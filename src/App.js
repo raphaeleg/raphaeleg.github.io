@@ -15,9 +15,8 @@ function App() {
   const splashRef = useRef();
   const [scrollPos, setScrollPos] = useState( 0 );
   const [isNotFirstPage, setIsNotFirstPage] = useState( false );
-  const [currentPage, setCurrentPage] = useState( 1 );
+  const [currentPage, setCurrentPage] = useState( -1 );
   const [prevPage, setPrevPage] = useState( 0 );
-  const [totalPages, setTotalPages] = useState( 5 );
   const [scrollBarPos, setScrollBarPos] = useState( 0 );
 
   useEffect( () => {
@@ -25,25 +24,15 @@ function App() {
       let currentPosition = window.pageYOffset; // or use document.documentElement.scrollTop;
       if ( currentPosition > 500 ) {
         setIsNotFirstPage( true );
-        let idx = Math.floor( currentPosition / window.innerHeight );
+        let idx = Math.floor( currentPosition / ( window.innerHeight * 1.1 ) );
         // get scroll values for scrollbar
-        if ( currentPosition > window.innerHeight * 7 ) {
-          setCurrentPage( idx - 6 );
-          setTotalPages( 3 );
-          if ( idx - 6 != prevPage ) {
-            setScrollBarPos( calcPosition( idx - 6, 3 ) );
-            setPrevPage( idx - 6 );
-          }
-        }
-        else {
-          setCurrentPage( idx - 1 );
-          setTotalPages( 5 );
-          if ( idx - 6 != prevPage ) {
-            setScrollBarPos( calcPosition( idx - 1, 5 ) );
-            setPrevPage( idx - 1 );
-          }
+        setCurrentPage( idx - 1 );
+        if ( idx - 6 != prevPage ) {
+          setScrollBarPos( calcPosition( idx - ( idx > 6 ? 6 : 1 ), ( idx > 6 ? 3 : 5 ) ) );
+          setPrevPage( idx - 1 );
         }
       }
+
       else
         setIsNotFirstPage( false );
 
@@ -64,7 +53,7 @@ function App() {
 
   return (
     <div className="App">
-      <ScrollBar currentPage={currentPage} totalPages={totalPages} scrollBarPos={scrollBarPos} />
+      <ScrollBar currentPage={currentPage} scrollBarPos={scrollBarPos} />
       <span ref={splashRef}>
         <Splash />
       </span>

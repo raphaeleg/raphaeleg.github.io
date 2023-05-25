@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 
-const ScrollBar = ( { currentPage, totalPages, scrollBarPos } ) => {
+const ScrollBar = ( { currentPage, scrollBarPos } ) => {
+    const totalPages = 8;
     return (
-        <span className={`scrollContainer ${currentPage > 0 ? '' : 'toHide'} ${totalPages === 3 ? 'sideScrollContainer' : ''}`}>
+        <span className={`scrollContainer ${currentPage > 0 ? '' : 'toHide'} ${currentPage > 5 ? 'sideScrollContainer' : ''}`}>
             <span className='scrollNumbers' style={{ marginTop: scrollBarPos }}>
                 <p className='scrollCurr'>{Math.min( Math.max( currentPage, 1 ), totalPages )}</p>
                 <p className='scrollDash'>/</p>
