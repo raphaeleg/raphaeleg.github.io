@@ -2,10 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 
 import './App.scss';
 import Splash from './components/Splash';
-import SplashBg from './components/SplashBg';
 import About from './components/About';
 import MainWorks from './components/MainWorks';
-import SideWorks from './components/SideWorks';
 import CTA from './components/CTA';
 import ScrollBar from "./components/ScrollBar";
 
@@ -69,9 +67,9 @@ function App() {
       <MainWorks title='Jane Austen' category='Website • UXUI • Next.js' images={[15, 16, 17, 18]} dark={true} />
       <MainWorks title='SALBOY FIFTY5IVE' category='Website • VR • JQuery' images={[19, 20, 21, 22]} dark={true} />
 
-      <SideWorks title='Marketing' category='' images={[35, 23, 24, 25, 26]} />
-      <SideWorks title='Art & Graphic' category='' images={[36, 27, 28, 29, 30, 31]} />
-      <SideWorks title='Upcoming Projects' category='' images={[32, 33, 34]} />
+      <MainWorks title='Marketing' category='' images={[35, 23, 24, 25, 26]} sideContent={true} />
+      <MainWorks title='Art & Graphic' category='' images={[36, 27, 28, 29, 30, 31]} sideContent={true} />
+      <MainWorks title='Upcoming Projects' category='' images={[32, 33, 34]} sideContent={true} />
 
       <CTA isNotFirstPage={isNotFirstPage} aboutRef={aboutRef} worksRef={worksRef} splashRef={splashRef} scrollTo={scrollTo} />
     </div>

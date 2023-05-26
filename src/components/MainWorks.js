@@ -1,15 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade } from 'swiper';
+import { EffectFade, Pagination } from 'swiper';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-fade';
+import 'swiper/css/pagination';
+// Scroll Animation
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin( ScrollTrigger );
 
-const MainWorks = ( { title, category, images, dark, ytLink } ) => {
+const MainWorks = ( { title, category, images, dark, ytLink, sideContent } ) => {
     const [my_swiper, set_my_swiper] = useState( {} );
     const headLineRef = useRef();
     const [showHeading, setShowHeading] = useState( true );
@@ -30,33 +32,36 @@ const MainWorks = ( { title, category, images, dark, ytLink } ) => {
         );
     }, [] );
 
+    function checkShowTitle() {
+        if ( my_swiper.realIndex == 0 )
+            setShowHeading( true );
+        else
+            setShowHeading( false );
+    }
+
+
     return (
-        <section className={'mainGalleryContainer'}>
-            <span className='mainWorksTitles' ref={headLineRef}>
-                {showHeading &&
-                    <>
-                        <h1>{title}</h1>
-                        <h2>{category}</h2>
-                    </>
-                }
+        <section className={`${sideContent ? 'sideGalleryContainer' : 'mainGalleryContainer'}`}>
+            <span className={`mainWorksTitles ${sideContent ? 'positionRight' : ''}`} ref={headLineRef}>
+                <span className={`${showHeading ? '' : 'toHide'}`}>
+                    <h1>{title}</h1>
+                    <h2>{category}</h2>
+                </span>
+
             </span>
             <Swiper
-                pagination={{
-                    dynamicBullets: true,
-                }}
-                modules={[EffectFade]}
+                className={`mySwiper ${( dark || sideContent && showHeading ) ? 'arrCursorDark' : 'arrCursorLight'}`}
+                modules={[EffectFade, Pagination]}
                 effect="fade"
-                className={`mySwiper ${dark ? 'arrCursorDark' : 'arrCursorLight'}`}
+                pagination={true}
                 onInit={( ev ) => {
                     set_my_swiper( ev )
                 }}
                 onClick={() => {
                     my_swiper.slideNext();
-                    if ( my_swiper.realIndex == 0 )
-                        setShowHeading( true );
-                    else
-                        setShowHeading( false );
+                    checkShowTitle();
                 }}
+                onSlideChange={() => checkShowTitle()}
                 loop={true}
             >
                 {images.map( ( slideContent ) => (
@@ -64,13 +69,14 @@ const MainWorks = ( { title, category, images, dark, ytLink } ) => {
                         <img src={`../MainWorks/${slideContent}.jpg`} alt={slideContent} />
                     </SwiperSlide>
                 ) )}
-
+                {/* style={{ backgroundColor: "#232325" }} */}
                 {ytLink &&
                     <SwiperSlide key={0}>
-                        <iframe width={49 * window.screen.width / 100} height={46 * window.screen.height / 100} src={ytLink} title="YouTube video player" frameBorder="5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                        <iframe width={60 * window.innerWidth / 100} height={50 * window.innerHeight / 100} src={ytLink} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading='eager' allowFullScreen></iframe>
+
                     </SwiperSlide>}
             </Swiper>
-        </section>
+        </section >
     )
 }
 

@@ -6,7 +6,7 @@ body::-webkit-scrollbar {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding: 20vh;
+  scroll-padding: 24vh;
   overflow-y: auto;
     overscroll-behavior: contain;
     scroll-snap-type: y mandatory;
@@ -48,12 +48,14 @@ section {
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  height: 110vh;
+  min-height: 110vh;
   padding: 5vh 5vw;
   width: 90vw;
   position: relative;
   scroll-snap-align: center;
 }
+
+/*~~~~~~~~~~ SPLASH ~~~~~~~~~~*/
 
 .splashContainer h1 {
   font-size: 9vw;
@@ -72,6 +74,18 @@ section {
   color: #232323;
 }
 
+/*~~~ SPLASH BG ~~~*/
+
+.anim {
+  width: 90vw;
+  height: 90vh;
+  // background-color: #232325;
+  position: absolute;
+  z-index: 1;
+}
+
+/*~~~~~~~~~~ ABOUT ~~~~~~~~~~*/
+
 .aboutContainer {
   background-color: #232325;
   text-align: left;
@@ -88,33 +102,31 @@ section {
   font-size: 1.5em;
 }
 
-.swiper {
-  width: 70vw;
-  height: 50vh;
-}
+/*~~ BALL THREEJS ~~*/
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
+.techContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  margin-top: 20px;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background-color: #232325;
+.ballContainer {
+  width: 8vw;
+  height: 8vw;
+  margin: 5px;
+  text-align: center;
 }
 
-.sideGalleryContainer .swiper-slide img {
-  background-color: #B8B8B8;
+.ballContainer2 {
+  width: 6vw;
+  height: 6vw;
+  text-align: center;
+  margin: 5px;
 }
+
+/*~~~~~~~~~~ GALLERY ~~~~~~~~~~*/
 
 .arrCursorLight {
   cursor: url(https://img.icons8.com/ios/50/FFFFFF/arrow--v1.png) 16 16, move;
@@ -158,6 +170,43 @@ iframe {
   background-color: #232325;
 }
 
+/*~~~ SWIPER ~~~*/
+
+.swiper {
+  width: 70vw;
+  height: 50vh;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #232323;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #232325;
+}
+
+.sideGalleryContainer .swiper-slide img {
+  background-color: #B8B8B8;
+}
+
+
+.swiper-pagination-bullet {
+  background-color: #B8B8B8 !important;
+}
+
+/*~~~ SIDE GALLERY ~~~*/
+
 .sideGalleryContainer {
   text-align: right;
 }
@@ -172,6 +221,8 @@ iframe {
 .positionRight h1 {
   margin-left: 40vw;
 }
+
+/*~~~~~~~~~~ CTA ~~~~~~~~~~*/
 
 .CTAContainer {
   position: fixed;
@@ -198,27 +249,7 @@ iframe {
   opacity: 0;
 }
 
-.techContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-bottom: 50px;
-  margin-top: 20px;
-}
-
-.ballContainer {
-  width: 8vw;
-  height: 8vw;
-  margin: 5px;
-  text-align: center;
-}
-
-.ballContainer2 {
-  width: 6vw;
-  height: 6vw;
-  text-align: center;
-  margin: 5px;
-}
+/*~~~~~~~~~~ SCROLL ~~~~~~~~~~*/
 
 .scrollContainer {
   position: fixed;
@@ -266,10 +297,50 @@ iframe {
   margin-left: 1em;
 }
 
-.anim {
-  width: 90vw;
-  height: 90vh;
-  // background-color: #232325;
-  position: absolute;
-  z-index: 1;
+@media only screen and (max-width: 800px) {
+  .splashContainer h1 {
+    font-size: 12vw;
+  }
+  .splashContainer p {
+    font-size: 1em;
+  }
+  .aboutContainer h2 {
+    font-size: 2em;
+    margin-right: 0;
+  }
+  .ballContainer{
+    width: 20vw;
+    height: 20vw;
+  }
+  .ballContainer p, .ballContainer2 p{
+    display: none;
+  }
+  .ballContainer2{
+    width: 15vw;
+    height: 15vw;
+  }
+  .mainWorksTitles h1 {
+    font-size: 12vw;
+    letter-spacing: 0;
+  }
+  .mainWorksTitles h2 {
+    font-size: 1em;
+  }
+  iframe {
+    width: 80vw;
+    height: 35vh;
+  }
+  .swiper {
+    width: 90vw;
+    height: 40vh;
+  }
+  .sideGalleryContainer {
+    text-align: center;
+  }
+  .positionRight h1 {
+    margin-left: 0;
+  }
+  .scrollContainer {
+    right: 1vw;
+  }
 }

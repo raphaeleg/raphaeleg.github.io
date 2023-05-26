@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { Canvas, extend, useFrame, useLoader, useThree } from '@react-three/fiber';
 import circleImg from '../assets/circle.png';
-import { Suspense, useCallback, useMemo, useRef } from 'react';
+import { Suspense, useCallback, useMemo, useRef, useEffect } from 'react';
 extend( { OrbitControls } )
 
 
@@ -33,6 +33,11 @@ function Points() {
 
         return new Float32Array( positions );
     }, [count, sep, graph] )
+
+    useEffect( () => {
+        bufferRef.current.needsUpdate = true;
+    }, [bufferRef] )
+
 
     useFrame( () => {
         t += 15
