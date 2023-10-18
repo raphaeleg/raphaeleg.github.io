@@ -63,41 +63,44 @@ function App() {
 			<span ref={worksRef}>
 				<MainWorks
 					title='Abandoned'
-					category='Video Game • Horror • Unreal Engine 5'
-					images={[40, 41, 42]}
+					category='Video Game • Horror • Unreal Engine 5'
+					images={[42, 43, 44]}
 					dark={false}
 				/>
 			</span>
 			<MainWorks
 				title='Escapee'
-				category='Video Game • RPG • Unity'
+				category='Video Game • RPG • Unity'
 				images={[1, 2, 3, 4]}
 				dark={false}
 				ytLink='https://www.youtube.com/embed/f3OJeqz19LE'
 			/>
 			<MainWorks
-				title='Translation Situation'
-				category='Video Game • Puzzle • Scratch'
-				images={[37, 38, 39]}
-				dark={false}
-			/>
-			<MainWorks
 				title='Sharing© Water'
-				category='Board Game • Speculative Design • Adobe Illustrator'
+				category='Board Game • Speculative Design • Adobe Illustrator'
 				images={[9, 10, 11, 12, 13, 14]}
 				dark={false}
 			/>
 			<MainWorks
-				title='Jane Austen'
-				category='Website • UXUI • Next.js'
-				images={[15, 16, 17, 18]}
-				dark={true}
+				title='Liminal Floor'
+				category='Study • Horror • React.js'
+				images={[5, 6, 7, 8]}
+				dark={false}
+				ytLink='https://www.youtube.com/embed/oDc_kKkF0g0'
+			/>
+			<MainWorks
+				title='Translation Situation'
+				category='Video Game • Puzzle • Scratch'
+				images={[37, 38, 39, 40, 41]}
+				dark={false}
+				ytLink='https://scratch.mit.edu/projects/909850203/embed'
 			/>
 
 			<MainWorks
-				title='Marketing'
-				category=''
-				images={[35, 23, 24, 25, 26]}
+				title='Jane Austen'
+				category='Website • UXUI • Next.js'
+				images={[15, 16, 17, 18]}
+				dark={true}
 				sideContent={true}
 			/>
 			<MainWorks
