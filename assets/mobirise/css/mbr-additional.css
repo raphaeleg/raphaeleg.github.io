@@ -1954,36 +1954,6 @@ a {
 .cid-tVWJaBYucU .mbr-section-title {
   color: #000000;
 }
-.cid-tWdKa7hTed {
-  padding-top: 6rem;
-  padding-bottom: 0rem;
-  background-color: #232325;
-}
-.cid-tWdKa7hTed .mbr-fallback-image.disabled {
-  display: none;
-}
-.cid-tWdKa7hTed .mbr-fallback-image {
-  display: block;
-  background-size: cover;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-}
-.cid-tWdKa7hTed .mbr-section-title {
-  color: #ffffff;
-  text-align: left;
-}
-.cid-tWdKa7hTed .mbr-section-subtitle {
-  color: #ffffff;
-  text-align: left;
-}
-.cid-tVWL2j6hX4 {
-  padding-top: 1rem;
-  padding-bottom: 4rem;
-  background-color: #232325;
-}
 .cid-tVWw5d2ghY {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -3272,38 +3242,8 @@ a {
     left: -1rem;
   }
 }
-.cid-tJS6uM4N87 {
-  background-image: url("../../../assets/images/whatsapp-image-2023-11-16-at-18.05.18-720x1107.jpg");
-}
-.cid-tJS6uM4N87 .mbr-fallback-image.disabled {
-  display: none;
-}
-.cid-tJS6uM4N87 .mbr-fallback-image {
-  display: block;
-  background-size: cover;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 0;
-}
-.cid-tJS6uM4N87 .topbg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30%;
-  background: #9fe870;
-}
-.cid-tJS6uM4N87 .mbr-section-title {
-  color: #232325;
-}
-.cid-tJS6uM4N87 .mbr-text,
-.cid-tJS6uM4N87 .mbr-section-btn {
-  color: #232325;
-}
 .cid-tMlEXTHLbS {
-  padding-top: 4rem;
+  padding-top: 10rem;
   padding-bottom: 6rem;
   background-color: #232325;
 }
