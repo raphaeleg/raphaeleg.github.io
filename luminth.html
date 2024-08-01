@@ -24,7 +24,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Karla:200,300,400,500,600,700,800,200i,300i,400i,500i,600i,700i,800i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:200,300,400,500,600,700,800,200i,300i,400i,500i,600i,700i,800i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=khsLWA"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=khsLWA" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=fBXgjJ"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=fBXgjJ" type="text/css">
 
   
   
@@ -50,8 +50,8 @@
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item dropdown"><a class="nav-link link dropdown-toggle text-black show display-4" href="index.html#features04-w" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="true">Projects</a><div class="dropdown-menu show" aria-labelledby="dropdown-833" data-bs-popper="none"><a class="show dropdown-item text-black display-4" href="tectonicus.html">Tectonicus</a><a class="dropdown-item text-black display-4" href="spaceinvader.html">Space Invaders Refactor</a><a class="show dropdown-item text-black display-4" href="luminth.html">Luminth</a><a class="show dropdown-item text-black display-4" href="misc.html">Creative Experiments</a></div></li>
-                    <li class="nav-item"><a class="nav-link link text-black display-4" href="index.html#footer03-8">Contact</a></li><li class="nav-item"><a class="nav-link link text-black display-4" href="assets/files/Raphaele_Resume.pdf" target="_blank">Resume</a></li></ul>
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item dropdown"><a class="nav-link link dropdown-toggle text-black display-4" href="index.html#features04-w" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Projects</a><div class="dropdown-menu" aria-labelledby="dropdown-833"><a class="show dropdown-item text-black display-4" href="tectonicus.html">Tectonicus</a><a class="dropdown-item text-black display-4" href="spaceinvader.html">Space Invaders Refactor</a><a class="show dropdown-item text-black display-4" href="luminth.html">Luminth</a><a class="show dropdown-item text-black display-4" href="misc.html">Creative Experiments</a></div></li>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#footer02-66">Contact</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="assets/files/RaphaeleMichelleGuillemot_Resume.pdf" target="_blank">Resume</a></li></ul>
                 
                 
             </div>
@@ -91,6 +91,86 @@
             </div>
         </div>
     </div>
+</section>
+
+<section data-bs-version="5.1" class="article11 cid-ukaJM5TM73" id="article11-6l">
+    
+
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-md-12 col-lg-11">
+                <h3 class="mbr-section-title mbr-fonts-style align-center mt-0 mb-0 display-2"><strong>Code Refactoring</strong></h3>
+                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mt-4 display-7">
+                Because the game was initially made within 72 hours, the game architecture was unclean and hard to read.</h4>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="image08 cid-ukaOdyh3d5" id="image08-6o">
+  
+  
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4">
+        <div class="col-12 col-md-12">
+          <h5 class="mbr-section-title mbr-fonts-style mt-0 mb-4 display-5"><strong>State Diagram</strong></h5>
+          <h6 class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-7">The first thing to identify is the overview of the game flow. Drawing a UML State Diagram of the game visualised what were the key actions and states to track</h6>
+          
+        </div>
+      </div>
+      <div class="col-lg-8 side-features">
+        <div class="image-wrapper mb-4">
+          <img class="w-100" src="assets/images/screenshot-2024-08-01-at-13.03.17-1489x743.png" alt="game state">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="image08 cid-ukaZqEiSvX" id="image08-6p">
+  
+  
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4">
+        <div class="col-12 col-md-12">
+          <h5 class="mbr-section-title mbr-fonts-style mt-0 mb-4 display-5"><strong>Primitive Class Diagram</strong></h5>
+          <h6 class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-7">Refactoring the architecture meant reimagining each class interaction. To make each class as modular as possible, A custom Game Event class was made, so that each script only has to react to Action Invocations rather than holding the individual game objects.&nbsp;</h6>
+          
+        </div>
+      </div>
+      <div class="col-lg-8 side-features">
+        <div class="image-wrapper mb-4">
+          <img class="w-100" src="assets/images/screenshot-2024-08-01-at-12.59.23-1489x1446.png" alt="New Architecture">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="image01 cid-ukaK57PRGn" id="image01-6m">
+  
+
+  
+  
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-9">
+        <div class="image-wrapper mb-4">
+          <img class="w-100" src="assets/images/screenshot-2024-08-01-at-14.00.56-1652x438.png" alt="Results">
+        </div>
+        <h4 class="mbr-description mbr-fonts-style mb-3 align-center display-5"><strong>Results: 635 deletions</strong></h4>
+        <p class="mbr-description mbr-fonts-style mb-0 align-center display-7">After implementing the changes outlined by the primitive class diagram, not only was it a lot easier to navigate through the project and the essential scripts, it was easier to add new features as each component was now as modular as possible.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section data-bs-version="5.1" class="article11 cid-ujpc9sIKAA" id="article11-6b">
@@ -427,8 +507,7 @@
             </div>
         </div>
     </div>
-</section>
-<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>  
+</section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
