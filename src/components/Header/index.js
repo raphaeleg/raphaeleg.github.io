@@ -12,14 +12,6 @@ const Header = () => {
                 <Link href="/" className="mx-4">Contact</Link>
                 <Link href="/" className="mx-4">Resume</Link>
             </nav>
-            <div>
-                <a className="inline-block w-6 h-6 mr-4" href="https://www.linkedin.com/in/raphaele-michelle-guillemot-6a34271a8/"><LinkedinIcon
-                    className="hover:scale-125 transition-all ease duration-200" /></a>
-                <a className="inline-block w-6 h-6 mr-4" href="https://github.com/raphaeleg"><GithubIcon
-                    className="hover:scale-125 transition-all ease duration-200" /></a>
-                <a className="inline-block w-6 h-6 mr-4" href="https://raphaeleg.itch.io/"><ItchIcon
-                    className="hover:scale-125 transition-all ease duration-200" /></a>
-            </div>
         </header>
     )
 }
