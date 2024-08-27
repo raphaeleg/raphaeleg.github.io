@@ -1,10 +1,9 @@
-import Link from 'next/link'
 import React from 'react'
-import Tag from '../Elements/Tags'
+import Tag from '../Elements/Tag'
 
 const About = () => {
     return (
-        <div className="flex flex-col lg:flex-row items-start align-start relative w-full py-12 lg:mh-[35vh]">
+        <div className="flex flex-col lg:flex-row items-start align-start relative w-full py-12 lg:min-h-[35vh]">
             <span className="flex flex-col items-start justify-center px-16 relative h-full sm:w-full lg:w-[70vw]">
                 <h2 className='font-bold capitalize text-lg sm:text-xl md:text-3xl lg:text-4xl'>About</h2>
                 <p className='sm:inline-block mt-4 md:text-lg lg:text-xl font-in font-light'>Solid foundation in Unity and C#, and a strong interest in code optimization and HLSL graphics programming. I have strong collaboration and leadership skills, with a history of working with cross-functional teams and co- founding a startup.</p>
