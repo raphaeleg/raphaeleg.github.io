@@ -1,6 +1,7 @@
 import { allBlogs } from "@/.contentlayer/generated"
 import BlogHeader from "@/src/components/Blog/BlogHeader";
 import RenderMdx from "@/src/components/Blog/RenderMdx";
+import TableOfContents from "@/src/components/Blog/TableOfContents";
 
 export default function BlogPage( { params } ) {
 
@@ -10,6 +11,7 @@ export default function BlogPage( { params } ) {
         <article>
             <BlogHeader blog={blog} />
             <div className="grid grid-cols-12  gap-y-8 lg:gap-8 sxl:gap-16 mt-8 px-5 md:px-10">
+                <TableOfContents blog={blog} />
                 <RenderMdx blog={blog} />
             </div>
 
