@@ -1,5 +1,8 @@
 import { makeSource, defineDocumentType } from '@contentlayer/source-files'
-
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
 
 const Blog = defineDocumentType( () => ( {
     name: 'Blog',
@@ -38,7 +41,20 @@ const Blog = defineDocumentType( () => ( {
     }
 } ) );
 
+const codeOptions = {
+    theme: 'nord', //nord, rose-pine-moon, everforest-dark, laserwave
+    grid: false,
+}
+
 export default makeSource( {
     contentDirPath: 'content',
     documentTypes: [Blog],
+    mdx: {
+        remarkPlugins: [remarkGfm],
+        rehypePlugins: [
+            rehypeSlug,
+            [rehypeAutolinkHeadings, { behavior: 'append' }],
+            [rehypePrettyCode, codeOptions]
+        ]
+    },
 } );
