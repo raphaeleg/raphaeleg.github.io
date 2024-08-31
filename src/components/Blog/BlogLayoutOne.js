@@ -13,8 +13,8 @@ const BlogLayoutOne = ( { blog } ) => {
             />
             <BlogImage blog={blog} classes="rounded-xl" />
 
-            <div className="w-full h-full absolute bottom-0 p-4 xs:p-6 sm:p-10 z-20">
-                <Tag link={`/categories/${slug( blog.tags[0] )}`} name={blog.tags[0]}
+            <div className="w-full h-full sm:h-auto absolute bottom-0 p-4 xs:p-6 sm:p-10 z-20">
+                <Tag isSolid={true} link={`/categories/${slug( blog.tags[0] )}`} name={blog.tags[0]}
                     className="px-6 text-xs  sm:text-sm py-1 sm:py-2 !border "
                 />
                 <Link href={blog.url} className="mt-6">
