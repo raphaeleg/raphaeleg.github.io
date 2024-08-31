@@ -1,6 +1,7 @@
 import React from 'react'
 import Tag from "@/src/components/Elements/Tag";
 import BlogImage from './BlogImage';
+import { slug } from 'github-slugger';
 
 const BlogHeader = ( { blog } ) => {
     return (
@@ -11,7 +12,7 @@ const BlogHeader = ( { blog } ) => {
                         return (
                             <Tag
                                 name={`#${( t )}`}
-                                link={`/categories/${( t )}`}
+                                link={`/categories/${( slug( t ) )}`}
                                 className="px-6 mx-2 text-sm py-2"
                                 isSolid={true}
                             />
