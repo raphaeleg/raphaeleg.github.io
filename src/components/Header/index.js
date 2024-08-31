@@ -7,7 +7,7 @@ const Header = () => {
     const [click, setClick] = useState( false );
     const toggle = () => setClick( !click );
     return (
-        <header className="z-20 w-full top-0 left-0 p-4 px-10 flex items-center bg-light/50 justify-between backdrop-blur-sm"
+        <header className="sticky z-20 w-full top-0 left-0 p-4 px-10 flex items-center bg-light-50 sm:bg-light/100 justify-between backdrop-blur-sm"
             style={{
                 height: click ? "100vh" : "auto",
                 width: click ? "100vw" : "100%",
@@ -43,18 +43,23 @@ const Header = () => {
                     right: click ? "0rem" : "-50rem"
                 }}
             >
-                <Link href="/" className="w-full py-5">Home</Link>
-                <Link href="/" className="w-full py-5">Projects</Link>
-                <Link href="/" className="w-full py-5">Blog</Link>
-                <Link href="/" className="w-full py-5">Contact</Link>
-                <Link href="/" className="w-full py-5">Resume</Link>
+                <Link href="/" className="w-full py-5" onClick={toggle}>Home</Link>
+                <Link href="/#home-game-projects" className="w-full py-5" onClick={toggle}>Projects</Link>
+                <Link href="/categories/all" className="w-full py-5" onClick={toggle}>Blog</Link>
+                <div href="" className="w-full py-5" onClick={() => {
+                    window.scrollTo( 0, document.body.scrollHeight );
+                    toggle();
+                }}>Contact</div>
+                <Link href="/Raphaele-Michelle-Guillemot-Resume.pdf" className="w-full py-5" target="_blank" onClick={toggle}>Resume</Link>
             </nav>
 
             <nav className="hidden sm:flex w-max py-3 px-8 font-medium capitalize items-end">
-                <Link href="/" className="mx-4">Projects</Link>
-                <Link href="/" className="mx-4">Blog</Link>
-                <Link href="/" className="mx-4">Contact</Link>
-                <Link href="/" className="mx-4">Resume</Link>
+                <Link href="/#home-game-projects" className="mx-4">Projects</Link>
+                <Link href="/categories/all" className="mx-4">Blog</Link>
+                <div href="" className="mx-4 cursor-pointer" onClick={() => {
+                    window.scrollTo( 0, document.body.scrollHeight );
+                }}>Contact</div>
+                <Link href="/Raphaele-Michelle-Guillemot-Resume.pdf" target="_blank" className="mx-4">Resume</Link>
             </nav>
         </header>
     )
