@@ -11,7 +11,7 @@ const BlogLayoutOne = ( { blog } ) => {
                 className="absolute top-0 left-0 bottom-0 right-0 h-full
                 bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-xl z-10"
             />
-            <BlogImage blog={blog} classes="rounded-xl" />
+            <BlogImage blog={blog} classes="rounded-xl" sizes={"(max-width:1024px) 50vw, 100vw"} />
 
             <div className="w-full h-full sm:h-auto absolute bottom-0 p-4 xs:p-6 sm:p-10 z-20">
                 <Tag isSolid={true} link={`/categories/${slug( blog.tags[0] )}`} name={blog.tags[0]}

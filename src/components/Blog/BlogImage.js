@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { cx } from '@/src/utils'
 
-const BlogImage = ( { blog, staticAnim, classes } ) => {
+const BlogImage = ( { blog, staticAnim, classes, priority, sizes } ) => {
     return (
         <Image
             src={blog.image.filePath.replace( "../public", "" )}
@@ -15,8 +15,8 @@ const BlogImage = ( { blog, staticAnim, classes } ) => {
                 `${!staticAnim && "group-hover:scale-105 transition-all ease duration-300"}`,
                 { classes }
             )}
-            priority
-            sizes="100vw"
+            priority={priority}
+            sizes={sizes}
         />
     )
 }

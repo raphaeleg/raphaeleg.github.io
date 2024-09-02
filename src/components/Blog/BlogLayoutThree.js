@@ -6,7 +6,7 @@ const BlogLayoutThree = ( { blog } ) => {
     return (
         <div className="group flex flex-col items-center text-dark">
             <Link href={blog.url} className="h-full rounded-xl overflow-hidden">
-                <BlogImage blog={blog} classes="aspect-[4/3]" />
+                <BlogImage blog={blog} classes="aspect-[4/3]" sizes={"(max-width:1024px) 33vw, 100vw"} />
             </Link>
 
             <div className="flex flex-col w-full mt-4">

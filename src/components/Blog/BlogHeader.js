@@ -34,7 +34,7 @@ const BlogHeader = ( { blog } ) => {
             </div>
 
             <div className="absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60" />
-            <BlogImage blog={blog} staticAnim={true} />
+            <BlogImage blog={blog} staticAnim={true} sizes={"100vw"} priority={true} />
         </div>
     )
 }

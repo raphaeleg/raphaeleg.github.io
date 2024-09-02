@@ -46,18 +46,39 @@ export async function generateMetadata( { params } ) {
     };
 }
 
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": blog.title,
+    "description": blog.description,
+    "image": imageList,
+    "datePublished": new Date( blog.publishedAt ).toISOString(),
+    "dateModified": new Date( blog.publishedAt ).toISOString(),
+    "author": [{
+        "@type": "Person",
+        "name": siteMetadata.title,
+        "url": siteMetadata.linkedin,
+    }]
+}
+
 export default function BlogPage( { params } ) {
 
     const blog = allBlogs.find( ( blog ) => blog._raw.flattenedPath === params.slug );
 
     return (
-        <article>
-            <BlogHeader blog={blog} />
-            <div className="grid grid-cols-12  gap-y-8 lg:gap-8 sxl:gap-16 mt-8 px-5 md:px-10">
-                <TableOfContents blog={blog} />
-                <RenderMdx blog={blog} />
-            </div>
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify( jsonLd ) }}
+            />
+            <article>
+                <BlogHeader blog={blog} />
+                <div className="grid grid-cols-12  gap-y-8 lg:gap-8 sxl:gap-16 mt-8 px-5 md:px-10">
+                    <TableOfContents blog={blog} />
+                    <RenderMdx blog={blog} />
+                </div>
 
-        </article >
+            </article >
+        </>
     );
 }
