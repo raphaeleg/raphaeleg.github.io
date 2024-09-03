@@ -1,14 +1,14 @@
 1:HL["/_next/static/media/3534416bbfdcc9be-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:HL["/_next/static/media/a34f9d1faa5f3315-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-3:HL["/_next/static/css/07a682a00ae77797.css","style",{"crossOrigin":""}]
-0:["NoOJLPfpw2-9nPtoKJ_zG",[[["",{"children":["blogs",{"children":[["slug","how-to-mask-feathered-holes","d"],{"children":["__PAGE__?{\"slug\":\"how-to-mask-feathered-holes\"}",{}]}]}]},"$undefined","$undefined",true],"$L4",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/07a682a00ae77797.css","precedence":"next","crossOrigin":""}]],"$L5"]]]]
-6:I{"id":4673,"chunks":["724:static/chunks/724-72c1e130eefbb1d6.js","185:static/chunks/app/layout-34313af6886ba141.js"],"name":"","async":false}
-7:I{"id":1443,"chunks":["272:static/chunks/webpack-c3186f3fb4f595d8.js","971:static/chunks/fd9d1056-be4284c6839b84b2.js","864:static/chunks/864-2f812e0173dd607b.js"],"name":"","async":false}
-8:I{"id":8639,"chunks":["272:static/chunks/webpack-c3186f3fb4f595d8.js","971:static/chunks/fd9d1056-be4284c6839b84b2.js","864:static/chunks/864-2f812e0173dd607b.js"],"name":"","async":false}
+3:HL["/_next/static/css/881764d7315ebb41.css","style",{"crossOrigin":""}]
+0:["ovBhe-YlH4rdiane066il",[[["",{"children":["blogs",{"children":[["slug","how-to-mask-feathered-holes","d"],{"children":["__PAGE__?{\"slug\":\"how-to-mask-feathered-holes\"}",{}]}]}]},"$undefined","$undefined",true],"$L4",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/881764d7315ebb41.css","precedence":"next","crossOrigin":""}]],"$L5"]]]]
+6:I{"id":4673,"chunks":["724:static/chunks/724-72c1e130eefbb1d6.js","185:static/chunks/app/layout-1cea9739228a0fe4.js"],"name":"","async":false}
+7:I{"id":1443,"chunks":["272:static/chunks/webpack-87946f1c662425a2.js","971:static/chunks/fd9d1056-be4284c6839b84b2.js","864:static/chunks/864-2f812e0173dd607b.js"],"name":"","async":false}
+8:I{"id":8639,"chunks":["272:static/chunks/webpack-87946f1c662425a2.js","971:static/chunks/fd9d1056-be4284c6839b84b2.js","864:static/chunks/864-2f812e0173dd607b.js"],"name":"","async":false}
 9:I{"id":4724,"chunks":["724:static/chunks/724-72c1e130eefbb1d6.js","964:static/chunks/964-61df1d552c4df895.js","688:static/chunks/app/blogs/[slug]/page-806deb45e43d784d.js"],"name":"","async":false}
 b:I{"id":6964,"chunks":["724:static/chunks/724-72c1e130eefbb1d6.js","964:static/chunks/964-61df1d552c4df895.js","688:static/chunks/app/blogs/[slug]/page-806deb45e43d784d.js"],"name":"Image","async":false}
 c:I{"id":8294,"chunks":["724:static/chunks/724-72c1e130eefbb1d6.js","964:static/chunks/964-61df1d552c4df895.js","688:static/chunks/app/blogs/[slug]/page-806deb45e43d784d.js"],"name":"","async":false}
-f:I{"id":4692,"chunks":["724:static/chunks/724-72c1e130eefbb1d6.js","185:static/chunks/app/layout-34313af6886ba141.js"],"name":"","async":false}
+f:I{"id":4692,"chunks":["724:static/chunks/724-72c1e130eefbb1d6.js","185:static/chunks/app/layout-1cea9739228a0fe4.js"],"name":"","async":false}
 d:T19c9,A huge mechanic of Luminth was the uncovering of the maze through lights. However, Unity doesn't have a built-in function to create transparent circles, needing technical expertise.
 
 # Primitive Solution
