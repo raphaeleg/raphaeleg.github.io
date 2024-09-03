@@ -1,0 +1,183 @@
+---
+title: 'Luminth'
+desc: 'A polished Game Jam game.'
+image: '../../public/blogs/luminth-cover.png'
+publishedAt: '2024-06-30'
+isPublished: true
+redirect: ""
+tags:
+  - game jam
+  - game
+  - published
+  - unity
+  - csharp
+  - shader-hlsl
+  - collaboration
+---
+
+Summon light to find your way out of the dark, dangerous maze. Avoid becoming a fish’s snack! **A 72-hour game jam**
+
+<iframe frameborder='0' src='https://itch.io/embed/2649454?linkback=true&amp;bg_color=EDE9E4&amp;fg_color=806562&amp;link_color=C3864D&amp;border_color=C3864D' width='552' height='167'>
+<a href='https://raphaeleg.itch.io/luminth'> Luminth by Raphaele Guillemot, Thomas Wang </a>
+</iframe>
+
+<Tag link='https://ldjam.com/events/ludum-dare/55/luminth' name='Ludum Dare page' isSolid={false} isNewPage={true} />
+
+This project was made with **3 people**, including another developer.
+
+Out of 2194 submissions, _Luminth_ was submitted for LudumDare55 and placed...
+
+- **Top 3%** in Graphics
+- **Top 7%** in Innovation <Image
+  	src='/blogs/luminth-0.png'
+  	width='500'
+  	height='500'
+  	alt='scores'
+  	sizes='100vw'
+  />
+
+Because of the positive reviews, we've decided to continue **polishing the game for 2 months**.
+
+Below talks about my contributions to the project, including some linked posts for further details on the technical implementations.
+
+# My Technical Contributions
+
+---
+
+## 1. Handled the `Lights` class
+
+- Instantiation with dynamic light radiuses
+- Hostile Lights that decreased Player's health
+- Background Image Masking to "see" the maze <Image
+  	src='/blogs/luminth-2.png'
+  	width='500'
+  	height='500'
+  	alt='timeline'
+  	sizes='100vw'
+  />
+
+### POST-GAME JAM: Better Light Visuals using Shaders (HLSL)
+
+A huge mechanic of Luminth was the uncovering of the maze through lights. However, Unity doesn't have a built-in function to create transparent circles, needing HLSL Shader expertise.
+
+<Image
+	src='/blogs/luminth-1.png'
+	width='600'
+	height='600'
+	alt='timeline'
+	sizes='100vw'
+/>
+
+- Alpha blending
+- Texture Copy
+- Particle Effects
+- Post-Processing (Vignette, Bloom)
+
+<Tag
+	link='/blogs/how-to-mask-feathered-holes'
+	name='How did I achieve this? (Technical)'
+	isSolid={true}
+/>
+
+---
+
+## 2. Made the Tutorial Scene
+
+- **Game Event Triggers**
+- Level Design
+- Dialogue Manager
+
+<Image
+	src='/blogs/luminth-tut.png'
+	width='700'
+	height='700'
+	alt='timeline'
+	sizes='100vw'
+/>
+
+### POST-GAME JAM: Better Tutorial
+
+Due to the interesting world Luminth had to offer, the original tutorial focused more on narrative to introduce the mechanics. However, we found that **it gave players unclear instructions and expectations**
+
+In the polished version, Luminth's tutorial dialogues went from 27 lines to 5 lines. This gave more focus on **action and visual instructions** than words, making it clearer what players should expect.
+
+<Image
+	src='/blogs/luminth-7.png'
+	width='500'
+	height='500'
+	alt='timeline'
+	sizes='100vw'
+/>
+
+--- 
+
+## 3. Other Scenes (Main Menu, Winning, Losing, Credits) 
+- Button Animations using DOTween
+
+<Image
+	src='/blogs/luminth-9.png'
+	width='1000'
+	height='1000'
+	alt='state diagram'
+	sizes='100vw'
+/>
+
+--- 
+
+## 4. Randomised Exit Position at every scene instantiation. 
+
+--- 
+
+## 5. WebGL Build published in itch.io
+ 
+--- 
+
+## 6. POST-GAME JAM: Focus Mechanic using Shaders (HLSL)
+
+From the original submission's feedback, we have introduced a new mechanic that helps players find the direction of the exit.
+
+<Image
+	src='/blogs/luminth-3.gif'
+	width='600'
+	height='600'
+	alt='timeline'
+	sizes='100vw'
+/>
+
+- Original Equations 
+- Mouse Position 
+- Unit Circle / Angle Calculations 
+- Chromatic Abbreviation
+
+<Tag link='/blogs/how-to-trapnation-radar' name='How did I achieve this? (Technical)' isSolid={true} />
+--- 
+
+# Soft-skill 
+
+Challenges Because of the tight time constraints, it was necessary
+to have clear communication in work delegation and what the game needed. This included
+**Task Prioritisation**, **Using GitHub Branches for specific tasks**, and **Agile
+Project Management**.
+
+<Image
+	src='/blogs/luminth-timeline.png'
+	width='800'
+	height='800'
+	alt='timeline'
+	sizes='100vw'
+/>
+--- 
+
+# What I've Learnt 
+
+1. **Completed game:** Successfully completed the game within **72 hours** through effective collaboration, and polished the game with post-processing and publishing. 
+
+2. **Applied knowledge:** Applied knowledge from previous game development experience such as: Shader Language, Level Design, Game Events, Dialogue Manager, and Agile collaboration 
+
+3. **Great feedback:** Showcased at **Hong Kong's Game Dev Happy Hour event**, among other games, and received positive feedback.
+
+<iframe frameborder='0' src='https://itch.io/embed/2649454?linkback=true&amp;bg_color=EDE9E4&amp;fg_color=806562&amp;link_color=C3864D&amp;border_color=C3864D' width='552' height='167'>
+<a href='https://raphaeleg.itch.io/luminth'> Luminth by Raphaele Guillemot, Thomas Wang </a>
+</iframe>
+
+<Tag link='https://ldjam.com/events/ludum-dare/55/luminth' name='Ludum Dare page' isSolid={false} isNewPage={true} />

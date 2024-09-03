@@ -1,0 +1,209 @@
+---
+title: 'How to: Mask Feathered Holes in Images, Unity (Part 1)'
+desc: 'Learn how to achieve a feathered hole effect on an image using HLSL in Unity'
+image: '../../public/blogs/luminth-1.png'
+publishedAt: '2024-05-19'
+isPublished: true
+redirect: ''
+tags:
+  - shader hlsl
+  - unity
+  - csharp
+  - experiment
+  - solo
+---
+A huge mechanic of Luminth was the uncovering of the maze through lights. However, Unity doesn't have a built-in function to create transparent circles, needing technical expertise.
+
+# Primitive Solution
+
+Within 72 hours, the best solution was using the **stencil buffer**, to reject pixels on the cloud texture based on a circle image attached with the light.
+
+<Image
+	src='/blogs/luminth-2.png'
+	width='500'
+	height='500'
+	alt='timeline'
+	sizes='100vw'
+/>
+
+This worked using two stencil buffer materials. The first one passing a ref of 1 with no color, and the second checks if the stencil buffer is not equal to 1 to draw. This was initially done with regular materials since it was a 2D image, but it can be replicated with ShaderLab.
+
+```hlsl title="Mask.shader" caption="Always write 1 for the entirety of this object"
+...
+Stencil {
+	Ref 1
+	Comp Always
+	Pass Replace
+}
+ColorMask 0
+...
+```
+
+```hlsl title="Obj.shader" caption="If the stencil buffer is not equal to 1, keep the original value"
+...
+Stencil {
+	Ref 1
+	Comp NotEqual
+	Pass Keep
+}
+...
+```
+
+Benefits:
+
+- Easy to implement
+- Easy to use with any GameObject
+
+Disadvantages:
+
+- The edges are too harsh for the intended effect.
+
+We can't get any further with stencil / masking as it only holds integers (not floating points). It literally **accept or reject pixels**.
+
+# Polished Solution
+
+There exist many solutions based on seeing players through walls, but the applications are mainly 3D, and uses ShaderGraph from URP. Let's look at how we can write a solution based in HLSL.
+
+<Image
+	src='/blogs/luminth-1.png'
+	width='500'
+	height='500'
+	alt='timeline'
+	sizes='100vw'
+/>
+
+### 1. Draw a transparent, soft circle on texture.
+
+```hlsl title="Clouds.shader" caption="1.1. SubShader Characteristics"
+Tags { RenderType = Transparent, Queue = Transparent }
+Blend SrcAlpha OneMinusAlpha
+```
+
+```hlsl title="Clouds.shader" caption="1.2. Define a circle function"
+void drawCircle(in float2 uv, in float2 center, in float radius, in float smooth, out float output) {
+	// Using Signed Distance from the center
+	float sqrDistance = (uv.x - center.x) * (uv.x - center.x) + (uv.y - center.y) * (uv.y - center.y);
+	float sqrRadius = radius * radius;
+	if (sqrDistance < radius) {
+		output = smoothstep(sqrRadius, sqrRadius-smoothValue, sqrDistance);
+	} else { output = 0; }
+}
+```
+
+```hlsl title="Clouds.shader" caption="1.3. Integrate the circle function with the frag Function"
+fixed4 frag(v2f i) : SV_Target {
+	fixed4 col = tex2D(_MainTex, i.uv);
+	drawCircle(i.uv, center, radius, smoothstepValue, outputAlpha);	// Defined properties
+	return col * (1,1,1,1-outputAlpha);
+}
+```
+
+### 2. Dynamically draw a circle
+
+Since it's planned to have multiple circles, the data structure will be an array.
+
+```hlsl /_Points/ title="Clouds.shader" caption="2.1. Define a data structure that reads points to make holes"
+sampler2D _MainTex;
+float4 _MainTex_ST;
+float4 _Points[100];	// The variable being modified. Capped at 100.
+```
+
+```cs /_Points/ title="Clouds.cs" caption="2.2. Use a C# script to populate the variable with data"
+public class Clouds : MonoBehaviour {
+	public Material m;
+	public Texture2D t;
+	Vector4[] lights;
+
+	void NewLight(Vector4 v) {
+		lights[0] = v;
+		m.SetVectorArray("_Points", lights);	// Updates the data the shader will use
+	}
+
+	void Start() {
+		Vector4 v = new(x, y, radius, 0);	// The defined data structure
+		NewLight(v);
+	}
+}
+```
+
+```hlsl {3-5} title="Clouds.shader" caption="2.3. Use the variables to make a circle"
+fixed4 frag(v2f i) : SV_Target {
+	fixed4 col = tex2D(_MainTex, i.uv);
+	float center = _Points[0].xy;
+	float radius = _Points[0].z;
+	float smoothValue = radius / 20;	// Feathering based on radius
+	drawCircle(i.uv, center, radius, smoothValue, outputAlpha);	// Defined properties
+	return col * (1,1,1,1-outputAlpha);
+}
+```
+
+Once it's possible to pass one variable of points, it's easy to pass an array of points using a counter and a for-loop. I won't go through that here.
+
+### 3. World Coordinates to UV Coordinates
+
+The last challenge is properly covering the world coordinates to the correct UV coordinates.
+
+- In World Space, the coordinates align on an axis
+- In Texture Space, the coordinates starts at the bottom-left, and range from (0 ~ 1).
+
+**To translate world to texture:**
+
+1. Get point x<sub>world</sub>, center<sub>world</sub> (the offset from (0,0)<sub>world</sub>), and center<sub>texture</sub> (by dividing the total texture size by 2)
+2. Find how far x<sub>world</sub> is from center<sub>world</sub> as distance<sub>world</sub>
+3. x<sub>texture</sub> = center<sub>texture</sub> + distance<sub>world</sub>
+4. To translate to uv Space, normalise x<sub>texture</sub> to size<sub>texture</sub> so it's within 0 ~ 1 values
+   - Make sure to use `spriteRenderer.size` instead of Texture2D.width or height
+
+```cs
+Vector2 size = sprRend.size;
+Vector2 centerT = size/2;
+
+Vector3 centerW = gameObject.transform.localPosition;
+
+Vector2 distance = x - centerW;
+
+Vector2 xT = distance + centerT;
+Vector2 nXT = xT / size;
+
+lights[j] = new(nXT.x, nXT.y, x.z, 0);	// push to _Points array!
+```
+
+This is how Gradient Holes are made!
+
+Be careful, since we're using a C# script to send data to the GPU, a lot of data from CPU will be passed down to GPU, potentially becoming a bottleneck if there's a large amount of data to send. (Specifically, O(max_lights, 4 floats) = O(100*4*4) = O(1600 bytes))
+
+If I were to continue improving this, I would also look into simplifying the calculations by manipulating the `vert` function in the shader file.
+
+<Tag
+	link='https://raw.githubusercontent.com/thomasw-dev/LudumDare55/PostJam/LudumDare55/Assets/Scripts/Shader/CloudsHole.shader?token=GHSAT0AAAAAACWRN6OOJXX4WA7FK6J52GOOZWWRY3Q'
+	name='Source Code: Clouds.shader'
+	isSolid={true}
+	isNewPage={true}
+/>
+<Tag
+	link='https://raw.githubusercontent.com/thomasw-dev/LudumDare55/PostJam/LudumDare55/Assets/Scripts/Shader/Clouds.cs?token=GHSAT0AAAAAACWRN6OOVFDPRWPWUXID62MWZWWRYSQ'
+	name='Source Code: Clouds.cs'
+	isSolid={true}
+	isNewPage={true}
+/>{' '}
+
+---
+
+Thank you for reading! Check out the game that used this, or the project details about it here!
+
+<Tag
+	link='/blogs/how-to-silhouette'
+	name='Part 2: Player Silhouette'
+	isSolid={true}
+/>
+<Tag link='/blogs/luminth' name='Luminth Details' isSolid={false} />{' '}
+
+<iframe
+	frameborder='0'
+	src='https://itch.io/embed/2649454?linkback=true&amp;bg_color=EDE9E4&amp;fg_color=806562&amp;link_color=C3864D&amp;border_color=C3864D'
+	width='552'
+	height='167'>
+	<a href='https://raphaeleg.itch.io/luminth'>
+		Luminth by Raphaele Guillemot, Thomas Wang
+	</a>
+</iframe>

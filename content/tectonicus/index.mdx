@@ -1,0 +1,119 @@
+---
+title: 'Tectonicus: At the Egde of War'
+desc: 'My Legacy as an Intern at GAMUCATEX.'
+image: '../../public/blogs/tectonicus-cover.png'
+publishedAt: '2023-07-10'
+isPublished: true
+redirect: ''
+tags:
+  - published
+  - game
+  - unity
+  - csharp
+  - code-architecture
+  - collaboration
+---
+
+Interned at Gamucatex for 2 months as a Software Engineer in C#. Heavily contributed towards the pre-production development of _Tectonicus: At the Edge of War_.
+
+I'm unable to share any source code, but I am able to describe my contributions and experience.
+
+<iframe
+	src='https://itch.io/embed/1745993'
+	width='552'
+	height='167'
+	frameborder='0'>
+	<a href='https://gamucatex.itch.io/tectonicus'>
+		Tectonicus: On the Edge of War by GAMUCATEX
+	</a>
+</iframe>
+
+# Background
+
+Gamucatex had undergone structural changes, resulting in a highly **flexible team** of developers.
+
+To adapt to these changes, I worked on **refactoring** the codebase for better adaptability, and effectively **communicating** the development progress.
+
+These efforts had a **significant impact on the pre-production successes of Gamucatex**.
+
+## Exclusive features for game's showcase at Roskilde Festival
+
+My onboarding task was to develop key exclusive features for showcasing Tectonicus at the 2023 Roskilde Festival, Northern Europe's largest music and arts festival
+
+| Energy-Saving Button                                                                                             | Obtain Exclusive Cards                                                                                                                                                                                                                                                                                       |
+| ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <Image src='/blogs/tectonicus-greenbtn.png' width='250' height='250' alt='Energy-Saving Button' sizes='100vw' /> | <Image src='/blogs/tectonicus-1.jpg' width='450' height='250' alt='Obtain Exclusive Cards' sizes='100vw' />                                                                                                                                                                                                  |
+| The button enabled the game to run on a lower FPS and lower resolution graphics, becoming more energy-efficient. | - Created additional card data of whether the players have a specific card<br/>- Created a function that takes a unique string to gift the user new cards.<br/><br/>This feature had to be written in generic code so that game designers could enter any number of exclusive strings and cards they wanted. |
+
+## Refactoring the codebase's architecture
+
+In the game, players use cards that represent units with specific abilities to win. However, the current class architecture for these units is limited in supporting a wider range of required abilities.
+
+<Image
+	src='/blogs/tectonicus-3.png'
+	width='300'
+	height='300'
+	alt='Card Architecture'
+	sizes='100vw'
+/>
+
+To address this, I worked on refactoring the units class to make it easier for future developers and designers to add unique abilities.
+
+For instance, I added a parameter for ability duration that spans more than one turn. To achieve this, I had to keep track of the number of turns that had passed in the ability class.
+
+However, I encountered a challenge when I had to determine what happens for an ability that triggers indefinitely during a battle. Thus, I required the game class to explicitly examine each instance of such ability.
+
+<Image
+	src='/blogs/tectonicus-4.jpg'
+	width='500'
+	height='500'
+	alt='Card Architecture'
+	sizes='100vw'
+/>
+
+## Directions to better UX/UI
+
+Previously, the game lacked a specialized focus on UXUI, which was a major issue at Roskilde Festival. Having experience in UXUI, I collaborated with developers and artists to improve the game's interface.
+
+<Image
+	src='/blogs/tectonicus-2.jpg'
+	width='500'
+	height='500'
+	alt='Card Architecture'
+	sizes='100vw'
+/>
+
+We communicated technically to achieve the UXUI designer's vision (such as file type, size, and layers needed), leading to a comprehensive action plan and streamlined task delegation between departments.
+
+## Friendly Documentation
+
+Technical documentation is crucial not only for future developers, but also for game designers to understand the developer's work better.
+
+During my tenure, I extensively reworked the technical documentation to make it more reader-friendly and efficient for onboarding.
+
+The process involved eliminating outdated information, adding more test cases, providing examples of certain features, and refining the standard development process in code, SCRUM cards, and version control.
+
+# Legacy
+
+Through my contributions in...
+
+1. Refactoring the codebase's architecture to support more features, and
+2. Greatly communicating with cross-functional teams to improve the cross-disciplinary field of UX/UI;
+
+I positively impacted the pre-production development of _Tectonicus: At the Edge of War_.
+
+# What I've Learnt
+
+1. **Complex architecture**: Refactoring the card abilities gave me a glimpse of managing complex architectures
+2. **Agile and Scrum**: Experienced two full **sprint cycles**, including code reviews and version control.
+3. **Collaboration**: Worked with many people in different departments from documentation to initiatives, and saw my work in the **grander pipeline**.
+
+<iframe
+	src='https://itch.io/embed/1745993'
+	width='552'
+	height='167'
+	frameborder='0'>
+	<a href='https://gamucatex.itch.io/tectonicus'>
+		Tectonicus: On the Edge of War by GAMUCATEX
+	</a>
+</iframe>

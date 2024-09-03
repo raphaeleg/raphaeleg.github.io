@@ -1,0 +1,419 @@
+---
+title: 'How to: Make a TrapNation-Inspired Radar, Unity'
+desc: 'Learn how to make a radar that follows the mouse using HLSL in Unity'
+image: '../../public/blogs/luminth-3.gif'
+publishedAt: '2024-06-20'
+isPublished: true
+redirect: ''
+tags:
+  - shader hlsl
+  - unity
+  - csharp
+  - experiment
+  - solo
+---
+
+From the original submission's feedback, we have introduced a new mechanic that helps players find the direction of the exit.
+
+<Image
+	src='/blogs/luminth-3.gif'
+	width='500'
+	height='500'
+	alt='Trap Nation'
+	sizes='100vw'
+/>
+
+# Ideation
+
+Luminth was a dreamy game, so it felt fitting to have a "focus" mechanic to listen closely, and sense the direction of the exit.
+
+I took inspiration from Trap Nation's music videos, where their beats created a trail of chromatic abbreviation.
+
+<Image
+	src='/blogs/luminth-inspo.jpg'
+	width='300'
+	height='300'
+	alt='Trap Nation'
+	sizes='100vw'
+/>
+
+# Planning
+
+First, let's look at how we might create a sense to where the exit was.
+
+We would need the following:
+
+- Exit Position (or rather, the angle the exit is at, relative to the mouse)
+- Mouse Position (or rather, the angle the mouse is looking at)
+
+### Finding the Wave Equation
+
+After tinkering with Desmos, it seems that...
+
+1. r = θ is the equation to make a "loop" pattern
+2. Recall the transformation of functions. <Image
+   	src='/blogs/luminth-eqexplain.png'
+   	width='300'
+   	height='300'
+   	alt='Formula'
+   	sizes='100vw'
+   /> The equivalent for our function is r = a ( θ - h ) + k. - Since this is a loop/circular function, h and k are behave similarly. Therefore, Let's say k = 0.
+3. Let's turn the loop pattern into a wave to make it an enclosed circle! We can simply use sin. <Image
+   	src='/blogs/luminth-sin.png'
+   	width='500'
+   	height='500'
+   	alt='Formula'
+   	sizes='100vw'
+   /> - c<sub>rotation</sub> was the previous h - as long as c<sub>amplitude</sub> was an integer, it produces one single bump. Let's use this to show the "peak". subsituting 1 gives two bumps, so let's use 2. - c<sub>intensity</sub> determines how "slim" the bump is. - c<sub>radius</sub> is the radius of the base circle. Since we're dealing with texturespace, 1 is a good value.
+
+So our wave function is <br/>f<sub>wave</sub>(x,k) = c<sub>amplitude</sub>sin( (x-k)/c<sub>amplitude</sub>) + c<sub>radius</sub> )<sup>c<sub>intensity</sub></sup><br/>f<sub>wave</sub>(x,k) = 2sin( (x-k)/2) + 1 )<sup>80</sup>
+
+Now the rest is easy.
+To show two different bumps, we simply multiply two equations like so:<Image
+	src='/blogs/luminth-twobumps.png'
+	width='500'
+	height='500'
+	alt='Formula'
+	sizes='100vw'
+/>
+
+Adding a few more constants to make it the shape I want and _voila_, it's perfect. <Image
+	src='/blogs/luminth-finaldesmo.gif'
+	width='700'
+	height='700'
+	alt='Formula'
+	sizes='100vw'
+/> Now v<sub>exit</sub> and v<sub>mouse</sub> has a big bump whenever I go around it, and shows nothing if they aren't aligned.
+
+## Rendering
+
+Let's import the equations into code.
+
+```hlsl /wave/ /peakEquation/ title="FocusRadar.shader"
+float _Intensity, _ExitAngle, _MouseAngle;
+
+fixed wave(float theta, float pos){
+	float eq = 2*sin(0.5*(theta-pos))+1;
+	return pow(eq,_Intensity);
+}
+fixed peakEquation(float uvAngle, float refAngle) {
+	return wave(uvAngle, _ExitAngle) * wave(uvAngle, refAngle) * 1/10 + 1;
+}
+```
+
+If we want to render this in the frag function, we notice that we're missing a few steps:
+
+- Getting the "θ", as it's not simply the texture coordinates.
+- Rendering a circle based on the equation.
+
+```hlsl /???/ /1/
+fixed4 frag (Interpolator i) : SV_Target{
+	float eq = peakEquation(???(i.uv), _MouseAngle);
+	return fixed4(1);
+}
+```
+
+### A Simple Circle base
+
+Firstly, we can reference the [previous code](/blogs/how-to-mask-feathered-holes#1-draw-a-transparent-soft-circle-on-texture) to render a circle like so:
+
+```hlsl {7} /???/
+fixed renderCircle(float2 uv, float r) {
+	float res = step(0,length(uv) - r); // using sdf method
+	return 1-res;
+}
+fixed4 frag (Interpolator i) : SV_Target{
+	float eq = peakEquation(???(i.uv), _MouseAngle);
+	return fixed4(renderCircle(uv,eq));
+}
+```
+
+### Getting the Theta Angle
+
+As for the angle, we might want to look at our texturespace as we do a Unit Circle. The Unit Circle has the same domains!
+
+<Image
+	src='/blogs/The-Unit-Circle-Chart.webp'
+	width='500'
+	height='500'
+	alt='Formula'
+	sizes='100vw'
+/>
+
+```hlsl caption="Get angle using the Unit Circle coordinate system"
+#define PI 3.14159
+
+fixed findAngle(float2 v) {
+	fixed2 o = fixed2(1,0);				// The starting point
+	float dot = o.x*v.x + o.y*v.y;
+	float len = 1 * length(v);
+	float angle = acos(dot/len)*0.5;	// Cosine Rule Equation
+
+	// If negative-x, other side of the circle
+	if (v.y < 0) {angle = PI-angle;}
+
+	return angle/PI;
+}
+```
+
+```hlsl /findAngle/ caption="Now we're using the Unit Circle Coordinates instead of the UV Coordinates!"
+fixed4 frag (Interpolator i) : SV_Target{
+	float2 uv = i.uv*2-1;	// Make (0,0) at the center of the screen
+	float eq = peakEquation(findAngle(uv), _MouseAngle);
+	return fixed4(renderCircle(uv,eq));
+}
+```
+
+We just need to adjust the formula slightly to align with the new changes.
+
+```hlsl {5,9}
+#define TAU 6.283185
+#define PI 3.14159
+
+fixed wave(float theta, float pos){
+	float eq = 0.5*sin(TAU*(theta-pos)+PI/2)+0.5+_Intensity*0.00012;
+	return pow(eq,_Intensity);
+}
+fixed peakEquation(float uvAngle, float refAngle) {
+	return wave(uvAngle, _ExitAngle) * wave(uvAngle, refAngle)/2.5 * 1/10 + 0.3;
+}
+```
+
+## Data
+
+Now that we have a shader that takes any angle and renders a radar, let's see how we can actually get those data from Unity.
+
+First, let's define the data we have to send to the shader:
+
+```cs /???/ title="FocusRadar.cs"
+public Material ringMat;
+
+private void FixedUpdate()
+{
+	ringMat.SetFloat("_MouseAngle", ???);
+	ringMat.SetFloat("_ExitAngle", ???);
+	ringMat.SetFloat("_Intensity", ???);
+}
+```
+
+### Calculating Angle Data
+
+First, let's make a similar `findAngle` function as we wrote in the shader.
+
+```cs caption="Using the Unit Circle Coordinates"
+private float FindAngle(Vector2 v)
+{
+	var angleRadians = Mathf.Atan2(v.y, v.x);
+	if (angleRadians < 0) { angleRadians += Mathf.PI * 2; }
+
+	angleRadians /= Mathf.PI*2;
+	return angleRadians;
+}
+```
+
+Now it's as simple as adding the input in the function to get the correct values!
+
+```cs caption="Mouse and Exit Angles"
+public float GetMouseAngle()
+{
+	// Getting the Mouse angle, relative to the screen's origin
+	Vector3 screenOrigin = new Vector3(screen.w / 2, screen.h / 2, 0);
+	return FindAngle(Input.mousePosition - screenOrigin);
+}
+public float GetExitAngle()
+{
+	// Getting the Exit angle, relative to the player's position
+	float line = values.exitPos - values.playerPos;
+	return FindAngle(line);
+}
+```
+
+### Intensity
+
+Intensity should be based on how close or far the player is from the exit.
+
+```cs
+public float GetIntensity()
+{
+	float distance = Vector2.Distance(values.exitPos, values.playerPos);
+	return distance;
+}
+```
+
+However, distance can range from 0 to 1920. Let's cap this so that the bump doesn't cover the full screen
+
+```cs {3,6}
+public float GetIntensity()
+{
+	float longestDistance = 30;
+	float distance = Vector2.Distance(values.exitPos, values.playerPos);
+
+	float intensity = 1-(distance/longestDistance);
+	return intensity;
+}
+```
+
+Now it ranges from 0 to 30! However, players wouldn't be able to see any bump despite pointing at the right direction. Let's change this:
+
+```cs {4-5,8} caption="Now the value will always be 5 or above, showing at least a small bump."
+public float GetIntensity()
+{
+	float longestDistance = 30;
+	float minI = 5;
+	float maxI = 90;
+	float distance = Vector2.Distance(values.exitPos, values.playerPos);
+
+	float intensity = minI+(maxI-minI)*(1-(distance/longestDistance));
+	return intensity;
+}
+```
+
+---
+
+Adding all the functions into `FixedUpdate()` gives
+
+```cs /GetMouseAngle()/ /GetExitAngle()/ /GetIntensity()/
+public Material ringMat;
+
+private void FixedUpdate()
+{
+	ringMat.SetFloat("_MouseAngle", GetMouseAngle());
+	ringMat.SetFloat("_ExitAngle", GetExitAngle());
+	ringMat.SetFloat("_Intensity", GetIntensity());
+}
+```
+
+# Final Touches
+
+We successfully have a working radar! But if you recall, it still doesn't look like the inspiration. We're missing two things: <Image
+	src='/blogs/luminth-inspo.jpg'
+	width='300'
+	height='300'
+	alt='Trap Nation'
+	sizes='100vw'
+/>
+
+- Black circle base
+- Chromatic Abbreviation
+
+### Simple Black Circle base
+
+We can simply use the `renderCircle()` function we made [earlier](/blogs/how-to-radar#a-simple-circle-base), right after our previous work
+
+```hlsl {1,12} title="FocusRadar.shader"
+fixed4 renderInnerBlack(fixed4 col, fixed2 uv){
+	float circ = 1-renderCircle(uv,0.28);
+	return fixed4(circ.xxx,1-circ);
+}
+fixed4 renderFocus(fixed2 uv){
+	float eq = peakEquation(findAngle(uv), _MouseAngle);
+	return fixed4(eq.xxx,1);
+}
+fixed4 frag (Interpolator i) : SV_Target {
+	float2 uv = i.uv*2-1;
+	fixed4 col = renderFocus(uv);
+	col *= fixed4(renderInnerBlack(col, uv).rgb,col.a);
+	return col;
+}
+```
+
+### Chromatic Abbreviation
+
+Chromatic Abbreviation in nature manipulates the red, green and blue channels separately. This means we'll have to write something like.
+
+```hlsl {4-6}
+fixed4 renderFocus(fixed2 uv){
+	float eq = peakEquation(findAngle(uv), _MouseAngle);
+
+	fixed r = renderCircle(uv,eq);
+	fixed g = renderCircle(uv,???);
+	fixed b = renderCircle(uv,???);
+
+	return fixed4(r,g,b,1);
+}
+```
+
+This indicates that we'll need a slightly different version of eq for the other two channels.
+
+Looking at TrapNation MVs, the Chromatic Abbreviation happens when the bump itself moves. What if we used the mouse position's previous location to replicate this effect?
+
+This will require a new data variable `prevMousePosition`
+
+```cs {2,11,19} title="FocusRadar.cs"
+public Material ringMat;
+private float previousMousePos;
+
+...
+
+public float GetMouseAngle()
+{
+	// Getting the Mouse angle, relative to the screen's origin
+	Vector3 screenOrigin = new Vector3(screen.w / 2, screen.h / 2, 0);
+	float mouse = FindAngle(Input.mousePosition - screenOrigin);
+	previousMousePos = mouse;
+	return mouse;
+}
+
+...
+
+private void FixedUpdate()
+{
+	ringMat.SetFloat("_PrevMouseAngle", previousMousePos);
+	ringMat.SetFloat("_MouseAngle", GetMouseAngle());
+	ringMat.SetFloat("_ExitAngle", GetExitAngle());
+	ringMat.SetFloat("_Intensity", GetIntensity());
+}
+```
+
+```hlsl {3,5-6} title="FocusRadar.shader"
+fixed4 renderFocus(fixed2 uv){
+	float eq = peakEquation(findAngle(uv), _MouseAngle);
+	float eqPrev = peakEquation(findAngle(uv), _PrevMouseAngle);
+
+	fixed r = renderCircle(uv,eq);
+	fixed g = renderCircle(uv,lerp(eq,eqPrev,0.5));
+	fixed b = renderCircle(uv,eqPrev);
+
+	return fixed4(r,g,b,1);
+}
+```
+
+# Results
+
+Congratulations for making it this far! That was the base logic for how I render this TrapNation-inspired shader.
+
+As a recap, we:
+
+1. Used Desmos to find the mathematical function to represent a peak in a circle.
+2. Considered the UV Coordinates as a Unit Circle to render angle coordinates and values.
+3. Made a dynamic Intensity value that considered how close the player is to the exit.
+4. Used Chromatic Abbreviation to make a mouse-movement effect.
+
+<Tag
+	link='https://raw.githubusercontent.com/thomasw-dev/LudumDare55/PostJam/LudumDare55/Assets/Scripts/Shader/FocusRing.shader?token=GHSAT0AAAAAACWRN6OOROPLUB64XKLLTLKUZWWRWWQ'
+	name='Source Code: FocusRadar.shader'
+	isSolid={true}
+	isNewPage={true}
+/>
+<Tag
+	link='https://raw.githubusercontent.com/thomasw-dev/LudumDare55/PostJam/LudumDare55/Assets/Scripts/Shader/FocusRing.cs?token=GHSAT0AAAAAACWRN6OONQW7WMSRW2GJKAZ4ZWWRXIA'
+	name='Source Code: FocusRadar.cs'
+	isSolid={true}
+	isNewPage={true}
+/>{' '}
+
+---
+
+Thank you for reading! Check out the game that used this, or the project details about it here!
+
+<Tag link='/blogs/luminth' name='Luminth Details' isSolid={true} />{' '}
+
+<iframe
+	frameborder='0'
+	src='https://itch.io/embed/2649454?linkback=true&amp;bg_color=EDE9E4&amp;fg_color=806562&amp;link_color=C3864D&amp;border_color=C3864D'
+	width='552'
+	height='167'>
+	<a href='https://raphaeleg.itch.io/luminth'>
+		Luminth by Raphaele Guillemot, Thomas Wang
+	</a>
+</iframe>

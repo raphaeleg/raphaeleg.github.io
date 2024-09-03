@@ -1,0 +1,206 @@
+---
+title: 'Space Invaders Refactor'
+desc: 'Turned 939 lines of C++ into 184 lines, Modern C++.'
+image: '../../public/blogs/spaceinvader-cover.png'
+publishedAt: '2024-01-15'
+isPublished: true
+redirect: ""
+tags:
+  - refactor
+  - optimization
+  - code-architecture
+  - cpp
+  - solo
+---
+
+Given a Space Invaders Project produced by junior programmers back at university, I refactored their code to include idiomatic modern C++, clean code and good API design.
+
+<Tag link="https://github.com/raphaeleg/SpaceInvaders_Refactor" name="See the commits at GitHub" isSolid={true} isNewPage={true} />
+
+# Core Issues
+
+Upon reviewing the codebase, this project's core issue is the constant violation of **Single Responsibility Principle**. Here are a few indicators of how the codebase violates the principle:
+
+1. **Physical structure:** In this project, there are only 3 `.cpp` files <Image
+	src='/blogs/spaceinvader-files.png'
+	width='150'
+	height='150'
+	alt='Physical Structure'
+	sizes='100vw'
+/>
+2. **Logical structure:** The `game.cpp` file holds all the objects involved with the game (Projectile, Wall, etc...). As a result, `game.cpp` was **939 lines** long
+3. **Three-step initialization:** A lot of objects would be created in a local variable, with a couple of lines changing special parameters, and in some cases, calling a launch function. The object itself isn’t handling itself, but another object. Here's an snippet of Three-step initialisation:
+
+```cpp {1,3,4} title="game.cpp" caption="Although game was initialised and defined, it was still assigned variables, and then had a lesser-known function to _actually_ initialise. This is very unsafe."
+Game game = { State::STARTSCREEN };	// from a defined enum State {STARTSCREEN, ...};
+Resources resources;
+game.resources = resources;
+game.Launch();
+```
+
+
+# Immediate Solutions
+
+When dealing with a messy project, it's hard to know where to start. I always like to get my feet stabilised by first making all the logic more readable. Here are some immediate steps I could do.
+
+### One file per object
+
+One easy way to alleviate the violation of Single Responsibility Principle is by giving each defined object a file of it's own. This already reduced `game.cpp` to **367 lines**.
+
+<Image
+	src='/blogs/spaceinvader-filesImprov.png'
+	width='400'
+	height='400'
+	alt='Alien, Background, Helper, Leaderboard, Player, Projectile, Renderer, Wall, game, main'
+	sizes='100vw'
+/>
+
+### More Functions
+
+All meaningful operations were properly packaged into named functions so that the core functions (`Game::Update()`) bacame more readable (as per C++ Core Guidelines F.1). Here is one example:
+
+```cpp title="game.cpp" caption="HandleProjectileHit() does as the name says: handles projectiles in Game::Update()"
+void Game::HandleProjectileHit() noexcept {
+	// Take care of Out of Bound Projectiles
+	RemoveOutOfScreenProjectiles(PlayerProjectiles);
+	RemoveOutOfScreenProjectiles(AlienProjectiles);
+
+	// Take care of projectiles that hit walls, decreasing wall health
+	RemoveWallHitProjectiles(PlayerProjectiles);
+	RemoveWallHitProjectiles(AlienProjectiles);
+
+	// Take care of entity hits, decreasing entity's health
+	RemoveAlienHitProjectiles(PlayerProjectiles);
+	RemovePlayerHitProjectiles(AlienProjectiles);
+}
+```
+
+### Group functions
+
+Now that the code was easier to read, it was also easier to understand which responsibilities actually belonged in `game.cpp`. For example, all rendering functions can be grouped into a new class that handles solely rendering.
+
+```cpp title="Renderer.hpp" caption="What was once in game.cpp was given it's own space!"
+class Renderer {
+	private:
+		...
+	public:
+		[[nodiscard]] int GetPlayerActiveTexture() const noexcept { return playerActiveTexture; }
+		[[nodiscard]] bool mouseOnText() const noexcept { return CheckCollisionPointRec(GetMousePosition(), textBox); }
+	
+		void UpdatePlayerAnimation() noexcept;
+		void StartScreen() const noexcept;
+		void GameplayText(int score, int lives) const noexcept;
+		void DefaultEndScreen() const noexcept;
+		void HighscoreScreen(std::string name, int maxChar) noexcept;
+};
+```
+
+This trimmed `game.cpp` to **223 lines**.
+
+### Better Constructors
+
+Better Constructors was then finally implemented. This minimizes the number of dynamic variables needed for object creation, so that creation only needs one line.
+
+```cpp title="Wall.hpp" caption="A wall object define itself if given a position.."
+Wall(const Vector2& pos) noexcept : position(pos) {};
+```
+
+```cpp {3} title="game.cpp" caption="..taking only one line to initialise."
+for (int i = 0; i < wallCount; i++) {
+	const auto pos = Vector2{wallDistance * (i+1), wallsPositionY};	// Position calculations
+	Walls.emplace_back(Wall(pos))	// game.cpp holds list `Walls` to contain all walls
+} 
+```
+
+Not only is it a lot safer, it's also a lot more readable and less complex.
+
+# Advanced Improvements
+
+### RAII
+
+Ensure critical resources such as texture or window is handled properly with constructor, destructor, and exception specifying.
+
+```cpp title="Window.hpp"
+class Window {
+public:
+    Window(const int screenWidth, const int screenHeight, std::string_view title) {
+        try {
+            InitWindow(screenWidth, screenHeight, title.data());
+        }
+        catch (const std::runtime_error& e) {
+            std::println("Error: Could not create window", e.what());
+        }
+    };
+    ~Window() { CloseWindow(); };
+    Window(const Window& other) = delete;
+    Window operator= (const Window& other) = delete;
+    Window(const Window&& other) = delete;
+    Window operator= (const Window&& other) = delete;
+};
+```
+
+This ensures that objects are always created in a valid state.
+
+### Pipelined logic
+
+Reduce complexity by keeping only essential data, and relying more on simple calculations
+
+For example, projectile doesn't need to keep updating a line start/end, just a position that renderer will draw out.
+
+```cpp {11,12} title="game.cpp" caption="Old Projectile Code updating a lineStart and lineEnd"
+// --- BEFORE ---
+struct Projectile {
+public: 
+	// INITIALIZE PROJECTILE WHILE DEFINING IF ITS PLAYER OR ENEMY 
+	Vector2 position = {0,0};
+	int speed = 15; 
+	bool active = true;  
+	EntityType type = {};
+
+	// LINE WILL UPDATE WITH POSITION FOR CALCULATIONS
+	Vector2 lineStart = { 0, 0 };
+	Vector2 lineEnd = { 0, 0 };
+
+	void Update();
+	void Render(Texture2D texture);
+};
+```
+```cpp {6,9} title="Projectile.hpp" caption="After Refactoring, simply adding to the y position"
+// --- AFTER ---
+static constexpr int PROJECTILE_LENGTH = 15;
+class Projectile {
+private:
+	int speed = 15;
+	Vector2 position = { 0, 0 };
+public:
+	Projectile(Vector2 pos, bool isPlayerProjectile) noexcept;
+	void Update() noexcept { position.y += speed; };
+	void Render(Texture2D texture) const noexcept;
+	[[nodiscard]] Vector2 GetPosition() const noexcept { return position; }
+	[[nodiscard]] bool IsOutOfScreen() const noexcept { return GetPosition().y < 0 || GetPosition().y > GetScreenHeightF(); }
+};
+```
+
+### Modern C++
+
+Seen throughout this post, you can see that Modern C++ was adhered. Here are some examples:
+- `.hpp` files specifying that the code is only meant to be read using C++.
+- Sticking to simple datatypes that doesn't need custom destructors, copy/move constructors nor assignments, Adhering to the Rule of 0
+- `for-range` loops
+- `static_cast` over c-style cast if necessary
+- using `std::algorithms` (`remove_if()`, `for_each()`, etc...)
+- `auto`, `[[nodiscard]]`, `constexpr`, `noexcepts`
+
+# Results: 939→184 lines
+
+1. **939→184 lines**: After this refactor, game.cpp turned from 939 to 18 lines, which proves that Single Responsibility Principle is a lot less violated.
+2. **Readability**: Because all meaningful operations and values have been stored and named, the code reads like English.
+3. **Modern C++**: Using C++ Core Guidelines, textbooks and C++ Convention Talks, motivated decisions were properly sourced to improve the code
+
+# How to further improve this?
+
+1. **State Machine**: Further adhere to Single Responsibility Principle by implementing a state machine handling different states
+2. **Bug in `OwnTexture`**: The special member operations are not handling all the members of the class, which means a copied texture will take an `undefined _path`.
+3. **Greater optimisation**: The code could be further optimised. Examples include using `auto-lambda` templates, `string_view`, and less unnecessary copy with `emplace_back`. 
+
+<Tag link="https://github.com/raphaeleg/SpaceInvaders_Refactor" name="See the commits at GitHub" isSolid={true} isNewPage={true} />

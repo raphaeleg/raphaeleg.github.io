@@ -1,0 +1,100 @@
+---
+title: 'How to: Make a 2D Silhouette of the Player, Unity (Part 2)'
+desc: 'Learn how to copy and manipulate a texture onto another texture using HLSL in Unity'
+image: '../../public/blogs/luminth-1.png'
+publishedAt: '2024-06-10'
+isPublished: true
+redirect: ''
+tags:
+  - shader hlsl
+  - unity
+  - csharp
+  - experiment
+  - solo
+---
+
+If you recall from the [previous post](/blogs/how-to-mask-feathered-holes), Luminth was able to render lights , illuminating the maze. But what about the player?
+
+A good way to show where the player is in the mist of clouds is with a _silhouette_. This will require a copying of the player sprite on top of the clouds texture.
+
+<Image
+	src='/blogs/luminth-1.png'
+	width='500'
+	height='500'
+	alt='timeline'
+	sizes='100vw'
+/>
+
+## 1. Define a player box, the position and space the player takes in the texture
+
+```hlsl caption="This requires a _PlayerData property, that should be passed using a C# script"
+v2f vert(appData v) {
+	...
+	float2 playerOrigin = _PlayerData.xy;
+	float2 playerRelativeScale = _PlayerData.zw;
+	o.playerBox = playerRelativeScale * (v.uv - playerOrigin);
+}
+```
+
+## 2. Define the function to draw a full silhouette copy of the player
+
+```hlsl caption="Taking the player's sprite, and outputting a clean, gray-colored version of it"
+fixed4 renderSilhouette(fixed4 col, float2 playerBox) {
+	// Get the Player Texture Color
+	fixed4 player = tex2D(_PlayerSprite, playerBox);
+	// Fill the sprite transparent areas with the underlying background
+	// This will render the silhouette player at all times
+	// if player.a = 0, draw the clouds
+	// if player.a = 1, draw the player
+	return lerp(col, _SilhouetteColor.rgba, player.a);
+}
+```
+
+## 3. Draw the silhouette, before the alpha blending of the cloud holes
+
+```hlsl
+fixed4 frag(v2f i) : SV_Target {
+	fixed4 col = tex2D(_CloudTex, i.uv);
+
+	// Within the bounds of the player texture at it's position
+	if(i.playerBox.x > 0 && i.playerBox.x < 1) {
+		if(i.playerBox.y > 0 && i.playerBox.y < 1) {
+			col = renderSilhouette(col, i.playerBox);
+		}
+	}
+
+	col = renderCloudHoles(col, i.uv);
+	return col;
+}
+```
+
+It was a lot more simpler than initially anticipated! I believe that there should be a better way to write out o.playerBox, but this implementation 100% works.
+
+<Tag
+	link='https://raw.githubusercontent.com/thomasw-dev/LudumDare55/PostJam/LudumDare55/Assets/Scripts/Shader/CloudsHole.shader?token=GHSAT0AAAAAACWRN6OOJXX4WA7FK6J52GOOZWWRY3Q'
+	name='Source Code: Clouds.shader'
+	isSolid={true}
+	isNewPage={true}
+/>
+<Tag
+	link='https://raw.githubusercontent.com/thomasw-dev/LudumDare55/PostJam/LudumDare55/Assets/Scripts/Shader/Clouds.cs?token=GHSAT0AAAAAACWRN6OOVFDPRWPWUXID62MWZWWRYSQ'
+	name='Source Code: Clouds.cs'
+	isSolid={true}
+	isNewPage={true}
+/>{' '}
+
+---
+
+Thank you for reading! Check out the game that used this, or the project details about it here!
+
+<Tag link='/blogs/luminth' name='Luminth Details' isSolid={true} />{' '}
+
+<iframe
+	frameborder='0'
+	src='https://itch.io/embed/2649454?linkback=true&amp;bg_color=EDE9E4&amp;fg_color=806562&amp;link_color=C3864D&amp;border_color=C3864D'
+	width='552'
+	height='167'>
+	<a href='https://raphaeleg.itch.io/luminth'>
+		Luminth by Raphaele Guillemot, Thomas Wang
+	</a>
+</iframe>
