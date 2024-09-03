@@ -1,0 +1,122 @@
+---
+title: "It's Not Michael"
+desc: 'Find your son and escape the hospital'
+image: '../../public/blogs/notmichael-cover.png'
+publishedAt: '2023-11-23'
+isPublished: true
+redirect: ''
+tags:
+  - level design
+  - game
+  - UE5-blueprints
+  - collaboration
+---
+
+Learnt the fundamentals of level design by creating a horror game, which heavily relies on evoking the right emotions.
+
+<iframe
+	width='560'
+	height='315'
+	src='https://www.youtube.com/embed/zq8Z-0FiINI?si=8ApO3UrQgiUvDzdW'
+	title='YouTube video player'
+	frameborder='0'
+	allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+	referrerpolicy='strict-origin-when-cross-origin'
+	allowfullscreen></iframe>
+
+# Project Goals
+
+1. Plan and design a level layout to enhance the gameplay, given the strict requirements
+2. Use framing and composition to present the level and guide the player
+3. World-building, narrative and implicit storytelling elements;
+4. Production steps involved in designing and creating a game level.
+
+# Core Challenges
+
+1. **Setting the story**: Can players understand the story and their objective when they start playing the game?
+2. **Evoking fear**: How to engage the player with tension and paranoia?
+3. **Guided Maze**: Can all players navigate through a “maze” experience without getting lost or frustrated?
+
+# Solutions
+
+<Image
+	src='/blogs/notmichael-l1-babycry.gif'
+	width='300'
+	height='300'
+	alt='Approach Baby'
+	sizes='100vw'
+/> | <Image
+	src='/blogs/notmichael-l2-1684-638x359.png'
+	width='300'
+	height='300'
+	alt='1684 on a Wall'
+	sizes='100vw'
+/> | <Image
+	src='/blogs/notmichael-l3-playground.gif'
+	width='300'
+	height='300'
+	alt='Playground'
+	sizes='100vw'
+/>
+---|---|--- **Onboarding section**: Start the game with a simple yet effective cutscene,
+and collectible items that shed hints about the story | **Slow-burn rising action**:
+As players explore, include more events and cues based on every action they take,
+suggesting an unknown presence. | **The illusion of non-linearity**: 1) Make a primary
+critical path that never allows backtracking naturally. 2) Keep the maze small yet
+highly explorable. 3) Orient players with landmarks and signs
+
+# How players are guided
+
+<Image
+	src='/blogs/notmichael-l2-hallway.gif'
+	width='270'
+	height='270'
+	alt='Playground'
+	sizes='100vw'
+/> | <Image
+	src='/blogs/notmichael-l3-beginning.gif'
+	width='270'
+	height='270'
+	alt='Enter ChildCare Facility'
+	sizes='100vw'
+/> | <Image
+	src='/blogs/notmichael-l3-toyshelffull.gif'
+	width='270'
+	height='270'
+	alt='Barrier'
+	sizes='100vw'
+/>
+---|---|--- **Lighting** heavily encourages players to favour certain routes, and
+changes when obtaining the flashlight | **Audio lines and spatial sound** serves
+as a progression through the maze | Locking doors, keys, and physical **barriers**
+determines how the player **navigate** through the level
+
+<Image
+	src='/blogs/notmichael-1.png'
+	width='1200'
+	height='1200'
+	alt='map'
+	sizes='100vw'
+/>
+
+## Using Blueprints to create events
+
+<Image
+	src='/blogs/notmichael-blueprints.png'
+	width='1200'
+	height='1200'
+	alt='Barrier'
+	sizes='100vw'
+/>
+For this specific example: 1. Trigger when the player enters a box collider 2. Checks
+information about current game state 3. If true, Play Sound and Timeline of an object
+changing rotation through time 4. Confirm event completion by changing game state
+
+# What I've Learnt
+
+1. **Tools**: Lighting, audio and physical barriers are good methods to guide the players through a level
+2. **Set Dressing**: Effective set dress doesn’t use too much that confuses the players, nor too little to keep the players immersed.
+3. **For an emotionally evoking genre such as horror:**
+   1. Set dressing and audio matters and cannot be fully realized in whitebox
+   2. Each experience is different, some people are more sensitive to jumpscares or cues than others
+   3. The playtesting environment heavily affects the player’s experience and feelings

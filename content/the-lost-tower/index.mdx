@@ -1,0 +1,126 @@
+---
+title: 'The Lost Tower'
+desc: 'A puzzle game submitted for the 2023 Winter Jam hosted by Uppsala University Campus Gotland'
+image: '../../public/blogs/losttower-cover.png'
+publishedAt: '2023-11-30'
+isPublished: true
+redirect: ''
+tags:
+  - game jam
+  - game
+  - published
+  - unity
+  - csharp
+  - collaboration
+  - solo
+  - code-architecture
+---
+
+A puzzle game based on a tragedy. Submitted for the **48-hour** 2023 Winter Jam hosted by Uppsala University Campus Gotland.
+
+<iframe
+	src='https://itch.io/embed/2391979'
+	width='552'
+	height='167'
+	frameborder='0'>
+	<a href='https://raphaeleg.itch.io/the-lost-tower'>
+		The Lost Tower by Raphaele Guillemot, Liz Wang, baoliri
+	</a>
+</iframe>
+<Tag
+	link='https://github.com/raphaeleg/TheLostTower'
+	name='GitHub Source Code'
+	isSolid={false}
+	isNewPage={true}
+/>
+
+# Core Challenges
+
+1. **Time Limit**: How to create a complete game within 48 hours?
+2. **Designer-Friendly**: Given the limited manpower, I cannot implement everything alone. How to make it easy for others to implement my script?
+3. **Multiple Genres**: As a puzzle game with visual novel elements, How to implement these genre features seamlessly?
+
+# Core Solutions
+
+1. **Generic**: Simple and generic scripts are fast to implement and highly reusable.
+2. **Expandable with Interface**: Have few core scripts, with few public variables for easy understanding of how to implement the scripts.
+3. **UML Diagrams**: Quickly sketch out class diagrams to understand the whole system before implementation.
+
+## Generic Code
+
+<Image
+	src='/blogs/losttower-2.png'
+	width='500'
+	height='500'
+	alt='Intractable'
+	sizes='100vw'
+/>
+
+For any interactable object in the current scene, it requires only three things:
+
+1. Whether the Player is near it → `is_in_range`
+2. The trigger to interact with it → `trigger`
+3. What to do on interact → `on_success`
+
+This script makes it **easy for designers** to make objects interactable with any keybind needed.
+
+### Dialogue System
+
+Using six classes, the game had an expandable dialogue system that was **user-friendly for designers**.
+
+<Image
+	src='/blogs/losttower-4.png'
+	width='800'
+	height='800'
+	alt='Documentation'
+	sizes='100vw'
+/> | <Image
+	src='/blogs/losttower-1.png'
+	width='800'
+	height='800'
+	alt='Dialogue'
+	sizes='100vw'
+/>
+---|--- 1. `DialogueStructure`: A sentence may require a sprite, the name of the
+character talking, what they're saying, and a sound effect 2. `Dialogue`: A dialogue
+consist of several sentences, that can be represented with a `DialogueStructure`
+3. `ChoiceStructure`: A choice consist of a description of what it is, and what it
+does 4. `Choices`: Player may choose multiple choices, that can be represented with
+a `ChoiceStructure` 5. `DialogueManager`: To keep track of whether a dialogue is
+running 6. `DialogueInterface`: To make a new dialogue, it references a `Dialogue`,
+and actions after a dialogue, which may be choices
+
+## Inventory System
+
+<Image
+	src='/blogs/losttower-3.png'
+	width='800'
+	height='800'
+	alt='Inventory'
+	sizes='100vw'
+/>
+
+1. `InventoryManager`: simply manages a list of items the player owns.
+2. `InventoryItemController`: Since some items were puzzle items that were meant to be dragged to the environment, each item owned by the player had an `InventoryItemController` that made the items draggable, and store whether it interacted with a certain object in-scene.
+
+# What I've Learnt
+
+1. **Code Architecture**: Using UML diagrams to get a greater sensing of the code architecture and the actors in them.
+2. **Code Interfaces**: Make code highly readable by keeping it clean and using interfaces.
+3. **Working under pressure**: Successfully deliver a game with a team under a strict time limit.
+
+<iframe
+	src='https://itch.io/embed/2391979'
+	width='552'
+	height='167'
+	frameborder='0'>
+	<a href='https://raphaeleg.itch.io/the-lost-tower'>
+		The Lost Tower by Raphaele Guillemot, Liz Wang, baoliri
+	</a>
+</iframe>
+<Tag
+	link='https://github.com/raphaeleg/TheLostTower'
+	name='GitHub Source Code'
+	isSolid={false}
+	isNewPage={true}
+/>

@@ -1,0 +1,172 @@
+---
+title: 'When Stars Collapse'
+desc: 'A universe survival management game submitted for the 8th Ludum Dare Discord Jam.'
+image: '../../public/blogs/starscollapse-cover.png'
+publishedAt: '2024-08-12'
+isPublished: true
+redirect: ''
+tags:
+  - game jam
+  - game
+  - published
+  - unity
+  - csharp
+  - collaboration
+---
+
+Watch as your stars live, thrive and die...and all over again. **A 48-hour game jam**
+
+<iframe
+	frameborder='0'
+	src='https://itch.io/embed/2890438?bg_color=4e3a3a&amp;fg_color=f6cabc&amp;border_color=181017'
+	width='552'
+	height='167'>
+	<a href='https://megaletan.itch.io/when-stars-collapse'>
+		When Stars Collapse by megaletan, Nick_MC, luneatic-art, Raphaele Guillemot,
+		Cog, thomasbrownnn
+	</a>
+</iframe>
+
+<Tag
+	link='https://github.com/raphaeleg/WhenStarsCollapse'
+	name='GitHub Source Code'
+	isNewPage={true}
+/>
+
+This project was made in a **team of 6**, including one experienced developer, and another beginner developer.
+
+Out of 168 submissions, _When Stars Collapse_ was submitted for the Ludum Dare Discord Jam 8 and placed 29th place, standing tall as part of the **top 20%**
+
+Below talks about my contributions to the project, which overall was a lot more management and animation focused compared to previous game jams.
+
+I am extremely committed to polishing the codebase within the next few days. Therefore, this page is a **Work in Progress**.
+
+# My Contributions
+
+---
+
+## 1. Handled the `Planets` class
+
+The Planets had six main states:
+
+<Image
+	src='/blogs/starscollapse-planets.png'
+	width='600'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+
+`WHITEDWARF`, `INITIAL`, `STAGE1`, `STAGE2`, `STAGE3`, `BLACKHOLE`
+
+The Planet first instantiates as the `INITIAL` State, making sure that it safely instantiated within a certain time frame.
+
+Each planet has it's unique `Update` functions
+
+```cs
+private void Update()
+{
+	UpdateTimer();
+
+	switch (state) {
+		case PlanetStates.WHITEDWARF:
+			UpdateWhiteDwarf();
+			break;
+		case PlanetStates.BLACKHOLE:
+			RotateBlackHole();
+			break;
+		default:
+			UpdateState();
+			break;
+	}
+}
+```
+
+The `STAGE` states are when the planet is "sick", meaning when left untouched, will become `BLACKHOLES`.
+
+`BLACKHOLES` destroy any nearby planets and resources.
+
+```cs caption="Animation process of being destroyed"
+public void ShrinkUntilDestroy()
+{
+	StartCoroutine(Shrink());
+}
+
+IEnumerator Shrink()
+{
+	Transform t = gameObject.transform;
+	while (t.localScale.x > 0f)
+	{
+		t.localScale -= new Vector3(0.1f, 0.1f, 0f);
+		yield return new WaitForSeconds(0.1f);
+	}
+	Destroy(gameObject);
+}
+```
+
+However, if "cured" in time, the planet will safely become a `WHITEDWARF`, then exit.
+
+## 2. Particle Effects
+
+Our amazing 2D Artist made particle animations.
+
+<Image
+	src='/blogs/starscollapse-SicknessParticle_Green.png'
+	width='600'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+
+Using Unity's Particle System, I was able to update the 2D raw image of each particle.
+
+<Image
+	src='/blogs/starscollapse-greensick.gif'
+	width='200'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+
+## 3. Polished HighScore Scene
+
+Made a highly custom, highly polished Highscore Screen that displayed all the scores in a digestible way using Unity Coroutines.
+
+<Image
+	src='/blogs/starscollapse-highscore.gif'
+	width='400'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+
+## 4. Crisis Management
+
+1 hour left before the submission period, I realised that the Audio System Wwise, was not compatible with Unity WebGL, refusing to build at all.
+
+With my quick thinking, I decided that the next best solution was to **remove sound entirely in the WebGL build**, while keeping the Audio in the Window's version. Thus, I calmly delegated the other developers to build the Windows and Mac version, while I go through each script to delete any Audio Commands.
+
+---
+
+# What I've Learnt
+
+1. **Management in a bigger team setting**: To see the grander picture and everyone's role in creating the game required me to delegate tasks and see the missing pieces. Not only within developers, but also with the UXUI designers, game designers, and artist.
+2. **Animations and Polish**: Focusing more on animations and particle effects enabled me to experiment and learn about the level of polish UXUI designers demanded, and the level it takes to achieve it
+3. **State Machine**: The Planets ran in a state machine, requiring complex interactions, behaviours and timing.
+
+<iframe
+	frameborder='0'
+	src='https://itch.io/embed/2890438?bg_color=4e3a3a&amp;fg_color=f6cabc&amp;border_color=181017'
+	width='552'
+	height='167'>
+	<a href='https://megaletan.itch.io/when-stars-collapse'>
+		When Stars Collapse by megaletan, Nick_MC, luneatic-art, Raphaele Guillemot,
+		Cog, thomasbrownnn
+	</a>
+</iframe>
+
+<Tag
+	link='https://github.com/raphaeleg/WhenStarsCollapse'
+	name='GitHub Source Code'
+	isNewPage={true}
+/>

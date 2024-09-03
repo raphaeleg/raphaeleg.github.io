@@ -2,6 +2,7 @@ import { allBlogs } from "@/.contentlayer/generated";
 import BlogLayoutThree from "@/src/components/Blog/BlogLayoutThree";
 import Categories from "@/src/components/Blog/Categories";
 import GithubSlugger, { slug } from "github-slugger";
+import { sortBlogs } from "@/src/utils";
 
 const slugger = new GithubSlugger();
 
@@ -48,12 +49,12 @@ const CategoryPage = ( { params } ) => {
     allCategories.sort();
 
     // Step 2: Filter blogs based on the current category (params.slug)
-    const blogs = allBlogs.filter( blog => {
+    const blogs = sortBlogs( allBlogs.filter( blog => {
         if ( params.slug === "all" ) {
             return true; // Include all blogs if 'all' category is selected
         }
         return blog.tags.some( tag => slug( tag ) === params.slug );
-    } );
+    } ) );
 
     return (
         <article className="my-12 flex flex-col text-dark">

@@ -3,6 +3,7 @@ import BlogHeader from "@/src/components/Blog/BlogHeader";
 import RenderMdx from "@/src/components/Blog/RenderMdx";
 import TableOfContents from "@/src/components/Blog/TableOfContents";
 import siteMetadata from "@/src/utils/siteMetaData";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata( { params } ) {
     const blog = allBlogs.find( ( blog ) => blog._raw.flattenedPath === params.slug );
@@ -21,7 +22,6 @@ export async function generateMetadata( { params } ) {
     const ogImages = imageList.map( ( img ) => {
         return { url: img.includes( "http" ) ? img : siteMetadata.siteUrl + img };
     } );
-
     return {
         title: blog.title,
         description: blog.description,
@@ -44,26 +44,36 @@ export async function generateMetadata( { params } ) {
             images: ogImages,
         },
     };
+
 }
 
-const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "headline": blog.title,
-    "description": blog.description,
-    "image": imageList,
-    "datePublished": new Date( blog.publishedAt ).toISOString(),
-    "dateModified": new Date( blog.publishedAt ).toISOString(),
-    "author": [{
-        "@type": "Person",
-        "name": siteMetadata.title,
-        "url": siteMetadata.linkedin,
-    }]
-}
 
 export default function BlogPage( { params } ) {
-
     const blog = allBlogs.find( ( blog ) => blog._raw.flattenedPath === params.slug );
+    if ( !blog ) { notFound() }
+
+    let imageList = [siteMetadata.socialBanner];
+    if ( blog.image ) {
+        imageList =
+            typeof blog.image.filePath === "string"
+                ? [siteMetadata.siteUrl + blog.image.filePath.replace( "../public", "" )]
+                : blog.image;
+    }
+
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": blog.title,
+        "description": blog.description,
+        "image": imageList,
+        "datePublished": new Date( blog.publishedAt ).toISOString(),
+        "dateModified": new Date( blog.publishedAt ).toISOString(),
+        "author": [{
+            "@type": "Person",
+            "name": siteMetadata.title,
+            "url": siteMetadata.linkedin,
+        }]
+    }
 
     return (
         <>
@@ -74,7 +84,7 @@ export default function BlogPage( { params } ) {
             <article>
                 <BlogHeader blog={blog} />
                 <div className="grid grid-cols-12  gap-y-8 lg:gap-8 sxl:gap-16 mt-8 px-5 md:px-10">
-                    <TableOfContents blog={blog} />
+                    {blog.toc.length > 0 && <TableOfContents blog={blog} />}
                     <RenderMdx blog={blog} />
                 </div>
 

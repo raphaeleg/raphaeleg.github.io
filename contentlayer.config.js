@@ -29,10 +29,14 @@ const Blog = defineDocumentType( () => ( {
             type: 'boolean',
             required: true,
         },
+        redirect: {
+            type: 'string',
+            required: true,
+        },
         tags: {
             type: 'list',
             of: { type: 'string' },
-        }
+        },
     },
     computedFields: {
         url: {
@@ -63,7 +67,7 @@ const Blog = defineDocumentType( () => ( {
 } ) );
 
 const codeOptions = {
-    theme: 'nord', //nord, rose-pine-moon, everforest-dark, laserwave
+    theme: 'rose-pine-moon', //nord, rose-pine-moon, everforest-dark, laserwave
     grid: false,
 }
 
