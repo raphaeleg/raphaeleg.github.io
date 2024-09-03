@@ -5,7 +5,6 @@ const nextConfig = {
     compiler: {
         removeConsole: true,
     },
-    basePath: "/",
     output: "export",
     reactStrictMode: true,
 }
