@@ -2,8 +2,9 @@
 import React from 'react'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image from 'next/image'
+import Tag from '../Elements/Tag'
 const mdxComponents = {
-    Image
+    Image, Tag
 }
 
 const RenderMdx = ( { blog } ) => {
@@ -19,6 +20,8 @@ const RenderMdx = ( { blog } ) => {
             prose-blockquote:rounded-r-lg
 
             prose-li:marker:text-accent
+
+            prose-h1:mt-16
 
             first-letter:text-3xl
             sm:first-letter:text-5xl

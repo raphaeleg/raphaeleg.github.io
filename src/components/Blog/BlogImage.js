@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { cx } from '@/src/utils'
 
-const BlogImage = ( { blog, staticAnim, classes, priority, sizes } ) => {
+const BlogImage = ( { blog, staticAnim, classes, priority, sizes, fill } ) => {
     return (
         <Image
             src={blog.image.filePath.replace( "../public", "" )}

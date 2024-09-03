@@ -44,7 +44,7 @@ const Header = () => {
                 }}
             >
                 <Link href="/" className="w-full py-5" onClick={toggle}>Home</Link>
-                <Link href="/#home-game-projects" className="w-full py-5" onClick={toggle}>Projects</Link>
+                <Link href="/categories/game" className="w-full py-5" onClick={toggle}>Projects</Link>
                 <Link href="/categories/all" className="w-full py-5" onClick={toggle}>Blog</Link>
                 <div href="" className="w-full py-5" onClick={() => {
                     window.scrollTo( 0, document.body.scrollHeight );
@@ -54,7 +54,7 @@ const Header = () => {
             </nav>
 
             <nav className="hidden sm:flex w-max py-3 px-8 font-medium capitalize items-end">
-                <Link href="/#home-game-projects" className="mx-4">Projects</Link>
+                <Link href="/categories/game" className="mx-4">Projects</Link>
                 <Link href="/categories/all" className="mx-4">Blog</Link>
                 <div href="" className="mx-4 cursor-pointer" onClick={() => {
                     window.scrollTo( 0, document.body.scrollHeight );
