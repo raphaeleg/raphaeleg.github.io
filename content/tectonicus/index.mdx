@@ -16,8 +16,6 @@ tags:
 
 Interned at Gamucatex for 2 months as a Software Engineer in C#. Heavily contributed towards the pre-production development of _Tectonicus: At the Edge of War_.
 
-I'm unable to share any source code, but I am able to describe my contributions and experience.
-
 <iframe
 	src='https://itch.io/embed/1745993'
 	width='552'
@@ -36,32 +34,24 @@ To adapt to these changes, I worked on **refactoring** the codebase for better a
 
 These efforts had a **significant impact on the pre-production successes of Gamucatex**.
 
-## Exclusive features for game's showcase at Roskilde Festival
+---
 
-My onboarding task was to develop key exclusive features for showcasing Tectonicus at the 2023 Roskilde Festival, Northern Europe's largest music and arts festival
+## 1. Exclusive features for game's showcase at Roskilde Festival
+
+My onboarding task was to develop key exclusive features for showcasing Tectonicus at the 2023 Roskilde Festival, Northern Europe's largest music and arts festival. This lasted one sprint cycle, where I **oversaw the development to publishing process**.
 
 | Energy-Saving Button                                                                                             | Obtain Exclusive Cards                                                                                                                                                                                                                                                                                       |
 | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | <Image src='/blogs/tectonicus-greenbtn.png' width='250' height='250' alt='Energy-Saving Button' sizes='100vw' /> | <Image src='/blogs/tectonicus-1.jpg' width='450' height='250' alt='Obtain Exclusive Cards' sizes='100vw' />                                                                                                                                                                                                  |
-| The button enabled the game to run on a lower FPS and lower resolution graphics, becoming more energy-efficient. | - Created additional card data of whether the players have a specific card<br/>- Created a function that takes a unique string to gift the user new cards.<br/><br/>This feature had to be written in generic code so that game designers could enter any number of exclusive strings and cards they wanted. |
+| The button enabled the game to run on a **lower FPS and lower resolution graphics**, becoming more energy-efficient. | - Created **additional card data** of whether the players have a specific card<br/>- Created a function that takes a unique string to **gift the user new cards.**<br/><br/>This feature had to be written in **generic code** so that game designers could enter any number of exclusive strings and cards they wanted. |
 
-## Refactoring the codebase's architecture
+---
 
-In the game, players use cards that represent units with specific abilities to win. However, the current class architecture for these units is limited in supporting a wider range of required abilities.
+## 2. Refactoring the codebase's architecture
 
-<Image
-	src='/blogs/tectonicus-3.png'
-	width='300'
-	height='300'
-	alt='Card Architecture'
-	sizes='100vw'
-/>
+<Image src='/blogs/tectonicus-3.png' width='300' height='300' alt='Card Architecture' sizes='100vw' />
 
-To address this, I worked on refactoring the units class to make it easier for future developers and designers to add unique abilities.
-
-For instance, I added a parameter for ability duration that spans more than one turn. To achieve this, I had to keep track of the number of turns that had passed in the ability class.
-
-However, I encountered a challenge when I had to determine what happens for an ability that triggers indefinitely during a battle. Thus, I required the game class to explicitly examine each instance of such ability.
+In the game, players use units that represent units with specific abilities to win. However, the class architecture for units was **limited in supporting a wider range of required abilities.** To address this, I worked on **refactoring** the units class to make it **easier for future developers and designers to add unique abilities.**
 
 <Image
 	src='/blogs/tectonicus-4.jpg'
@@ -71,9 +61,18 @@ However, I encountered a challenge when I had to determine what happens for an a
 	sizes='100vw'
 />
 
-## Directions to better UX/UI
 
-Previously, the game lacked a specialized focus on UXUI, which was a major issue at Roskilde Festival. Having experience in UXUI, I collaborated with developers and artists to improve the game's interface.
+Let's say we want to make **ability durations** span more than one turn. 
+- This can be achieved by keeping track of the **number of turns that had passed** in the ability class. 
+- This also meant that it was necessary to explicitly write whether an ability was to last forever, like a permanent buff.
+
+Hopefully by writing explication as such, it was easier to read the code, and specify how exactly the abilities should behave.
+
+---
+
+## 3. Directions to better UX/UI
+
+Previously, the game lacked a specialized focus on UXUI, which was a major issue at Roskilde Festival. Having experience in UXUI, I **collaborated with developers and artists** to improve the game's interface.
 
 <Image
 	src='/blogs/tectonicus-2.jpg'
@@ -83,24 +82,28 @@ Previously, the game lacked a specialized focus on UXUI, which was a major issue
 	sizes='100vw'
 />
 
-We communicated technically to achieve the UXUI designer's vision (such as file type, size, and layers needed), leading to a comprehensive action plan and streamlined task delegation between departments.
+We communicated what technicalities were possible or needed to achieve the UXUI designer's vision (file type, size, and layers needed), leading to a **comprehensive action plan** and streamlined **task delegation** between departments.
 
-## Friendly Documentation
+---
 
-Technical documentation is crucial not only for future developers, but also for game designers to understand the developer's work better.
+## 4. Friendly Documentation
 
-During my tenure, I extensively reworked the technical documentation to make it more reader-friendly and efficient for onboarding.
+Technical documentation is crucial not only for future developers, but also for game designers to better understand the developer's workflow.
 
-The process involved eliminating outdated information, adding more test cases, providing examples of certain features, and refining the standard development process in code, SCRUM cards, and version control.
+I extensively reworked the technical documentation to make it more **reader-friendly** and **efficient for onboarding**. This involved:
+- Eliminating outdated information
+- Adding more test cases
+- Providing examples of certain features
+- Refining the standard development process for writing code, creating SCRUM cards, and version control.
 
-# Legacy
+---
 
-Through my contributions in...
+# Summary
 
-1. Refactoring the codebase's architecture to support more features, and
-2. Greatly communicating with cross-functional teams to improve the cross-disciplinary field of UX/UI;
+I positively impacted the pre-production development of _Tectonicus: At the Edge of War_ through my contributions in...
 
-I positively impacted the pre-production development of _Tectonicus: At the Edge of War_.
+1. **Refactoring** the codebase's architecture to **support more features**, and
+2. Greatly **communicating with cross-functional teams** to improve the cross-disciplinary field of UX/UI;
 
 # What I've Learnt
 

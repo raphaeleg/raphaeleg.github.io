@@ -68,26 +68,19 @@ This script makes it **easy for designers** to make objects interactable with an
 
 Using six classes, the game had an expandable dialogue system that was **user-friendly for designers**.
 
-<Image
-	src='/blogs/losttower-4.png'
-	width='800'
-	height='800'
-	alt='Documentation'
-	sizes='100vw'
-/> | <Image
-	src='/blogs/losttower-1.png'
-	width='800'
-	height='800'
-	alt='Dialogue'
-	sizes='100vw'
-/>
----|--- 1. `DialogueStructure`: A sentence may require a sprite, the name of the
-character talking, what they're saying, and a sound effect 2. `Dialogue`: A dialogue
+<Image src='/blogs/losttower-4.png' width='800' height='800' alt='Documentation' sizes='100vw' /> | <Image src='/blogs/losttower-1.png' width='800' height='800' alt='Dialogue' sizes='100vw'/>
+---|--- 
+1. `DialogueStructure`: A sentence may require a sprite, the name of the
+character talking, what they're saying, and a sound effect 
+2. `Dialogue`: A dialogue
 consist of several sentences, that can be represented with a `DialogueStructure`
 3. `ChoiceStructure`: A choice consist of a description of what it is, and what it
-does 4. `Choices`: Player may choose multiple choices, that can be represented with
-a `ChoiceStructure` 5. `DialogueManager`: To keep track of whether a dialogue is
-running 6. `DialogueInterface`: To make a new dialogue, it references a `Dialogue`,
+does 
+4. `Choices`: Player may choose multiple choices, that can be represented with
+a `ChoiceStructure` 
+5. `DialogueManager`: To keep track of whether a dialogue is
+running 
+6. `DialogueInterface`: To make a new dialogue, it references a `Dialogue`,
 and actions after a dialogue, which may be choices
 
 ## Inventory System

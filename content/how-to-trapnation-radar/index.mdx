@@ -13,7 +13,7 @@ tags:
   - solo
 ---
 
-From the original submission's feedback, we have introduced a new mechanic that helps players find the direction of the exit.
+From the original submission's feedback, we have introduced a new mechanic that helps players **find the direction of the exit**.
 
 <Image
 	src='/blogs/luminth-3.gif'
@@ -25,48 +25,64 @@ From the original submission's feedback, we have introduced a new mechanic that 
 
 # Ideation
 
-Luminth was a dreamy game, so it felt fitting to have a "focus" mechanic to listen closely, and sense the direction of the exit.
+Luminth is a dreamy game, so it felt fitting to have a "focus" mechanic to listen closely, and sense the direction of the exit.
 
 I took inspiration from Trap Nation's music videos, where their beats created a trail of chromatic abbreviation.
 
-<Image
-	src='/blogs/luminth-inspo.jpg'
-	width='300'
-	height='300'
-	alt='Trap Nation'
-	sizes='100vw'
-/>
+<Image src='/blogs/luminth-focusplan.png' width='460' height='500' alt='Plan' sizes='100vw' />| <Image src='/blogs/luminth-inspo.jpg' width='500' height='500' alt='Trap Nation' sizes='100vw' />
+---|---
 
 # Planning
 
-First, let's look at how we might create a sense to where the exit was.
-
-We would need the following:
-
-- Exit Position (or rather, the angle the exit is at, relative to the mouse)
-- Mouse Position (or rather, the angle the mouse is looking at)
+First, let's look at how we might create a sense to where the exit is. There are three important actors:
+- **Exit:** the location on the circle that will produce a bump.
+- **Player:** determines the relative location the exit is.
+- **Mouse:** the position the player is "focusing" at, which will go around the circle in search for a bump.
 
 ### Finding the Wave Equation
 
-After tinkering with Desmos, it seems that...
+Let's use Desmos to figure out how to achieve this bumpy circle.
 
-1. r = θ is the equation to make a "loop" pattern
-2. Recall the transformation of functions. <Image
-   	src='/blogs/luminth-eqexplain.png'
+1. r = θ is the equation to make a "loop" pattern <Image
+   	src='/blogs/luminth-ogr.png'
    	width='300'
    	height='300'
    	alt='Formula'
    	sizes='100vw'
-   /> The equivalent for our function is r = a ( θ - h ) + k. - Since this is a loop/circular function, h and k are behave similarly. Therefore, Let's say k = 0.
-3. Let's turn the loop pattern into a wave to make it an enclosed circle! We can simply use sin. <Image
-   	src='/blogs/luminth-sin.png'
+   />
+2. Recall the transformation of functions. <Image
+   	src='/blogs/luminth-eqexplain.png'
+   	width='200'
+   	height='200'
+   	alt='Formula'
+   	sizes='100vw'
+   /> The equivalent to transform our function is r = a ( θ - h ) + k. 
+	- Since this is a loop/circular function, h and k behave similarly. Therefore, Let's say k = 0.  <Image
+   	src='/blogs/luminth-sqirl.png'
    	width='500'
    	height='500'
    	alt='Formula'
    	sizes='100vw'
-   /> - c<sub>rotation</sub> was the previous h - as long as c<sub>amplitude</sub> was an integer, it produces one single bump. Let's use this to show the "peak". subsituting 1 gives two bumps, so let's use 2. - c<sub>intensity</sub> determines how "slim" the bump is. - c<sub>radius</sub> is the radius of the base circle. Since we're dealing with texturespace, 1 is a good value.
+   />
+3. Let's turn the loop pattern into a wave to make it an enclosed circle! We can simply use sin. <Image
+   	src='/blogs/luminth-closeloop.png'
+   	width='500'
+   	height='500'
+   	alt='Formula'
+   	sizes='100vw'
+   /> 
+4. To actually produce a bump, we have to add a few more variables <Image
+   	src='/blogs/luminth-sin2.png'
+   	width='500'
+   	height='500'
+   	alt='Formula'
+   	sizes='100vw'
+   /> 
+	- as long as c<sub>amplitude</sub> is an integer, it produces one single bump. Let's use this to show the "peak". <br/>Subsituting 1 gives two bumps, so let's use 2. 
+	- c<sub>intensity</sub> determines how "slim" the bump is. 
+	- c<sub>radius</sub> is the radius of the base circle. Since we're dealing with texturespace, 1 is a good value.
 
-So our wave function is <br/>f<sub>wave</sub>(x,k) = c<sub>amplitude</sub>sin( (x-k)/c<sub>amplitude</sub>) + c<sub>radius</sub> )<sup>c<sub>intensity</sub></sup><br/>f<sub>wave</sub>(x,k) = 2sin( (x-k)/2) + 1 )<sup>80</sup>
+So our wave function is <br/>f<sub>wave</sub>(x,k) = c<sub>amplitude</sub>sin( (x-k)/c<sub>amplitude</sub>) )<sup>c<sub>intensity</sub></sup> + c<sub>radius</sub><br/>f<sub>wave</sub>(x,k) = 2sin( (x-k)/2) )<sup>80</sup> + 1
 
 Now the rest is easy.
 To show two different bumps, we simply multiply two equations like so:<Image
@@ -77,17 +93,20 @@ To show two different bumps, we simply multiply two equations like so:<Image
 	sizes='100vw'
 />
 
-Adding a few more constants to make it the shape I want and _voila_, it's perfect. <Image
+Adding a few more constants to create the desired shape and _voila_, it's perfect. <Image
 	src='/blogs/luminth-finaldesmo.gif'
 	width='700'
 	height='700'
 	alt='Formula'
 	sizes='100vw'
-/> Now v<sub>exit</sub> and v<sub>mouse</sub> has a big bump whenever I go around it, and shows nothing if they aren't aligned.
+/> v<sub>exit</sub> and v<sub>mouse</sub> has a big bump whenever I go around it, and shows nothing if they aren't aligned.
+
+The final equation is r = f<sub>wave</sub>(θ,v<sub>exit</sub>) × f<sub>wave</sub>(θ,v<sub>mouse</sub>) × c<sub>size</sub> + c<sub>radius</sub>
+
 
 ## Rendering
 
-Let's import the equations into code.
+Let's import these equations to our project.
 
 ```hlsl /wave/ /peakEquation/ title="FocusRadar.shader"
 float _Intensity, _ExitAngle, _MouseAngle;
@@ -190,9 +209,9 @@ public Material ringMat;
 
 private void FixedUpdate()
 {
-	ringMat.SetFloat("_MouseAngle", ???);
-	ringMat.SetFloat("_ExitAngle", ???);
-	ringMat.SetFloat("_Intensity", ???);
+	ringMat.SetFloat("_MouseAngle", ???);	// the angle the mouse is pointing at
+	ringMat.SetFloat("_ExitAngle", ???);	// the angle the exit is located at
+	ringMat.SetFloat("_Intensity", ???);	// how "slim" the bump should loop
 }
 ```
 
@@ -285,7 +304,7 @@ private void FixedUpdate()
 
 # Final Touches
 
-We successfully have a working radar! But if you recall, it still doesn't look like the inspiration. We're missing two things: <Image
+We successfully have a working radar! But if you recall, TrapNation's MVs has more than just a bump. We're missing two things: <Image
 	src='/blogs/luminth-inspo.jpg'
 	width='300'
 	height='300'
