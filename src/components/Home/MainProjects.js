@@ -33,13 +33,13 @@ const MainProjects = ( { blogs } ) => {
                     <BlogLayoutOne blog={sortedBlogs[4]} />
                 </article>
                 <article className="col-span-1  row-span-1 relative grid-cols-1 lg:grid-cols-2">
+                    <BlogLayoutOne blog={sortedBlogs[0]} />
+                </article>
+                <article className="col-span-1  row-span-1 relative grid-cols-1 lg:grid-cols-2">
                     <BlogLayoutOne blog={sortedBlogs[1]} />
                 </article>
                 <article className="col-span-1  row-span-1 relative grid-cols-1 lg:grid-cols-2">
                     <BlogLayoutOne blog={sortedBlogs[2]} />
-                </article>
-                <article className="col-span-1  row-span-1 relative grid-cols-1 lg:grid-cols-2">
-                    <BlogLayoutOne blog={sortedBlogs[0]} />
                 </article>
             </div>
         </section>

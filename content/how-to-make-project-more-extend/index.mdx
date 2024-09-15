@@ -1,0 +1,428 @@
+---
+title: "How to: Make a project more Extendable"
+desc: "Four tricks to turn your current codebase to one you can easily add more features and content in."
+image: '../../public/blogs/starscollapse-diagramCover.png'
+publishedAt: '2024-09-01'
+isPublished: true
+redirect: ""
+tags:
+  - optimization
+  - unity
+  - csharp
+  - code-architecture
+  - refactor
+  - solo
+---
+<Tag
+	link='https://github.com/raphaeleg/WhenStarsCollapse'
+	name='GitHub Source Code'
+	isNewPage={true}
+/>
+
+During my [refactoring process of my game jam game](/blogs/when-stars-collapse-refactor), I wanted to find a way that made it easy to also **extend** from the original code, such that it was easy to add more features and content if desired. Here are four ways I achieved this.
+
+
+# 1. Outer-class extendability: Events Manager
+One way to make code more easily extendable was through **the way objects received data**. Compared to the previous way of passing a reference to an entire object, I decided to pass data through Events.
+
+### Event Manager Script
+I created a **singleton** `EventsManager` class, holding a global `eventsDictionary` of all the listeners and events that each object listens to. This gave each script the freedom to **listen and trigger events anytime anywhere**.
+
+Here is my EventsManager script. It has three basic functions: `StartListening`, `StopListening`, and `TriggerEvent`. Each event additionally supports **integer data passing**. This means that whenever an event is Triggered, some integer value can also be sent to the listeners.
+```cs title="EventManager.cs"
+public class EventManager : MonoBehaviour {
+	// Global EventManager instance, and eventDictionary.
+	public static EventManager Instance = null;
+	public static Dictionary<string, Action<int>> eventDictionary;
+
+	// As a singleton class, ensure that there only exist one instance of EventManager.
+	void Awake() {
+		if (Instance != null) {
+			Destroy(gameObject);
+			return;
+		}
+		Instance = this;
+		eventDictionary = new Dictionary<string, Action<int>>();
+	}
+	
+	public static void StartListening(string eventName, Action<int> listener) {
+		Action<int> thisEvent;
+		if (eventDictionary.TryGetValue(eventName, out thisEvent)) {
+			thisEvent += listener;
+			eventDictionary[eventName] = thisEvent;
+		}
+		else {
+			thisEvent += listener;
+			eventDictionary.Add(eventName, thisEvent);
+		}
+	}
+	public static void StopListening(string eventName, Action<int> listener) {
+		Action<int> thisEvent;
+		if (eventDictionary.TryGetValue(eventName, out thisEvent)) {
+			thisEvent -= listener;
+			eventDictionary[eventName] = thisEvent;
+		}
+	}
+	public static void TriggerEvent(string eventName, int i) {
+		Action<int> thisEvent = null;
+		if (eventDictionary.TryGetValue(eventName, out thisEvent)) {
+			thisEvent?.Invoke(i);
+		}
+	}
+}
+```
+
+### Example Usage
+Let's say we have a Meteor. By clicking on a Meteor, it "loads" a MeteorBar.
+
+One way we could have done this is for whenever a meteor is clicked, to find an object named "meteor bar", and directly update a certain variable that loads the meteor bar once. But what if Unity cannot find such object? What if we had 10 different types of meteors and meteor bars?
+
+Events answers those questions.
+
+First, let's **trigger** the fact that a meteor was clicked.
+
+```cs {5} title="Meteor.cs" caption="Let's say we trigger a 'CollectMeteor' Event"
+namespace Meteors {
+	public class Meteor : MonoBehaviour {
+		// ...
+		private void OnMouseDown() {
+			EventManager.TriggerEvent("CollectMeteor", 1);
+			Destroy(gameObject);
+		}
+		// ...
+	}
+}
+```
+Next, we can let the meteor bar class **listen** for a "CollectMeteor" Event.
+
+```cs /Event_AddMeteor/ caption="By pairing the Event_AddMeteor method to this event, it will automatically run this method, with a passed integer data."
+namespace Runes 
+{
+	public class MeteorBar : MonoBehaviour {
+		int collectedMeteors = 0;
+		#region Event Listener
+			private void OnEnable() {
+				EventManager.StartListening("CollectMeteor", Event_AddMeteor);
+			}
+			private void OnDisable() {
+				EventManager.StopListening("CollectMeteor", Event_AddMeteor);
+			}
+		#endregion
+		public void Event_AddMeteor(int val) {
+			collectedMeteors += val;
+		}
+	}
+}
+```
+
+Notice how these two scripts are in different namespaces, yet are still able to interact freely.
+
+### A more complicated, successful example
+<Image
+	src='/blogs/starscollapse-diagram1.png'
+	width='1000'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+
+As seen, because rune interactions happen through events, each part of the rune **doesn't need a reference to it's neighbours**, only the **data needed**. Furthermore, it's easy and safe to **extend** the runes system, either adding or removing parts of the system, as only the events involved needs to be updated.
+
+# 2. Outer-class extendability: Enums
+Now let's say that there are three different Meteors, and three different Meteor Bars, and they can only connect to it's same type of `RED`, `GREEN`, `BLUE`. 
+
+One way we can _extend_ the current code is by giving each object a "Faction", where all **Meteors** and **Runes** belong to a faction. Here is a base class:
+```cs title="Faction.cs"
+public class Faction : MonoBehaviour {
+	public enum Type { BLUE, GREEN, RED };
+	public Type type;
+
+	public Faction(Type t) { this.type = t; }
+}
+```
+
+### Attaching it to our Events
+Alright, so we can attach this script to our meteor and meteor bar, and instantiate them in some way, but how do we check whether they have been triggered?
+
+Knowing that events are simply strings, we can actually use a suffix on the event name, like so:
+```cs {7-15} title="Faction.cs"
+public class Faction : MonoBehaviour {
+	public enum Type { BLUE, GREEN, RED };
+	public Type type;
+
+	public Faction(Type t) { this.type = t; }
+
+	public string StringType() {
+		return type switch {
+			Type.RED => "Red",
+			Type.GREEN => "Green",
+			Type.BLUE => "Blue",
+			_ => "Unknown",
+		};
+	}
+	public string StringType(string prefix) { return prefix + "_" + StringType(); }
+}
+```
+Now whenever we call `StringType("xyz")`, it should return a string "xyz_Red".
+```cs {3,6} title="Meteor.cs"
+namespace Meteors {
+	public class Meteor : MonoBehaviour {
+		private Faction faction;
+		// ...
+		private void OnMouseDown() {
+			EventManager.TriggerEvent(faction.StringType("CollectMeteor"), 1);
+			Destroy(gameObject);
+		}
+		// ...
+	}
+}
+```
+```cs {2,6,7,10}
+public class MeteorBar : MonoBehaviour {
+	private Faction faction;
+	int collectedMeteors = 0;
+	#region Event Listener
+		private void OnEnable() {
+			faction = transform.GetComponent<Faction>();
+			EventManager.StartListening(faction.StringType("CollectMeteor"), Event_AddMeteor);
+		}
+		private void OnDisable() {
+			EventManager.StopListening(faction.StringType("CollectMeteor"), Event_AddMeteor);
+		}
+	#endregion
+	public void Event_AddMeteor(int val) {
+		collectedMeteors += val;
+	}
+}
+```
+This is so powerful because now **we can make as many "Factions" as we want**, to map to the certain Meteor and Meteor bar.
+
+# 3. Inner-class extendability: Finite State Machine
+Now that we've covered different class interaction, what about extending a system?
+
+In my case, I had a Planets class that I realised had **different states**, yet had **sharable behaviours**. This called for a **Finite State Machine** (FSM) of four main states: `Begin`, `Sick`, `BlackHole`, `WhiteDwarf`. Each state can do the following actions: `Start()`, `Collided()`,  or `ShrinkUntilDestroy()`.
+
+**IMPORTANT NOTE:** The idea of a """Finite""" State Machine implies that the code is in fact, not easily extendable. However, an FSM helps streamline the logic of how the object should behave, in a way making it easier to **track and add** new features to the object, relative to one big Manager class.
+<Image
+	src='/blogs/starscollapse-planets.png'
+	width='600'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+Using the same `Faction` enum, I first made some **abstract** `StateMachine` and `State` classes, that were **easily extendable** to any sort of object, like planets:
+<Image
+	src='/blogs/starscollapse-diagram2.png'
+	width='900'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+### FSM Script
+It was as easy as the following: 
+```cs title="StateMachine.cs"
+public abstract class StateMachine : MonoBehaviour {
+    protected State State;
+
+    public void SetState(State state) {
+        State = state;
+        StartCoroutine(State.Start());
+    }
+}
+```
+```cs title="State.cs"
+public abstract class State {
+	protected Planet Planet;
+
+	public State(Planet planet) {
+		Planet = planet;
+	}
+	// Virtual methods to be overridden.
+	public virtual IEnumerator Start() {
+		yield break;
+	}
+	public virtual IEnumerator Collided(Collider2D other) {
+		yield break;
+	}
+	// Ensure that this function is being called at the right states
+	public virtual void ShrinkUntilDestroy(GameObject collider) {
+		Planet.GetComponent<Anim_Shrink>().ShrinkUntilDestroy(collider);
+	}
+}
+```
+```cs title="Planet.cs"
+public class Planet : StateMachine {
+	public Faction faction { get; private set; }
+
+	// Added methods that determined the switching of states
+	public void Start() {
+		faction = GetComponent<Faction>();
+		SetState(new Begin(this));
+	}
+	public void ShrinkUntilDestroy(GameObject other) {
+		State.ShrinkUntilDestroy(other);
+	}
+	public void OnTriggerEnter2D(Collider2D other) {
+		StartCoroutine(State.Collided(other));
+	}
+	public void OnDestroy() {
+		Destroy(gameObject);
+	}
+}
+```
+### Benefits
+This gives the same benefits as the Events, where each state only needs to know **it's own relevant data**, as there are some state-specific data. For example, Black Holes and White Dwarfs doesn't have a faction, but a Sick Planet does. 
+
+Now, if a planet ever has a new state, it simply needs to create a new `State` file, and a way it's triggered. Furthermore, if states every have a new feature, such as the `ShrinkUntilDestroy()` method, it simply needs to update the `State.cs` file, and override the virtual function for the relevant states it affects.        
+
+# 4. Inner-class extendability: Generalization
+
+Finally, the last time I can share is on generalisation.
+
+Let's say you have to create a scene that does the following animations:
+<Image
+	src='/blogs/starscollapse-highscore.gif'
+	width='700'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+
+What you could do under a heavy time limit is to hard-code all the possible elements that needs to appear, and copy-paste all the coroutines needed, with a slight change of what the next coroutine should be.
+
+Approaching this script, the Highscore Scene is extremely animation-heavy and object heavy. The best thing to do was the make as many generalisations and prefabs as possible. This was achieved in two ways:
+
+1. Making **Prefab** text containers so that every object had the same “base” and only changed the text string. This helped ensure that the objects had a "standard" to reference from.
+2. A general `AnimationData` struct for each Score (Time, Stars Collected, Stars Saved) that held the constant texts (title, labels), the base score, the animation to flip the numbers to reveal a result score.
+
+### Organising all the objects into a struct
+
+Expanding on the second point, we first have to identify what objects are there for one section of a score:
+```cs title="ScoreboardManager.cs"
+[Serializable] public struct AnimationData {
+	[Header("Constant Text")]
+	public GameObject Title;
+	public GameObject Label;
+	public GameObject MulLabel;
+	[Header("Base Value")]
+	public GameObject BaseValObj;
+	private TMP_Text BaseValStr;
+	[Header("Score Value")]
+	public GameObject ScoreValObj;
+	public int ScoreVal { get; private set; }
+	public TMP_Text ScoreValStr { get; private set; }
+}
+```
+Wew... That's a lot. But that doesn't mean we need to pass 8 objects for every section, we can actually just pass in 5!
+```cs caption="Constructor"
+[Serializable] public struct AnimationData {
+	[Header("Constant Text")]
+	public GameObject Title;
+	public GameObject Label;
+	public GameObject MulLabel;
+	[Header("Base Value")]
+	public GameObject BaseValObj;
+	private TMP_Text BaseValStr;
+	[Header("Score Value")]
+	public GameObject ScoreValObj;
+	public int ScoreVal { get; private set; }
+	public TMP_Text ScoreValStr { get; private set; }
+
+	public AnimationData(GameObject t, GameObject l, GameObject mL, GameObject bVS, GameObject sVS) {
+		Title = t;
+		Label = l;
+		MulLabel = mL;
+		BaseValObj = bVS;
+		BaseValStr = bVS ? bVS.GetComponent<TMP_Text>() : null;
+		ScoreValObj = sVS;
+		ScoreVal = 0;
+		ScoreValStr = sVS.GetComponent<TMP_Text>();
+		ScoreValStr.text = "";
+	}
+}
+```
+Now that we have a struct that organises one score section, let's make a List that holds each section, and fill it up from the inspector.
+
+<Image
+	src='/blogs/starscollapse-scoreManager.png'
+	width='300'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+
+It already feels a lot easier to manage all the objects.
+
+### Utilising the struct in a function
+
+Regarding the appearing of the objects, or the coroutines, let's make three main ones instead of 18, that **loops through our generalised struct**.
+```cs {13-16}
+public class Scoreboard : MonoBehaviour {
+	// ...
+	private const float DELAY = 0.5f;
+	private const float DELAY_SECTION = DELAY*4;
+	[Serializable] public struct AnimationData {
+		// ...
+	}
+	void Start() {
+		// ...
+		StartCoroutine(Sequence());
+	}
+	private IEnumerator Sequence() {
+		foreach (AnimationData data in animationList) {
+			StartCoroutine(Sequence(data));
+			yield return new WaitForSeconds(DELAY_SECTION);
+		}
+		CTA.SetActive(true);
+	}
+	IEnumerator Sequence(AnimationData data) {
+		yield return new WaitForSeconds(DELAY);
+		EventManager.TriggerEvent("SFX_ScoreAppear", 0);
+		data.Title.SetActive(true);
+		data.Label.SetActive(true);
+		data.MulLabel.SetActive(true);
+		yield return new WaitForSeconds(DELAY);
+		EventManager.TriggerEvent("SFX_ScoreAppear", 0);
+		data.BaseValObj.SetActive(true);
+		data.ScoreValObj.SetActive(true);
+		StartCoroutine(ScoreFlip(data.ScoreValStr, data.ScoreVal));
+	}
+	IEnumerator ScoreFlip(TMP_Text text, int realScore) {
+		// ...
+	}
+}
+```
+This made the code a lot more readable, as now to reveal each score, we only need to loop through a List of `AnimationData` and call one `Sequence()` method that triggered that Score section animation.
+
+
+Now that the code is a lot less hard-coded, it's easier to see how we may add new score sections (e.g. the number of Black Holes in the game) and touch less of the logic it takes to show everything.
+
+
+# Conclusion
+
+I would say that making a class extendable is all about **finding the obvious and repeated behaviours, and extracting that to make a generalised class**. Hopefully, these small tricks and patterns will help you find how to make your code not only easier to extend from, but also cleaner to read.
+
+Thank you for getting this far! If you're interested in more, check out the following:
+<Tag
+	link='/blogs/when-stars-collapse-refactor'
+	name="This project's refactor overview"
+	isSolid={true}
+	isNewPage={true}
+/>
+<Tag
+	link='https://github.com/raphaeleg/WhenStarsCollapse'
+	name='GitHub Source Code'
+	isNewPage={true}
+/>
+<iframe
+	frameborder='0'
+	src='https://itch.io/embed/2890438?bg_color=4e3a3a&amp;fg_color=f6cabc&amp;border_color=181017'
+	width='552'
+	height='167'>
+	<a href='https://megaletan.itch.io/when-stars-collapse'>
+		When Stars Collapse by megaletan, Nick_MC, luneatic-art, Raphaele Guillemot,
+		Cog, thomasbrownnn
+	</a>
+</iframe>
+
+          

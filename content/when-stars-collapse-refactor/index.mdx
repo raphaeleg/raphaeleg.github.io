@@ -1,0 +1,126 @@
+---
+title: "When Stars Collapse: Refactoring Process"
+desc: "How did I spend 1 week to completely transform the codebase?"
+image: '../../public/blogs/starscollapse-healCover.gif'
+publishedAt: '2024-09-15'
+isPublished: true
+redirect: ""
+tags:
+  - refactor
+  - unity
+  - csharp
+  - optimization
+  - code-architecture
+  - solo
+---
+
+<iframe
+	frameborder='0'
+	src='https://itch.io/embed/2890438?bg_color=4e3a3a&amp;fg_color=f6cabc&amp;border_color=181017'
+	width='552'
+	height='167'>
+	<a href='https://megaletan.itch.io/when-stars-collapse'>
+		When Stars Collapse by megaletan, Nick_MC, luneatic-art, Raphaele Guillemot,
+		Cog, thomasbrownnn
+	</a>
+</iframe>
+<Tag
+	link='https://github.com/raphaeleg/WhenStarsCollapse'
+	name='GitHub Source Code'
+	isNewPage={true}
+/>
+
+Having [submitted this game for the 8th Ludum Dare Discord Jam](/blogs/when-stars-collapse), I wanted to take the challenge to **refactor the game into a complete version by myself**. 
+
+Through a net deletion of **240,467** from the original codebase, this project became...
+
+# Complete
+The main actors missing from the original Game Jam game was **Audio**, **Cursor** and the **Tutorial Frames**.
+
+### 1. Audio
+As the Audio System Wwise wasn't compatible with Unity WebGL, this refactor entirely switched to the FMOD Audio System.
+
+<Image
+	src='/blogs/starscollapse-diagram3.png'
+	width='300'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+Additionally, to keep the background music constant through each scene, it became a **singleton class**, meaning there only existed one AudioManager throughout the entire game, essentially becoming a global object.
+
+### 2. Cursor Manager
+The cursor wasn't able to animate nor render since switching to WebGL. 
+<Image
+	src='/blogs/starscollapse-cursor.gif'
+	width='50'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+
+Now, the `CursorManager` simply holds all the possible `CursorAnimations`, and switches animations either by a **global method** (e.g. mouse click), or by an **event trigger** (e.g. listening to a rune drag)
+
+The beautiful thing about the cursor it that it’s extremely **extendable** and **designer-friendly**, only needing to create a new ScriptableObject of a `CursorType` (such as Grab or Click). 
+
+### 3. Unity Animation System
+Because of the ~1,700 1200x1200 images needed to show the tutorial and narrative of the story, a solution to optimise all the images and play a smooth animation wasn't found during the game jam. 
+
+By using Unity's Animation System, not only could all frames be rendered, there were special ways the animation could play, such as looping certain parts after an opening animation.
+<Image
+	src='/blogs/starscollapse-planetAnim.png'
+	width='600'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+
+# More Readable
+ |Before| After|
+| --- | ---- |
+| <Image src='/blogs/starscollapse-before.png' width='500' height='250' alt='Energy-Saving Button' sizes='100vw' /> | <Image src='/blogs/starscollapse-after.png' width='300' height='250' alt='Obtain Exclusive Cards' sizes='100vw' />         
+|Scripts were all over the place and repeated many lines of code due to the time limit. | Because all scripts organised into a clear hierarchy, it's easier to navigate, read, and code rarely repeats. 
+
+Here is an example of how classes were cleaned and optimised, adhering to the Single Responsibility Principle:
+
+<Image src='/blogs/starscollapse-gameManagers.png' width='800' height='250' alt='Energy-Saving Button' sizes='100vw' />
+
+# Extendable
+Because of my coding approach to decouple objects as much as possible, it was a lot clearer to see how to **inject additional content or feature** in the codebase for both developers and designers. This was mostly achieved through the use of Game Events, Finite State Machine and abstract classes.
+
+<Tag
+	link='/blogs/how-to-make-project-more-extend'
+	name='How did I achieve this?'
+	isSolid={true}
+	isNewPage={true}
+/>
+<Image
+	src='/blogs/starscollapse-diagram1.png'
+	width='700'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+
+
+# More Fun
+Since the codebase was refactored from scratch, some game design choices were changed. For example, instead of Dragging and Dropping a rune to a planet, all players have to do is hold a rune until it touches a correct planet, automatically turning into a White Dwarf.      
+<Image
+	src='/blogs/starscollapse-heal.gif'
+	width='700'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/> 
+Because of the clearer logic, it was also easier to fix bugs found in the original game. One example being able to set planet spawn locations smarter, so that it wasn't covered by UI and wasn't overlapping with other planets.                            
+
+# What I've Learnt
+This refactor project took about a week to complete, yet I was able to:
+### 1. Practice Clean Code Architecture
+Being able to practice Event Managers and State Machines made me feel more equipped to handle bigger projects that has more actors.
+### 2. Optimise WebGL Builds
+This process was a huge learning experience on how to create an optimised WebGL build, especially taking into account the ~1,700 1200x1200 tutorial sprites. 
+
+At first, the complete build took **+180 seconds** to build. However, after going through all the textures and finding ways to optimise through Unity's build setting, the WebGL build now only needs an average of **5 seconds** to load for first-time users.
+### 3. Complete a polished game.
+Learning FMOD's Audio system, and fully utilising Unity's Animation System was a first-time experience that is now an added knowledge in my toolbox.
