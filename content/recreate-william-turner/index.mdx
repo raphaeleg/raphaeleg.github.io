@@ -1,0 +1,172 @@
+---
+title: 'Recreating "The Fighting Temeraire" using shaders'
+desc: "and other techniques for creating stunning graphics in GLSL"
+image: '../../public/blogs/TBOS-cover.gif'
+publishedAt: '2025-01-15'
+isPublished: true
+redirect: ''
+tags:
+  - graphics
+  - shader
+  - experiment
+  - glsl
+  - solo
+---
+
+<Tag
+	link='https://www.shadertoy.com/user/raphaeleg'
+	name='ShaderToy Account and source code'
+	isSolid={false}
+	isNewPage={true}
+/>
+
+New year new graphics adventure! While working on a personal project in UE5, I realised that I needed quite a strong understanding and manipulation of shaders. Although I've [touched High-Level Shader Language (HLSL) in the past](/categories/hlsl), I wanted to invest some time to properly learn some cool techniques the GPU could do. Therefore, **I challenged myself to follow and complete _The Book of Shaders_ in 15 days.**
+
+# What are shaders?
+Shaders can be considered a set of instructions executed for each pixel all at once. In other words, Single Instruction, Multiple Data/Threads (**SIMD/T**). This is one of the many specialties of the GPU, which in itself has a very different approach compared to programming for the CPU. Simply put, your program will be fed to every thread, which they will all simultaneously read, and output a color for their own assigned pixel. In other words, **your program will be read by the pixel itself, and the pixel will determine it's own color solely on your program**. It cannot check what other pixel's colours are, and will only be executed once. 
+
+(This is a massive oversimplification, but essentially highlights the difference between GPU and CPU programming).
+
+# Cool Techniques
+
+I was blown away throughout the whole journey. Things that were intuitive to me was suddenly presented in a beautifully mathematical and logical way. Here are a few highlights:
+
+- **The "Multiply" Blend Mode**: The Multiply Blend Mode appears frequently in many graphics application (e.g. Photoshop, MediBang Paint Pro, ProCreate, etc..). As it's name suggests, it simply multiplies the colours together (rgb×rgb). Since colours only exist in a 0~1 range, 0 being black, 1 being white, multiplying an image with a white circle black background would **mask** the image to the circle (0×rgb will always be 0, black, where 1×rgb will always be rgb, the image's original color).
+
+- **The "Add" Blend Mode**: The Add Blend Mode is another common blend mode in graphics applications. The reason why an adding two colours together leans to a whiter color is because the added value of those colours will **always result to a value closer to 1, white.**
+
+## 1. Patterns
+
+In graphics programming, almost everything is defined in the range 0~1, including the canvas we paint (often called the UV)
+
+<Image
+	src='/blogs/TBOS-UV.png'
+	width='300'
+	height='300'
+	alt='Regular UV'
+	sizes='100vw'
+/>
+
+If we scale the UV to 3, and only use the fraction value of the coordinate (0.001 ~ 0.999), we get a repeating image!
+
+<Image
+	src='/blogs/TBOS-UV3.png'
+	width='300'
+	height='300'
+	alt='Scaled UV'
+	sizes='100vw'
+/>
+
+You can still modify the whole image, such as rotating it like so:
+
+<iframe width="300" height="300" frameborder="0" src="https://www.shadertoy.com/embed/lXGcR3?gui=false&paused=false&muted=true" allowfullscreen></iframe> 
+
+Or even specify a unique animation based on the tile's index! "Moving Polkadots" used alternating directions based on the tile's row and column.
+
+<iframe width="300" height="300" frameborder="0" src="https://www.shadertoy.com/embed/l3ycR3?gui=false&paused=false&muted=true" allowfullscreen></iframe>
+
+## 2. Randomness
+
+A surprising discovery was that the basis of randomness is the fraction value of sin!
+
+<Image
+	src='/blogs/TBOS-rand.png'
+	width='600'
+	height='300'
+	alt='fract(sin(x))'
+	sizes='100vw'
+/>
+
+To "choose" a random value is to use the coordinate numbers itself in the random equation. In this example, we take the **integer** coordinate of the scaled UV to produce 9 or 100 random values. 
+
+```glsl
+float random (vec2 st) {
+    return fract(sin(dot(st.xy,vec2(12.9898,78.233)))*43758.5453123);
+}
+
+void main() {
+    uv *= 10.0; // Scale the coordinate system by 10
+    vec2 ipos = floor(uv);  // get the integer coords
+    // vec2 fpos = fract(uv);  // the fractional coords
+
+    // Assign a random value based on the integer coord
+    vec3 color = vec3(random( ipos ));
+
+    gl_FragColor = vec4(color,1.0);
+}
+```
+<Image
+	src='/blogs/TBOS-randScale.png'
+	width='600'
+	height='300'
+	alt='Scaled randomness'
+	sizes='100vw'
+/>
+
+That's the basis of my very simple "HackerMan" Shader, where I only take values that pass a specific threshold to look like lines of code. 
+
+<iframe width="300" height="300" frameborder="0" src="https://www.shadertoy.com/embed/l3Gyz3?gui=false&paused=false&muted=true" allowfullscreen></iframe>
+
+## 3. Noise
+
+Randomness is the very foundation of noise, where graphics starts to look more "organic".
+
+Throughout the years, there has been multiple techniques such as Value Noise, Gradient Noise, and Simplex Noise. Without going into too much detail, the concept is to **mix multiple random outputs together**.
+
+At this point, I finally felt confident in GLSL to mix colours and create the shapes I wanted. As a challenge, I imitated brushstrokes using noise, using Mark Rothko's painting _Three_ (1950) as a reference.
+
+<Image
+	src='/blogs/TBOS-MRThree1950.jpg'
+	width='640'
+	height='300'
+	alt='Mark Rothko Three'
+	sizes='100vw'
+/>
+_Mark Rothko, Three (1950)_
+<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/MXycWy?gui=false&paused=true&muted=true" allowfullscreen></iframe>
+_My shader, three types of brushstrokes_
+
+To add on top of our new technique, we can also create fractal-like noise using **Fractal Brownian Motion (fBm)**, which **mix multiple noise textures together**. To create finer details, more noise textures can be added at a smaller power.
+
+"Blue Noise" is my highest viewed shader for it's complexity and beauty, showing the power of fBm. 
+
+<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/4XKcW3?gui=false&paused=false&muted=true" allowfullscreen></iframe>
+
+# Challenge: Recreating _The Fighting Temeraire_
+
+After a long journey, I decided to challenge myself by recreating this painting.
+
+<Image
+	src='/blogs/TBOS-Turner.jpg'
+	width='640'
+	height='300'
+	alt='Mark Rothko Three'
+	sizes='100vw'
+/>
+
+_William Turner, The Fighting Temeraire (1838)_
+
+This was an earlier painting referenced as an exercise from _The Book of Shaders_ in very early chapters. I wanted to revisit this painting with my newfound knowledge because **the colours were absolutely stunning**.
+
+There were 2 parts to the painting: The sea and the sky. I used fBm for both the waves and the clouds in different ways.
+
+- The challenge with the sea was the mixture of different gradients. I wanted to approach this in a logical way, separating each main colour in their own gradient mask, then adding them all together. As for the texture, a stretched fBm with a white outline was used.
+
+- As for the sky, I used 2 different threshold ranges of the fBm to render the clouds, one for the blue sky, and another for the sunset influence. I wanted to highlight the halo effect a cloud texture would produce under the sunlight.
+
+<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/M33fzr?gui=false&paused=false&muted=true" allowfullscreen></iframe>
+
+I would've never imagined that rendering something like this would take **less than 130 lines**. Given more time, I would definitely look into giving the clouds some density instead of this smog-like texture. I would've also tweaked the colouring to give more of the brilliant sunrays the original painting has. 
+
+# Conclusion
+
+The mathematics behind the outputs were heavily rewarded with stunning visuals I never would've expected. Unfortunately, the Book of Shaders discontinued from this chapter onwards, which means that there's still a lot more to learn in shader world. Nevertheless, the knowledge I gained from this challenge will definitely help me in future projects involving shaders.
+
+Thank you for reading through my journey! This is the first out of 24 planned projects to delve further in graphics programming, hopefully the next few projects will be as rewarding as this one!
+
+<Tag
+	link='https://www.shadertoy.com/user/raphaeleg'
+	name='ShaderToy Account and source code'
+	isSolid={true}
+	isNewPage={true}
+/>
