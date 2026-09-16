@@ -1,0 +1,169 @@
+1:HL["/_next/static/css/d5e9b3b11173a82b.css","style",{"crossOrigin":""}]
+0:["cn6t2z2UcSyTY0TP4F4Sg",[[["",{"children":["blogs",{"children":[["slug","the-lost-tower","d"],{"children":["__PAGE__?{\"slug\":\"the-lost-tower\"}",{}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d5e9b3b11173a82b.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
+4:I[9447,["326","static/chunks/326-1558ba6b642e03ad.js","185","static/chunks/app/layout-94361ac75333a938.js"],""]
+5:I[6954,[],""]
+6:I[7264,[],""]
+7:I[8326,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],""]
+9:I[413,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],"Image"]
+a:I[794,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],""]
+d:I[5659,["326","static/chunks/326-1558ba6b642e03ad.js","185","static/chunks/app/layout-94361ac75333a938.js"],""]
+b:Teda,
+A puzzle game based on a tragedy. Submitted for the **48-hour** 2023 Winter Jam hosted by Uppsala University Campus Gotland.
+
+<iframe
+	src='https://itch.io/embed/2391979'
+	width='552'
+	height='167'
+	frameborder='0'>
+	<a href='https://raphaeleg.itch.io/the-lost-tower'>
+		The Lost Tower by Raphaele Guillemot, Liz Wang, baoliri
+	</a>
+</iframe>
+<Tag
+	link='https://github.com/raphaeleg/TheLostTower'
+	name='GitHub Source Code'
+	isSolid={false}
+	isNewPage={true}
+/>
+
+# Core Challenges
+
+1. **Time Limit**: How to create a complete game within 48 hours?
+2. **Designer-Friendly**: Given the limited manpower, I cannot implement everything alone. How to make it easy for others to implement my script?
+3. **Multiple Genres**: As a puzzle game with visual novel elements, How to implement these genre features seamlessly?
+
+# Core Solutions
+
+1. **Generic**: Simple and generic scripts are fast to implement and highly reusable.
+2. **Expandable with Interface**: Have few core scripts, with few public variables for easy understanding of how to implement the scripts.
+3. **UML Diagrams**: Quickly sketch out class diagrams to understand the whole system before implementation.
+
+## Generic Code
+
+<Image
+	src='/blogs/losttower-2.png'
+	width='500'
+	height='500'
+	alt='Intractable'
+	sizes='100vw'
+/>
+
+For any interactable object in the current scene, it requires only three things:
+
+1. Whether the Player is near it → `is_in_range`
+2. The trigger to interact with it → `trigger`
+3. What to do on interact → `on_success`
+
+This script makes it **easy for designers** to make objects interactable with any keybind needed.
+
+### Dialogue System
+
+Using six classes, the game had an expandable dialogue system that was **user-friendly for designers**.
+
+<Image src='/blogs/losttower-4.png' width='800' height='800' alt='Documentation' sizes='100vw' /> | <Image src='/blogs/losttower-1.png' width='800' height='800' alt='Dialogue' sizes='100vw'/>
+---|--- 
+1. `DialogueStructure`: A sentence may require a sprite, the name of the
+character talking, what they're saying, and a sound effect 
+2. `Dialogue`: A dialogue
+consist of several sentences, that can be represented with a `DialogueStructure`
+3. `ChoiceStructure`: A choice consist of a description of what it is, and what it
+does 
+4. `Choices`: Player may choose multiple choices, that can be represented with
+a `ChoiceStructure` 
+5. `DialogueManager`: To keep track of whether a dialogue is
+running 
+6. `DialogueInterface`: To make a new dialogue, it references a `Dialogue`,
+and actions after a dialogue, which may be choices
+
+## Inventory System
+
+<Image
+	src='/blogs/losttower-3.png'
+	width='800'
+	height='800'
+	alt='Inventory'
+	sizes='100vw'
+/>
+
+1. `InventoryManager`: simply manages a list of items the player owns.
+2. `InventoryItemController`: Since some items were puzzle items that were meant to be dragged to the environment, each item owned by the player had an `InventoryItemController` that made the items draggable, and store whether it interacted with a certain object in-scene.
+
+# What I've Learnt
+
+1. **Code Architecture**: Using UML diagrams to get a greater sensing of the code architecture and the actors in them.
+2. **Code Interfaces**: Make code highly readable by keeping it clean and using interfaces.
+3. **Working under pressure**: Successfully deliver a game with a team under a strict time limit.
+
+<iframe
+	src='https://itch.io/embed/2391979'
+	width='552'
+	height='167'
+	frameborder='0'>
+	<a href='https://raphaeleg.itch.io/the-lost-tower'>
+		The Lost Tower by Raphaele Guillemot, Liz Wang, baoliri
+	</a>
+</iframe>
+<Tag
+	link='https://github.com/raphaeleg/TheLostTower'
+	name='GitHub Source Code'
+	isSolid={false}
+	isNewPage={true}
+/>
+c:T2173,var Component=(()=>{var g=Object.create;var o=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var w=(i,e)=>()=>(e||i((e={exports:{}}).exports,e),e.exports),f=(i,e)=>{for(var t in e)o(i,t,{get:e[t],enumerable:!0})},l=(i,e,t,r)=>{if(e&&typeof e=="object"||typeof e=="function")for(let a of u(e))!b.call(i,a)&&a!==t&&o(i,a,{get:()=>e[a],enumerable:!(r=m(e,a))||r.enumerable});return i};var y=(i,e,t)=>(t=i!=null?g(p(i)):{},l(e||!i||!i.__esModule?o(t,"default",{value:i,enumerable:!0}):t,i)),v=i=>l(o({},"__esModule",{value:!0}),i);var c=w((S,h)=>{h.exports=_jsx_runtime});var C={};f(C,{default:()=>x,frontmatter:()=>k});var n=y(c()),k={title:"The Lost Tower",desc:"A puzzle game submitted for the 2023 Winter Jam hosted by Uppsala University Campus Gotland",image:"../../public/blogs/losttower-cover.png",publishedAt:"2023-11-30",isPublished:!0,redirect:"",tags:["game jam","game","published","unity","csharp","collaboration","solo","code-architecture"]};function s(i){let e=Object.assign({p:"p",strong:"strong",h1:"h1",a:"a",span:"span",ol:"ol",li:"li",h2:"h2",code:"code",h3:"h3",table:"table",thead:"thead",tr:"tr",th:"th"},i.components),{Tag:t,Image:r}=e;return r||d("Image",!0),t||d("Tag",!0),(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.p,{children:["A puzzle game based on a tragedy. Submitted for the ",(0,n.jsx)(e.strong,{children:"48-hour"})," 2023 Winter Jam hosted by Uppsala University Campus Gotland."]}),`
+`,(0,n.jsx)("iframe",{src:"https://itch.io/embed/2391979",width:"552",height:"167",frameborder:"0",children:(0,n.jsx)("a",{href:"https://raphaeleg.itch.io/the-lost-tower",children:(0,n.jsx)(e.p,{children:"The Lost Tower by Raphaele Guillemot, Liz Wang, baoliri"})})}),`
+`,(0,n.jsx)(t,{link:"https://github.com/raphaeleg/TheLostTower",name:"GitHub Source Code",isSolid:!1,isNewPage:!0}),`
+`,(0,n.jsxs)(e.h1,{id:"core-challenges",children:["Core Challenges",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#core-challenges",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.ol,{children:[`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Time Limit"}),": How to create a complete game within 48 hours?"]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Designer-Friendly"}),": Given the limited manpower, I cannot implement everything alone. How to make it easy for others to implement my script?"]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Multiple Genres"}),": As a puzzle game with visual novel elements, How to implement these genre features seamlessly?"]}),`
+`]}),`
+`,(0,n.jsxs)(e.h1,{id:"core-solutions",children:["Core Solutions",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#core-solutions",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.ol,{children:[`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Generic"}),": Simple and generic scripts are fast to implement and highly reusable."]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Expandable with Interface"}),": Have few core scripts, with few public variables for easy understanding of how to implement the scripts."]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"UML Diagrams"}),": Quickly sketch out class diagrams to understand the whole system before implementation."]}),`
+`]}),`
+`,(0,n.jsxs)(e.h2,{id:"generic-code",children:["Generic Code",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#generic-code",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(r,{src:"/blogs/losttower-2.png",width:"500",height:"500",alt:"Intractable",sizes:"100vw"}),`
+`,(0,n.jsx)(e.p,{children:"For any interactable object in the current scene, it requires only three things:"}),`
+`,(0,n.jsxs)(e.ol,{children:[`
+`,(0,n.jsxs)(e.li,{children:["Whether the Player is near it \u2192 ",(0,n.jsx)(e.code,{children:"is_in_range"})]}),`
+`,(0,n.jsxs)(e.li,{children:["The trigger to interact with it \u2192 ",(0,n.jsx)(e.code,{children:"trigger"})]}),`
+`,(0,n.jsxs)(e.li,{children:["What to do on interact \u2192 ",(0,n.jsx)(e.code,{children:"on_success"})]}),`
+`]}),`
+`,(0,n.jsxs)(e.p,{children:["This script makes it ",(0,n.jsx)(e.strong,{children:"easy for designers"})," to make objects interactable with any keybind needed."]}),`
+`,(0,n.jsxs)(e.h3,{id:"dialogue-system",children:["Dialogue System",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#dialogue-system",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.p,{children:["Using six classes, the game had an expandable dialogue system that was ",(0,n.jsx)(e.strong,{children:"user-friendly for designers"}),"."]}),`
+`,(0,n.jsx)(e.table,{children:(0,n.jsx)(e.thead,{children:(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.th,{children:(0,n.jsx)(r,{src:"/blogs/losttower-4.png",width:"800",height:"800",alt:"Documentation",sizes:"100vw"})}),(0,n.jsx)(e.th,{children:(0,n.jsx)(r,{src:"/blogs/losttower-1.png",width:"800",height:"800",alt:"Dialogue",sizes:"100vw"})})]})})}),`
+`,(0,n.jsxs)(e.ol,{children:[`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.code,{children:"DialogueStructure"}),`: A sentence may require a sprite, the name of the\r
+character talking, what they're saying, and a sound effect`]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.code,{children:"Dialogue"}),`: A dialogue\r
+consist of several sentences, that can be represented with a `,(0,n.jsx)(e.code,{children:"DialogueStructure"})]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.code,{children:"ChoiceStructure"}),`: A choice consist of a description of what it is, and what it\r
+does`]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.code,{children:"Choices"}),`: Player may choose multiple choices, that can be represented with\r
+a `,(0,n.jsx)(e.code,{children:"ChoiceStructure"})]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.code,{children:"DialogueManager"}),`: To keep track of whether a dialogue is\r
+running`]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.code,{children:"DialogueInterface"}),": To make a new dialogue, it references a ",(0,n.jsx)(e.code,{children:"Dialogue"}),`,\r
+and actions after a dialogue, which may be choices`]}),`
+`]}),`
+`,(0,n.jsxs)(e.h2,{id:"inventory-system",children:["Inventory System",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#inventory-system",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(r,{src:"/blogs/losttower-3.png",width:"800",height:"800",alt:"Inventory",sizes:"100vw"}),`
+`,(0,n.jsxs)(e.ol,{children:[`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.code,{children:"InventoryManager"}),": simply manages a list of items the player owns."]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.code,{children:"InventoryItemController"}),": Since some items were puzzle items that were meant to be dragged to the environment, each item owned by the player had an ",(0,n.jsx)(e.code,{children:"InventoryItemController"})," that made the items draggable, and store whether it interacted with a certain object in-scene."]}),`
+`]}),`
+`,(0,n.jsxs)(e.h1,{id:"what-ive-learnt",children:["What I've Learnt",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#what-ive-learnt",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.ol,{children:[`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Code Architecture"}),": Using UML diagrams to get a greater sensing of the code architecture and the actors in them."]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Code Interfaces"}),": Make code highly readable by keeping it clean and using interfaces."]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Working under pressure"}),": Successfully deliver a game with a team under a strict time limit."]}),`
+`]}),`
+`,(0,n.jsx)("iframe",{src:"https://itch.io/embed/2391979",width:"552",height:"167",frameborder:"0",children:(0,n.jsx)("a",{href:"https://raphaeleg.itch.io/the-lost-tower",children:(0,n.jsx)(e.p,{children:"The Lost Tower by Raphaele Guillemot, Liz Wang, baoliri"})})}),`
+`,(0,n.jsx)(t,{link:"https://github.com/raphaeleg/TheLostTower",name:"GitHub Source Code",isSolid:!1,isNewPage:!0})]})}function I(i={}){let{wrapper:e}=i.components||{};return e?(0,n.jsx)(e,Object.assign({},i,{children:(0,n.jsx)(s,i)})):s(i)}var x=I;function d(i,e){throw new Error("Expected "+(e?"component":"object")+" `"+i+"` to be defined: you likely forgot to import, pass, or provide it.")}return v(C);})();
+;return Component;2:[null,["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__variable_f367f3 __variable_73ee6c font-mr bg-light","children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":["$","main",null,{"className":"my-32 w-full h-[55vh] flex justify-center font-mr","children":["$","div",null,{"className":"relative flex flex-col items-center justify-center","children":[["$","h1",null,{"className":"inline-block text-dark \n      text-6xl font-bold w-full capitalize xl:text-8xl text-center","children":"404"}],["$","h2",null,{"className":"inline-block text-dark \n      text-5xl font-bold w-full capitalize xl:text-6xl text-center mt-4 tracking-wide leading-snug","children":"Page Not Found!"}],["$","$L7",null,{"href":"/","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light m-12","children":"Go To Home"}]]}]}],"notFoundStyles":[],"childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children",["slug","the-lost-tower","d"],"children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$L8",[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"The Lost Tower\",\"image\":[\"https://raphaeleg.github.io/blogs/losttower-cover.png\"],\"datePublished\":\"2023-11-30T00:00:00.000Z\",\"dateModified\":\"2023-11-30T00:00:00.000Z\",\"author\":[{\"@type\":\"Person\",\"name\":\"Raphaele's Portfolio\",\"url\":\"https://www.linkedin.com/in/raphaele-michelle-guillemot-6a34271a8/\"}]}"}}],["$","article",null,{"children":[["$","div",null,{"className":"mb-8 text-center relative w-full h-[50vh] bg-dark","children":[["$","div",null,{"className":"w-5/6 z-10 flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2","children":[["$","span",null,{"children":[["$","$L7",null,{"href":"/categories/game-jam","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#game jam"}],["$","$L7",null,{"href":"/categories/game","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#game"}],["$","$L7",null,{"href":"/categories/published","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#published"}],["$","$L7",null,{"href":"/categories/unity","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#unity"}],["$","$L7",null,{"href":"/categories/csharp","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#csharp"}],["$","$L7",null,{"href":"/categories/collaboration","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#collaboration"}],["$","$L7",null,{"href":"/categories/solo","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#solo"}],["$","$L7",null,{"href":"/categories/code-architecture","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#code-architecture\r"}]]}],["$","h1",null,{"className":"inline-block mt-6 font-semibold capitalize text-light text-2xl md:text-3xl lg:text-5xl !leading-normal relative","children":"The Lost Tower"}],"$undefined"]}],["$","div",null,{"className":"absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60"}],["$","$L9",null,{"src":"/blogs/losttower-cover.png","placeholder":"blur","blurDataURL":"data:image/jpeg;base64,/9j/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAAIAAgDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAbEAEAAwEAAwAAAAAAAAAAAAABAAIDBAURof/EABUBAQEAAAAAAAAAAAAAAAAAAAEE/8QAGREAAgMBAAAAAAAAAAAAAAAAAQIAERMx/9oADAMBAAIRAxEAPwCn0Pja4483LW9y2pbbRzRQH57YiI7uCTJskZQK5P/Z","alt":"The Lost Tower","width":1280,"height":800,"className":"w-full h-full object-cover object-center false [object Object]","priority":true,"sizes":"100vw"}]]}],["$","div",null,{"className":"grid grid-cols-12  gap-y-8 lg:gap-8 sxl:gap-16 mt-8 px-5 md:px-10","children":[["$","div",null,{"className":"col-span-12  lg:col-span-4","children":["$","details",null,{"className":"border-[1px] border-solid border-dark  text-dark  rounded-lg p-4 sticky top-6 max-h-[80vh] overflow-hidden overflow-y-auto","open":true,"children":[["$","summary",null,{"className":"text-lg font-semibold capitalize cursor-pointer","children":"Table Of Content"}],["$","ul",null,{"className":"mt-4 font-in text-base","children":[["$","li","#core-challenges",{"className":"py-1","children":["$","a",null,{"href":"#core-challenges","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Core Challenges"}]]}]}],["$","li","#core-solutions",{"className":"py-1","children":["$","a",null,{"href":"#core-solutions","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Core Solutions"}]]}]}],["$","li","#generic-code",{"className":"py-1","children":["$","a",null,{"href":"#generic-code","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Generic Code"}]]}]}],["$","li","#dialogue-system",{"className":"py-1","children":["$","a",null,{"href":"#dialogue-system","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"Dialogue System"}]]}]}],["$","li","#inventory-system",{"className":"py-1","children":["$","a",null,{"href":"#inventory-system","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Inventory System"}]]}]}],["$","li","#what-ive-learnt",{"className":"py-1","children":["$","a",null,{"href":"#what-ive-learnt","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"What I've Learnt"}]]}]}]]}]]}]}],["$","$La",null,{"blog":{"title":"The Lost Tower","publishedAt":"2023-11-30T00:00:00.000Z","desc":"A puzzle game submitted for the 2023 Winter Jam hosted by Uppsala University Campus Gotland","image":{"filePath":"../public/blogs/losttower-cover.png","relativeFilePath":"../../public/blogs/losttower-cover.png","format":"jpeg","height":800,"width":1280,"aspectRatio":1.6,"blurhashDataUrl":"data:image/jpeg;base64,/9j/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAAIAAgDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAbEAEAAwEAAwAAAAAAAAAAAAABAAIDBAURof/EABUBAQEAAAAAAAAAAAAAAAAAAAEE/8QAGREAAgMBAAAAAAAAAAAAAAAAAQIAERMx/9oADAMBAAIRAxEAPwCn0Pja4483LW9y2pbbRzRQH57YiI7uCTJskZQK5P/Z"},"isPublished":true,"redirect":"","tags":["game jam","game","published","unity","csharp","collaboration","solo","code-architecture\r"],"body":{"raw":"$b","code":"$c"},"_id":"the-lost-tower/index.mdx","_raw":{"sourceFilePath":"the-lost-tower/index.mdx","sourceFileName":"index.mdx","sourceFileDir":"the-lost-tower","contentType":"mdx","flattenedPath":"the-lost-tower"},"type":"Blog","url":"/blogs/the-lost-tower","toc":[{"level":"one","text":"Core Challenges","slug":"core-challenges"},{"level":"one","text":"Core Solutions","slug":"core-solutions"},{"level":"two","text":"Generic Code","slug":"generic-code"},{"level":"three","text":"Dialogue System","slug":"dialogue-system"},{"level":"two","text":"Inventory System","slug":"inventory-system"},{"level":"one","text":"What I've Learnt","slug":"what-ive-learnt"}]}}]]}]]}]],null],"segment":"__PAGE__?{\"slug\":\"the-lost-tower\"}"},"styles":[]}],"segment":["slug","the-lost-tower","d"]},"styles":[]}],"segment":"blogs"},"styles":[]}],["$","$Ld",null,{}]]}]}],null]
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"The Lost Tower | Raphaele's Portfolio"}],["$","link","2",{"rel":"manifest","href":"/manifest.webmanifest"}],["$","meta","3",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","4",{"name":"robots","content":"index, follow"}],["$","meta","5",{"name":"googlebot","content":"index, follow, noimageindex, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","6",{"property":"og:title","content":"The Lost Tower"}],["$","meta","7",{"property":"og:url","content":"https://raphaeleg.github.io/blogs/the-lost-tower"}],["$","meta","8",{"property":"og:site_name","content":"Raphaele's Portfolio"}],["$","meta","9",{"property":"og:locale","content":"en-us"}],["$","meta","10",{"property":"og:image","content":"https://raphaeleg.github.io/blogs/losttower-cover.png"}],["$","meta","11",{"property":"og:type","content":"article"}],["$","meta","12",{"property":"article:published_time","content":"2023-11-30T00:00:00.000Z"}],["$","meta","13",{"property":"article:modified_time","content":"2023-11-30T00:00:00.000Z"}],["$","meta","14",{"property":"article:author","content":"Raphaele's Portfolio"}],["$","meta","15",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","16",{"name":"twitter:title","content":"The Lost Tower"}],["$","meta","17",{"name":"twitter:image","content":"https://raphaeleg.github.io/blogs/losttower-cover.png"}]]
+8:null

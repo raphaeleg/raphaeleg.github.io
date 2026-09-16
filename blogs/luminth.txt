@@ -1,0 +1,262 @@
+1:HL["/_next/static/css/d5e9b3b11173a82b.css","style",{"crossOrigin":""}]
+0:["cn6t2z2UcSyTY0TP4F4Sg",[[["",{"children":["blogs",{"children":[["slug","luminth","d"],{"children":["__PAGE__?{\"slug\":\"luminth\"}",{}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d5e9b3b11173a82b.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
+4:I[9447,["326","static/chunks/326-1558ba6b642e03ad.js","185","static/chunks/app/layout-94361ac75333a938.js"],""]
+5:I[6954,[],""]
+6:I[7264,[],""]
+7:I[8326,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],""]
+9:I[413,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],"Image"]
+a:I[794,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],""]
+d:I[5659,["326","static/chunks/326-1558ba6b642e03ad.js","185","static/chunks/app/layout-94361ac75333a938.js"],""]
+b:T12de,
+Summon light to find your way out of the dark, dangerous maze. Avoid becoming a fish’s snack! **A 72-hour game jam**
+
+<iframe frameborder='0' src='https://itch.io/embed/2649454?linkback=true&amp;bg_color=EDE9E4&amp;fg_color=806562&amp;link_color=C3864D&amp;border_color=C3864D' width='552' height='167'>
+<a href='https://raphaeleg.itch.io/luminth'> Luminth by Raphaele Guillemot, Thomas Wang </a>
+</iframe>
+
+<Tag link='https://ldjam.com/events/ludum-dare/55/luminth' name='Ludum Dare page' isSolid={false} isNewPage={true} />
+
+# Background
+
+This project was made with **3 people**, including another developer.
+
+Out of 2194 submissions, _Luminth_ was submitted for LudumDare55 and placed...
+
+- **Top 3%** in Graphics
+- **Top 7%** in Innovation <Image
+  	src='/blogs/luminth-0.png'
+  	width='500'
+  	height='500'
+  	alt='scores'
+  	sizes='100vw'
+  />
+
+Because of the positive reviews, we've decided to continue **polishing the game for 2 months**.
+
+
+# My Technical Contributions
+
+
+## 1. Handled the `Lights` class
+
+- Instantiation with dynamic light radiuses
+- Hostile Lights that decreased Player's health
+- Background Image Masking to "see" the maze <Image
+  	src='/blogs/luminth-2.png'
+  	width='500'
+  	height='500'
+  	alt='timeline'
+  	sizes='100vw'
+  />
+
+### POST-GAME JAM: Better Light Visuals using Shaders (HLSL)
+
+A huge mechanic of Luminth was the uncovering of the maze through lights. However, Unity doesn't have a built-in function to create transparent circles, needing HLSL Shader expertise.
+
+<Image
+	src='/blogs/luminth-1.png'
+	width='600'
+	height='600'
+	alt='timeline'
+	sizes='100vw'
+/>
+
+- Alpha blending
+- Texture Copy
+- Particle Effects
+- Post-Processing (Vignette, Bloom)
+
+<Tag
+	link='/blogs/how-to-mask-feathered-holes'
+	name='How did I achieve this? (Technical)'
+	isSolid={true}
+/>
+
+---
+
+## 2. Made the Tutorial Scene
+
+- **Game Event Triggers**
+- Level Design
+- Dialogue Manager
+
+<Image
+	src='/blogs/luminth-tut.png'
+	width='700'
+	height='700'
+	alt='timeline'
+	sizes='100vw'
+/>
+
+### POST-GAME JAM: Better Tutorial
+
+Due to the interesting world Luminth had to offer, the original tutorial focused more on narrative to introduce the mechanics. However, we found that **it gave players unclear instructions and expectations**
+
+In the polished version, Luminth's tutorial dialogues went from 27 lines to 5 lines. This gave more focus on **action and visual instructions** than words, making it clearer what players should expect.
+
+<Image
+	src='/blogs/luminth-7.png'
+	width='500'
+	height='500'
+	alt='timeline'
+	sizes='100vw'
+/>
+
+--- 
+
+## 3. Other Scenes (Main Menu, Winning, Losing, Credits) 
+- Button Animations using DOTween
+
+<Image
+	src='/blogs/luminth-9.png'
+	width='1000'
+	height='1000'
+	alt='state diagram'
+	sizes='100vw'
+/>
+
+--- 
+
+## 4. Randomised Exit Position at every scene instantiation. 
+
+--- 
+
+## 5. WebGL Build published in itch.io
+ 
+--- 
+
+## 6. POST-GAME JAM: Focus Mechanic using Shaders (HLSL)
+
+From the original submission's feedback, we have introduced a new mechanic that helps players find the direction of the exit.
+
+<Image
+	src='/blogs/luminth-3.gif'
+	width='600'
+	height='600'
+	alt='timeline'
+	sizes='100vw'
+/>
+
+- Original Equations 
+- Mouse Position 
+- Unit Circle / Angle Calculations 
+- Chromatic Abbreviation
+
+<Tag link='/blogs/how-to-trapnation-radar' name='How did I achieve this? (Technical)' isSolid={true} />
+--- 
+
+# Soft-skills
+
+Challenges Because of the tight time constraints, it was necessary
+to have clear communication in work delegation and what the game needed. This included
+**Task Prioritisation**, **Using GitHub Branches for specific tasks**, and **Agile
+Project Management**.
+
+<Image
+	src='/blogs/luminth-timeline.png'
+	width='800'
+	height='800'
+	alt='timeline'
+	sizes='100vw'
+/>
+--- 
+
+# What I've Learnt 
+
+1. **Completed game:** Successfully completed the game within **72 hours** through effective collaboration, and polished the game with post-processing and publishing. 
+
+2. **Applied knowledge:** Applied knowledge from previous game development experience such as: Shader Language, Level Design, Game Events, Dialogue Manager, and Agile collaboration 
+
+3. **Great feedback:** Showcased at **Hong Kong's Game Dev Happy Hour event**, among other games, and received positive feedback.
+
+<iframe frameborder='0' src='https://itch.io/embed/2649454?linkback=true&amp;bg_color=EDE9E4&amp;fg_color=806562&amp;link_color=C3864D&amp;border_color=C3864D' width='552' height='167'>
+<a href='https://raphaeleg.itch.io/luminth'> Luminth by Raphaele Guillemot, Thomas Wang </a>
+</iframe>
+
+<Tag link='https://ldjam.com/events/ludum-dare/55/luminth' name='Ludum Dare page' isSolid={false} isNewPage={true} />
+c:T2a6b,var Component=(()=>{var g=Object.create;var l=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var f=(i,e)=>()=>(e||i((e={exports:{}}).exports,e),e.exports),w=(i,e)=>{for(var t in e)l(i,t,{get:e[t],enumerable:!0})},s=(i,e,t,a)=>{if(e&&typeof e=="object"||typeof e=="function")for(let r of m(e))!b.call(i,r)&&r!==t&&l(i,r,{get:()=>e[r],enumerable:!(a=u(e,r))||a.enumerable});return i};var v=(i,e,t)=>(t=i!=null?g(p(i)):{},s(e||!i||!i.__esModule?l(t,"default",{value:i,enumerable:!0}):t,i)),k=i=>s(l({},"__esModule",{value:!0}),i);var o=f((j,h)=>{h.exports=_jsx_runtime});var I={};w(I,{default:()=>y,frontmatter:()=>x});var n=v(o()),x={title:"Luminth",desc:"A polished Game Jam game.",image:"../../public/blogs/luminth-cover.png",publishedAt:"2024-06-30",isPublished:!0,redirect:"",tags:["game jam","game","published","unity","shader","csharp","hlsl","collaboration"]};function c(i){let e=Object.assign({p:"p",strong:"strong",h1:"h1",a:"a",span:"span",em:"em",ul:"ul",li:"li",h2:"h2",code:"code",h3:"h3",hr:"hr",ol:"ol"},i.components),{Tag:t,Image:a}=e;return a||d("Image",!0),t||d("Tag",!0),(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.p,{children:["Summon light to find your way out of the dark, dangerous maze. Avoid becoming a fish\u2019s snack! ",(0,n.jsx)(e.strong,{children:"A 72-hour game jam"})]}),`
+`,(0,n.jsx)("iframe",{frameborder:"0",src:"https://itch.io/embed/2649454?linkback=true&bg_color=EDE9E4&fg_color=806562&link_color=C3864D&border_color=C3864D",width:"552",height:"167",children:(0,n.jsx)("a",{href:"https://raphaeleg.itch.io/luminth",children:" Luminth by Raphaele Guillemot, Thomas Wang "})}),`
+`,(0,n.jsx)(t,{link:"https://ldjam.com/events/ludum-dare/55/luminth",name:"Ludum Dare page",isSolid:!1,isNewPage:!0}),`
+`,(0,n.jsxs)(e.h1,{id:"background",children:["Background",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#background",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.p,{children:["This project was made with ",(0,n.jsx)(e.strong,{children:"3 people"}),", including another developer."]}),`
+`,(0,n.jsxs)(e.p,{children:["Out of 2194 submissions, ",(0,n.jsx)(e.em,{children:"Luminth"})," was submitted for LudumDare55 and placed..."]}),`
+`,(0,n.jsxs)(e.ul,{children:[`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Top 3%"})," in Graphics"]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Top 7%"})," in Innovation ",(0,n.jsx)(a,{src:"/blogs/luminth-0.png",width:"500",height:"500",alt:"scores",sizes:"100vw"})]}),`
+`]}),`
+`,(0,n.jsxs)(e.p,{children:["Because of the positive reviews, we've decided to continue ",(0,n.jsx)(e.strong,{children:"polishing the game for 2 months"}),"."]}),`
+`,(0,n.jsxs)(e.h1,{id:"my-technical-contributions",children:["My Technical Contributions",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#my-technical-contributions",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.h2,{id:"1-handled-the-lights-class",children:["1. Handled the ",(0,n.jsx)(e.code,{children:"Lights"})," class",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#1-handled-the-lights-class",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.ul,{children:[`
+`,(0,n.jsx)(e.li,{children:"Instantiation with dynamic light radiuses"}),`
+`,(0,n.jsx)(e.li,{children:"Hostile Lights that decreased Player's health"}),`
+`,(0,n.jsxs)(e.li,{children:['Background Image Masking to "see" the maze ',(0,n.jsx)(a,{src:"/blogs/luminth-2.png",width:"500",height:"500",alt:"timeline",sizes:"100vw"})]}),`
+`]}),`
+`,(0,n.jsxs)(e.h3,{id:"post-game-jam-better-light-visuals-using-shaders-hlsl",children:["POST-GAME JAM: Better Light Visuals using Shaders (HLSL)",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#post-game-jam-better-light-visuals-using-shaders-hlsl",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(e.p,{children:"A huge mechanic of Luminth was the uncovering of the maze through lights. However, Unity doesn't have a built-in function to create transparent circles, needing HLSL Shader expertise."}),`
+`,(0,n.jsx)(a,{src:"/blogs/luminth-1.png",width:"600",height:"600",alt:"timeline",sizes:"100vw"}),`
+`,(0,n.jsxs)(e.ul,{children:[`
+`,(0,n.jsx)(e.li,{children:"Alpha blending"}),`
+`,(0,n.jsx)(e.li,{children:"Texture Copy"}),`
+`,(0,n.jsx)(e.li,{children:"Particle Effects"}),`
+`,(0,n.jsx)(e.li,{children:"Post-Processing (Vignette, Bloom)"}),`
+`]}),`
+`,(0,n.jsx)(t,{link:"/blogs/how-to-mask-feathered-holes",name:"How did I achieve this? (Technical)",isSolid:!0}),`
+`,(0,n.jsx)(e.hr,{}),`
+`,(0,n.jsxs)(e.h2,{id:"2-made-the-tutorial-scene",children:["2. Made the Tutorial Scene",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#2-made-the-tutorial-scene",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.ul,{children:[`
+`,(0,n.jsx)(e.li,{children:(0,n.jsx)(e.strong,{children:"Game Event Triggers"})}),`
+`,(0,n.jsx)(e.li,{children:"Level Design"}),`
+`,(0,n.jsx)(e.li,{children:"Dialogue Manager"}),`
+`]}),`
+`,(0,n.jsx)(a,{src:"/blogs/luminth-tut.png",width:"700",height:"700",alt:"timeline",sizes:"100vw"}),`
+`,(0,n.jsxs)(e.h3,{id:"post-game-jam-better-tutorial",children:["POST-GAME JAM: Better Tutorial",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#post-game-jam-better-tutorial",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.p,{children:["Due to the interesting world Luminth had to offer, the original tutorial focused more on narrative to introduce the mechanics. However, we found that ",(0,n.jsx)(e.strong,{children:"it gave players unclear instructions and expectations"})]}),`
+`,(0,n.jsxs)(e.p,{children:["In the polished version, Luminth's tutorial dialogues went from 27 lines to 5 lines. This gave more focus on ",(0,n.jsx)(e.strong,{children:"action and visual instructions"})," than words, making it clearer what players should expect."]}),`
+`,(0,n.jsx)(a,{src:"/blogs/luminth-7.png",width:"500",height:"500",alt:"timeline",sizes:"100vw"}),`
+`,(0,n.jsx)(e.hr,{}),`
+`,(0,n.jsxs)(e.h2,{id:"3-other-scenes-main-menu-winning-losing-credits",children:["3. Other Scenes (Main Menu, Winning, Losing, Credits)",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#3-other-scenes-main-menu-winning-losing-credits",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.ul,{children:[`
+`,(0,n.jsx)(e.li,{children:"Button Animations using DOTween"}),`
+`]}),`
+`,(0,n.jsx)(a,{src:"/blogs/luminth-9.png",width:"1000",height:"1000",alt:"state diagram",sizes:"100vw"}),`
+`,(0,n.jsx)(e.hr,{}),`
+`,(0,n.jsxs)(e.h2,{id:"4-randomised-exit-position-at-every-scene-instantiation",children:["4. Randomised Exit Position at every scene instantiation.",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#4-randomised-exit-position-at-every-scene-instantiation",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(e.hr,{}),`
+`,(0,n.jsxs)(e.h2,{id:"5-webgl-build-published-in-itchio",children:["5. WebGL Build published in itch.io",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#5-webgl-build-published-in-itchio",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(e.hr,{}),`
+`,(0,n.jsxs)(e.h2,{id:"6-post-game-jam-focus-mechanic-using-shaders-hlsl",children:["6. POST-GAME JAM: Focus Mechanic using Shaders (HLSL)",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#6-post-game-jam-focus-mechanic-using-shaders-hlsl",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(e.p,{children:"From the original submission's feedback, we have introduced a new mechanic that helps players find the direction of the exit."}),`
+`,(0,n.jsx)(a,{src:"/blogs/luminth-3.gif",width:"600",height:"600",alt:"timeline",sizes:"100vw"}),`
+`,(0,n.jsxs)(e.ul,{children:[`
+`,(0,n.jsx)(e.li,{children:"Original Equations"}),`
+`,(0,n.jsx)(e.li,{children:"Mouse Position"}),`
+`,(0,n.jsx)(e.li,{children:"Unit Circle / Angle Calculations"}),`
+`,(0,n.jsx)(e.li,{children:"Chromatic Abbreviation"}),`
+`]}),`
+`,(0,n.jsx)(t,{link:"/blogs/how-to-trapnation-radar",name:"How did I achieve this? (Technical)",isSolid:!0}),`
+`,(0,n.jsx)(e.hr,{}),`
+`,(0,n.jsxs)(e.h1,{id:"soft-skills",children:["Soft-skills",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#soft-skills",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.p,{children:[`Challenges Because of the tight time constraints, it was necessary\r
+to have clear communication in work delegation and what the game needed. This included\r
+`,(0,n.jsx)(e.strong,{children:"Task Prioritisation"}),", ",(0,n.jsx)(e.strong,{children:"Using GitHub Branches for specific tasks"}),", and ",(0,n.jsx)(e.strong,{children:`Agile\r
+Project Management`}),"."]}),`
+`,(0,n.jsx)(a,{src:"/blogs/luminth-timeline.png",width:"800",height:"800",alt:"timeline",sizes:"100vw"}),`
+`,(0,n.jsx)(e.hr,{}),`
+`,(0,n.jsxs)(e.h1,{id:"what-ive-learnt",children:["What I've Learnt",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#what-ive-learnt",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.ol,{children:[`
+`,(0,n.jsxs)(e.li,{children:[`
+`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.strong,{children:"Completed game:"})," Successfully completed the game within ",(0,n.jsx)(e.strong,{children:"72 hours"})," through effective collaboration, and polished the game with post-processing and publishing."]}),`
+`]}),`
+`,(0,n.jsxs)(e.li,{children:[`
+`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.strong,{children:"Applied knowledge:"})," Applied knowledge from previous game development experience such as: Shader Language, Level Design, Game Events, Dialogue Manager, and Agile collaboration"]}),`
+`]}),`
+`,(0,n.jsxs)(e.li,{children:[`
+`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.strong,{children:"Great feedback:"})," Showcased at ",(0,n.jsx)(e.strong,{children:"Hong Kong's Game Dev Happy Hour event"}),", among other games, and received positive feedback."]}),`
+`]}),`
+`]}),`
+`,(0,n.jsx)("iframe",{frameborder:"0",src:"https://itch.io/embed/2649454?linkback=true&bg_color=EDE9E4&fg_color=806562&link_color=C3864D&border_color=C3864D",width:"552",height:"167",children:(0,n.jsx)("a",{href:"https://raphaeleg.itch.io/luminth",children:" Luminth by Raphaele Guillemot, Thomas Wang "})}),`
+`,(0,n.jsx)(t,{link:"https://ldjam.com/events/ludum-dare/55/luminth",name:"Ludum Dare page",isSolid:!1,isNewPage:!0})]})}function L(i={}){let{wrapper:e}=i.components||{};return e?(0,n.jsx)(e,Object.assign({},i,{children:(0,n.jsx)(c,i)})):c(i)}var y=L;function d(i,e){throw new Error("Expected "+(e?"component":"object")+" `"+i+"` to be defined: you likely forgot to import, pass, or provide it.")}return k(I);})();
+;return Component;2:[null,["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__variable_f367f3 __variable_73ee6c font-mr bg-light","children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":["$","main",null,{"className":"my-32 w-full h-[55vh] flex justify-center font-mr","children":["$","div",null,{"className":"relative flex flex-col items-center justify-center","children":[["$","h1",null,{"className":"inline-block text-dark \n      text-6xl font-bold w-full capitalize xl:text-8xl text-center","children":"404"}],["$","h2",null,{"className":"inline-block text-dark \n      text-5xl font-bold w-full capitalize xl:text-6xl text-center mt-4 tracking-wide leading-snug","children":"Page Not Found!"}],["$","$L7",null,{"href":"/","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light m-12","children":"Go To Home"}]]}]}],"notFoundStyles":[],"childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children",["slug","luminth","d"],"children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$L8",[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Luminth\",\"image\":[\"https://raphaeleg.github.io/blogs/luminth-cover.png\"],\"datePublished\":\"2024-06-30T00:00:00.000Z\",\"dateModified\":\"2024-06-30T00:00:00.000Z\",\"author\":[{\"@type\":\"Person\",\"name\":\"Raphaele's Portfolio\",\"url\":\"https://www.linkedin.com/in/raphaele-michelle-guillemot-6a34271a8/\"}]}"}}],["$","article",null,{"children":[["$","div",null,{"className":"mb-8 text-center relative w-full h-[50vh] bg-dark","children":[["$","div",null,{"className":"w-5/6 z-10 flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2","children":[["$","span",null,{"children":[["$","$L7",null,{"href":"/categories/game-jam","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#game jam"}],["$","$L7",null,{"href":"/categories/game","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#game"}],["$","$L7",null,{"href":"/categories/published","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#published"}],["$","$L7",null,{"href":"/categories/unity","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#unity"}],["$","$L7",null,{"href":"/categories/shader","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#shader"}],["$","$L7",null,{"href":"/categories/csharp","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#csharp"}],["$","$L7",null,{"href":"/categories/hlsl","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#hlsl"}],["$","$L7",null,{"href":"/categories/collaboration","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#collaboration\r"}]]}],["$","h1",null,{"className":"inline-block mt-6 font-semibold capitalize text-light text-2xl md:text-3xl lg:text-5xl !leading-normal relative","children":"Luminth"}],"$undefined"]}],["$","div",null,{"className":"absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60"}],["$","$L9",null,{"src":"/blogs/luminth-cover.png","placeholder":"blur","blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAY1BMVEX+4mLDy7j4s1r86av2u3/yrIzg0GvrkKr72F/+3F/6xHz80mL8z6TU1LLt12Orrnjngrb/73DxfFPler33qlbwsrj/86WksH3Rt0vZyGPN0KmnlDWluctxi4RoiIxGplu9ytQLwSDUAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAQ0lEQVR4nAXBhQHAIBAAsYMiT7G62/5TNuElSNDDRKkORDT1ftYeIlf+1NI0FpXVkeY04orbW9t6ghC9t4ZzQ4zvzA9pAwLIO4kUGgAAAABJRU5ErkJggg==","alt":"Luminth","width":1280,"height":800,"className":"w-full h-full object-cover object-center false [object Object]","priority":true,"sizes":"100vw"}]]}],["$","div",null,{"className":"grid grid-cols-12  gap-y-8 lg:gap-8 sxl:gap-16 mt-8 px-5 md:px-10","children":[["$","div",null,{"className":"col-span-12  lg:col-span-4","children":["$","details",null,{"className":"border-[1px] border-solid border-dark  text-dark  rounded-lg p-4 sticky top-6 max-h-[80vh] overflow-hidden overflow-y-auto","open":true,"children":[["$","summary",null,{"className":"text-lg font-semibold capitalize cursor-pointer","children":"Table Of Content"}],["$","ul",null,{"className":"mt-4 font-in text-base","children":[["$","li","#background",{"className":"py-1","children":["$","a",null,{"href":"#background","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Background"}]]}]}],["$","li","#my-technical-contributions",{"className":"py-1","children":["$","a",null,{"href":"#my-technical-contributions","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"My Technical Contributions"}]]}]}],["$","li","#1-handled-the-lights-class",{"className":"py-1","children":["$","a",null,{"href":"#1-handled-the-lights-class","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"1. Handled the `Lights` class"}]]}]}],["$","li","#post-game-jam-better-light-visuals-using-shaders-hlsl",{"className":"py-1","children":["$","a",null,{"href":"#post-game-jam-better-light-visuals-using-shaders-hlsl","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"POST-GAME JAM: Better Light Visuals using Shaders (HLSL)"}]]}]}],["$","li","#2-made-the-tutorial-scene",{"className":"py-1","children":["$","a",null,{"href":"#2-made-the-tutorial-scene","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"2. Made the Tutorial Scene"}]]}]}],["$","li","#post-game-jam-better-tutorial",{"className":"py-1","children":["$","a",null,{"href":"#post-game-jam-better-tutorial","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"POST-GAME JAM: Better Tutorial"}]]}]}],["$","li","#3-other-scenes-main-menu-winning-losing-credits-",{"className":"py-1","children":["$","a",null,{"href":"#3-other-scenes-main-menu-winning-losing-credits-","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"3. Other Scenes (Main Menu, Winning, Losing, Credits) "}]]}]}],["$","li","#4-randomised-exit-position-at-every-scene-instantiation-",{"className":"py-1","children":["$","a",null,{"href":"#4-randomised-exit-position-at-every-scene-instantiation-","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"4. Randomised Exit Position at every scene instantiation. "}]]}]}],["$","li","#5-webgl-build-published-in-itchio",{"className":"py-1","children":["$","a",null,{"href":"#5-webgl-build-published-in-itchio","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"5. WebGL Build published in itch.io"}]]}]}],["$","li","#6-post-game-jam-focus-mechanic-using-shaders-hlsl",{"className":"py-1","children":["$","a",null,{"href":"#6-post-game-jam-focus-mechanic-using-shaders-hlsl","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"6. POST-GAME JAM: Focus Mechanic using Shaders (HLSL)"}]]}]}],["$","li","#soft-skills",{"className":"py-1","children":["$","a",null,{"href":"#soft-skills","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Soft-skills"}]]}]}],["$","li","#what-ive-learnt-",{"className":"py-1","children":["$","a",null,{"href":"#what-ive-learnt-","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"What I've Learnt "}]]}]}]]}]]}]}],["$","$La",null,{"blog":{"title":"Luminth","publishedAt":"2024-06-30T00:00:00.000Z","desc":"A polished Game Jam game.","image":{"filePath":"../public/blogs/luminth-cover.png","relativeFilePath":"../../public/blogs/luminth-cover.png","format":"png","height":800,"width":1280,"aspectRatio":1.6,"blurhashDataUrl":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAY1BMVEX+4mLDy7j4s1r86av2u3/yrIzg0GvrkKr72F/+3F/6xHz80mL8z6TU1LLt12Orrnjngrb/73DxfFPler33qlbwsrj/86WksH3Rt0vZyGPN0KmnlDWluctxi4RoiIxGplu9ytQLwSDUAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAQ0lEQVR4nAXBhQHAIBAAsYMiT7G62/5TNuElSNDDRKkORDT1ftYeIlf+1NI0FpXVkeY04orbW9t6ghC9t4ZzQ4zvzA9pAwLIO4kUGgAAAABJRU5ErkJggg=="},"isPublished":true,"redirect":"","tags":["game jam","game","published","unity","shader","csharp","hlsl","collaboration\r"],"body":{"raw":"$b","code":"$c"},"_id":"luminth/index.mdx","_raw":{"sourceFilePath":"luminth/index.mdx","sourceFileName":"index.mdx","sourceFileDir":"luminth","contentType":"mdx","flattenedPath":"luminth"},"type":"Blog","url":"/blogs/luminth","toc":[{"level":"one","text":"Background","slug":"background"},{"level":"one","text":"My Technical Contributions","slug":"my-technical-contributions"},{"level":"two","text":"1. Handled the `Lights` class","slug":"1-handled-the-lights-class"},{"level":"three","text":"POST-GAME JAM: Better Light Visuals using Shaders (HLSL)","slug":"post-game-jam-better-light-visuals-using-shaders-hlsl"},{"level":"two","text":"2. Made the Tutorial Scene","slug":"2-made-the-tutorial-scene"},{"level":"three","text":"POST-GAME JAM: Better Tutorial","slug":"post-game-jam-better-tutorial"},{"level":"two","text":"3. Other Scenes (Main Menu, Winning, Losing, Credits) ","slug":"3-other-scenes-main-menu-winning-losing-credits-"},{"level":"two","text":"4. Randomised Exit Position at every scene instantiation. ","slug":"4-randomised-exit-position-at-every-scene-instantiation-"},{"level":"two","text":"5. WebGL Build published in itch.io","slug":"5-webgl-build-published-in-itchio"},{"level":"two","text":"6. POST-GAME JAM: Focus Mechanic using Shaders (HLSL)","slug":"6-post-game-jam-focus-mechanic-using-shaders-hlsl"},{"level":"one","text":"Soft-skills","slug":"soft-skills"},{"level":"one","text":"What I've Learnt ","slug":"what-ive-learnt-"}]}}]]}]]}]],null],"segment":"__PAGE__?{\"slug\":\"luminth\"}"},"styles":[]}],"segment":["slug","luminth","d"]},"styles":[]}],"segment":"blogs"},"styles":[]}],["$","$Ld",null,{}]]}]}],null]
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Luminth | Raphaele's Portfolio"}],["$","link","2",{"rel":"manifest","href":"/manifest.webmanifest"}],["$","meta","3",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","4",{"name":"robots","content":"index, follow"}],["$","meta","5",{"name":"googlebot","content":"index, follow, noimageindex, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","6",{"property":"og:title","content":"Luminth"}],["$","meta","7",{"property":"og:url","content":"https://raphaeleg.github.io/blogs/luminth"}],["$","meta","8",{"property":"og:site_name","content":"Raphaele's Portfolio"}],["$","meta","9",{"property":"og:locale","content":"en-us"}],["$","meta","10",{"property":"og:image","content":"https://raphaeleg.github.io/blogs/luminth-cover.png"}],["$","meta","11",{"property":"og:type","content":"article"}],["$","meta","12",{"property":"article:published_time","content":"2024-06-30T00:00:00.000Z"}],["$","meta","13",{"property":"article:modified_time","content":"2024-06-30T00:00:00.000Z"}],["$","meta","14",{"property":"article:author","content":"Raphaele's Portfolio"}],["$","meta","15",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","16",{"name":"twitter:title","content":"Luminth"}],["$","meta","17",{"name":"twitter:image","content":"https://raphaeleg.github.io/blogs/luminth-cover.png"}]]
+8:null

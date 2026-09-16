@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://raphaeleg.github.io
+
+# Sitemaps
+Sitemap: https://raphaeleg.github.io/sitemap.xml

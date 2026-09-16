@@ -1,0 +1,246 @@
+1:HL["/_next/static/css/d5e9b3b11173a82b.css","style",{"crossOrigin":""}]
+0:["cn6t2z2UcSyTY0TP4F4Sg",[[["",{"children":["blogs",{"children":[["slug","recreate-william-turner","d"],{"children":["__PAGE__?{\"slug\":\"recreate-william-turner\"}",{}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d5e9b3b11173a82b.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
+4:I[9447,["326","static/chunks/326-1558ba6b642e03ad.js","185","static/chunks/app/layout-94361ac75333a938.js"],""]
+5:I[6954,[],""]
+6:I[7264,[],""]
+7:I[8326,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],""]
+9:I[413,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],"Image"]
+a:I[794,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],""]
+d:I[5659,["326","static/chunks/326-1558ba6b642e03ad.js","185","static/chunks/app/layout-94361ac75333a938.js"],""]
+b:T20a7,
+<Tag
+	link='https://www.shadertoy.com/user/raphaeleg'
+	name='ShaderToy Account and source code'
+	isSolid={false}
+	isNewPage={true}
+/>
+
+New year new graphics adventure! While working on a personal project in UE5, I realised that I needed quite a strong understanding and manipulation of shaders. Although I've [touched High-Level Shader Language (HLSL) in the past](/categories/hlsl), I wanted to invest some time to properly learn some cool techniques the GPU could do. Therefore, **I challenged myself to follow and complete _The Book of Shaders_ in 15 days.**
+
+# What are shaders?
+Shaders can be considered a set of instructions executed for each pixel all at once. In other words, Single Instruction, Multiple Data/Threads (**SIMD/T**). This is one of the many specialties of the GPU, which in itself has a very different approach compared to programming for the CPU. Simply put, your program will be fed to every thread, which they will all simultaneously read, and output a color for their own assigned pixel. In other words, **your program will be read by the pixel itself, and the pixel will determine it's own color solely on your program**. It cannot check what other pixel's colours are, and will only be executed once. 
+
+(This is a massive oversimplification, but essentially highlights the difference between GPU and CPU programming).
+
+# Cool Techniques
+
+I was blown away throughout the whole journey. Things that were intuitive to me was suddenly presented in a beautifully mathematical and logical way. Here are a few highlights:
+
+- **The "Multiply" Blend Mode**: The Multiply Blend Mode appears frequently in many graphics application (e.g. Photoshop, MediBang Paint Pro, ProCreate, etc..). As it's name suggests, it simply multiplies the colours together (rgb×rgb). Since colours only exist in a 0~1 range, 0 being black, 1 being white, multiplying an image with a white circle black background would **mask** the image to the circle (0×rgb will always be 0, black, where 1×rgb will always be rgb, the image's original color).
+
+- **The "Add" Blend Mode**: The Add Blend Mode is another common blend mode in graphics applications. The reason why an adding two colours together leans to a whiter color is because the added value of those colours will **always result to a value closer to 1, white.**
+
+## 1. Patterns
+
+In graphics programming, almost everything is defined in the range 0~1, including the canvas we paint (often called the UV)
+
+<Image
+	src='/blogs/TBOS-UV.png'
+	width='300'
+	height='300'
+	alt='Regular UV'
+	sizes='100vw'
+/>
+
+If we scale the UV to 3, and only use the fraction value of the coordinate (0.001 ~ 0.999), we get a repeating image!
+
+<Image
+	src='/blogs/TBOS-UV3.png'
+	width='300'
+	height='300'
+	alt='Scaled UV'
+	sizes='100vw'
+/>
+
+You can still modify the whole image, such as rotating it like so:
+
+<iframe width="300" height="300" frameborder="0" src="https://www.shadertoy.com/embed/lXGcR3?gui=false&paused=false&muted=true" allowfullscreen></iframe> 
+
+Or even specify a unique animation based on the tile's index! "Moving Polkadots" used alternating directions based on the tile's row and column.
+
+<iframe width="300" height="300" frameborder="0" src="https://www.shadertoy.com/embed/l3ycR3?gui=false&paused=false&muted=true" allowfullscreen></iframe>
+
+## 2. Randomness
+
+A surprising discovery was that the basis of randomness is the fraction value of sin!
+
+<Image
+	src='/blogs/TBOS-rand.png'
+	width='600'
+	height='300'
+	alt='fract(sin(x))'
+	sizes='100vw'
+/>
+
+To "choose" a random value is to use the coordinate numbers itself in the random equation. In this example, we take the **integer** coordinate of the scaled UV to produce 9 or 100 random values. 
+
+```glsl
+float random (vec2 st) {
+    return fract(sin(dot(st.xy,vec2(12.9898,78.233)))*43758.5453123);
+}
+
+void main() {
+    uv *= 10.0; // Scale the coordinate system by 10
+    vec2 ipos = floor(uv);  // get the integer coords
+    // vec2 fpos = fract(uv);  // the fractional coords
+
+    // Assign a random value based on the integer coord
+    vec3 color = vec3(random( ipos ));
+
+    gl_FragColor = vec4(color,1.0);
+}
+```
+<Image
+	src='/blogs/TBOS-randScale.png'
+	width='600'
+	height='300'
+	alt='Scaled randomness'
+	sizes='100vw'
+/>
+
+That's the basis of my very simple "HackerMan" Shader, where I only take values that pass a specific threshold to look like lines of code. 
+
+<iframe width="300" height="300" frameborder="0" src="https://www.shadertoy.com/embed/l3Gyz3?gui=false&paused=false&muted=true" allowfullscreen></iframe>
+
+## 3. Noise
+
+Randomness is the very foundation of noise, where graphics starts to look more "organic".
+
+Throughout the years, there has been multiple techniques such as Value Noise, Gradient Noise, and Simplex Noise. Without going into too much detail, the concept is to **mix multiple random outputs together**.
+
+At this point, I finally felt confident in GLSL to mix colours and create the shapes I wanted. As a challenge, I imitated brushstrokes using noise, using Mark Rothko's painting _Three_ (1950) as a reference.
+
+<Image
+	src='/blogs/TBOS-MRThree1950.jpg'
+	width='640'
+	height='300'
+	alt='Mark Rothko Three'
+	sizes='100vw'
+/>
+_Mark Rothko, Three (1950)_
+<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/MXycWy?gui=false&paused=true&muted=true" allowfullscreen></iframe>
+_My shader, three types of brushstrokes_
+
+To add on top of our new technique, we can also create fractal-like noise using **Fractal Brownian Motion (fBm)**, which **mix multiple noise textures together**. To create finer details, more noise textures can be added at a smaller power.
+
+"Blue Noise" is my highest viewed shader for it's complexity and beauty, showing the power of fBm. 
+
+<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/4XKcW3?gui=false&paused=false&muted=true" allowfullscreen></iframe>
+
+# Challenge: Recreating _The Fighting Temeraire_
+
+After a long journey, I decided to challenge myself by recreating this painting.
+
+<Image
+	src='/blogs/TBOS-Turner.jpg'
+	width='640'
+	height='300'
+	alt='Mark Rothko Three'
+	sizes='100vw'
+/>
+
+_William Turner, The Fighting Temeraire (1838)_
+
+This was an earlier painting referenced as an exercise from _The Book of Shaders_ in very early chapters. I wanted to revisit this painting with my newfound knowledge because **the colours were absolutely stunning**.
+
+There were 2 parts to the painting: The sea and the sky. I used fBm for both the waves and the clouds in different ways.
+
+- The challenge with the sea was the mixture of different gradients. I wanted to approach this in a logical way, separating each main colour in their own gradient mask, then adding them all together. As for the texture, a stretched fBm with a white outline was used.
+
+- As for the sky, I used 2 different threshold ranges of the fBm to render the clouds, one for the blue sky, and another for the sunset influence. I wanted to highlight the halo effect a cloud texture would produce under the sunlight.
+
+<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/M33fzr?gui=false&paused=false&muted=true" allowfullscreen></iframe>
+
+I would've never imagined that rendering something like this would take **less than 130 lines**. Given more time, I would definitely look into giving the clouds some density instead of this smog-like texture. I would've also tweaked the colouring to give more of the brilliant sunrays the original painting has. 
+
+# Conclusion
+
+The mathematics behind the outputs were heavily rewarded with stunning visuals I never would've expected. Unfortunately, the Book of Shaders discontinued from this chapter onwards, which means that there's still a lot more to learn in shader world. Nevertheless, the knowledge I gained from this challenge will definitely help me in future projects involving shaders.
+
+Thank you for reading through my journey! This is the first out of 24 planned projects to delve further in graphics programming, hopefully the next few projects will be as rewarding as this one!
+
+<Tag
+	link='https://www.shadertoy.com/user/raphaeleg'
+	name='ShaderToy Account and source code'
+	isSolid={true}
+	isNewPage={true}
+/>
+c:T4921,var Component=(()=>{var p=Object.create;var o=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var y=Object.getPrototypeOf,m=Object.prototype.hasOwnProperty;var f=(l,e)=>()=>(e||l((e={exports:{}}).exports,e),e.exports),w=(l,e)=>{for(var r in e)o(l,r,{get:e[r],enumerable:!0})},a=(l,e,r,t)=>{if(e&&typeof e=="object"||typeof e=="function")for(let i of g(e))!m.call(l,i)&&i!==r&&o(l,i,{get:()=>e[i],enumerable:!(t=u(e,i))||t.enumerable});return l};var A=(l,e,r)=>(r=l!=null?p(y(l)):{},a(e||!l||!l.__esModule?o(r,"default",{value:l,enumerable:!0}):r,l)),b=l=>a(o({},"__esModule",{value:!0}),l);var h=f((C,s)=>{s.exports=_jsx_runtime});var T={};w(T,{default:()=>k,frontmatter:()=>E});var n=A(h()),E={title:'Recreating "The Fighting Temeraire" using shaders',desc:"and other techniques for creating stunning graphics in GLSL",image:"../../public/blogs/TBOS-cover.gif",publishedAt:"2025-01-15",isPublished:!0,redirect:"",tags:["graphics","shader","experiment","glsl","solo"]};function c(l){let e=Object.assign({p:"p",a:"a",strong:"strong",em:"em",h1:"h1",span:"span",ul:"ul",li:"li",h2:"h2",div:"div",pre:"pre",code:"code"},l.components),{Tag:r,Image:t}=e;return t||d("Image",!0),r||d("Tag",!0),(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(r,{link:"https://www.shadertoy.com/user/raphaeleg",name:"ShaderToy Account and source code",isSolid:!1,isNewPage:!0}),`
+`,(0,n.jsxs)(e.p,{children:["New year new graphics adventure! While working on a personal project in UE5, I realised that I needed quite a strong understanding and manipulation of shaders. Although I've ",(0,n.jsx)(e.a,{href:"/categories/hlsl",children:"touched High-Level Shader Language (HLSL) in the past"}),", I wanted to invest some time to properly learn some cool techniques the GPU could do. Therefore, ",(0,n.jsxs)(e.strong,{children:["I challenged myself to follow and complete ",(0,n.jsx)(e.em,{children:"The Book of Shaders"})," in 15 days."]})]}),`
+`,(0,n.jsxs)(e.h1,{id:"what-are-shaders",children:["What are shaders?",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#what-are-shaders",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.p,{children:["Shaders can be considered a set of instructions executed for each pixel all at once. In other words, Single Instruction, Multiple Data/Threads (",(0,n.jsx)(e.strong,{children:"SIMD/T"}),"). This is one of the many specialties of the GPU, which in itself has a very different approach compared to programming for the CPU. Simply put, your program will be fed to every thread, which they will all simultaneously read, and output a color for their own assigned pixel. In other words, ",(0,n.jsx)(e.strong,{children:"your program will be read by the pixel itself, and the pixel will determine it's own color solely on your program"}),". It cannot check what other pixel's colours are, and will only be executed once."]}),`
+`,(0,n.jsx)(e.p,{children:"(This is a massive oversimplification, but essentially highlights the difference between GPU and CPU programming)."}),`
+`,(0,n.jsxs)(e.h1,{id:"cool-techniques",children:["Cool Techniques",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#cool-techniques",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(e.p,{children:"I was blown away throughout the whole journey. Things that were intuitive to me was suddenly presented in a beautifully mathematical and logical way. Here are a few highlights:"}),`
+`,(0,n.jsxs)(e.ul,{children:[`
+`,(0,n.jsxs)(e.li,{children:[`
+`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.strong,{children:'The "Multiply" Blend Mode'}),": The Multiply Blend Mode appears frequently in many graphics application (e.g. Photoshop, MediBang Paint Pro, ProCreate, etc..). As it's name suggests, it simply multiplies the colours together (rgb\xD7rgb). Since colours only exist in a 0~1 range, 0 being black, 1 being white, multiplying an image with a white circle black background would ",(0,n.jsx)(e.strong,{children:"mask"})," the image to the circle (0\xD7rgb will always be 0, black, where 1\xD7rgb will always be rgb, the image's original color)."]}),`
+`]}),`
+`,(0,n.jsxs)(e.li,{children:[`
+`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.strong,{children:'The "Add" Blend Mode'}),": The Add Blend Mode is another common blend mode in graphics applications. The reason why an adding two colours together leans to a whiter color is because the added value of those colours will ",(0,n.jsx)(e.strong,{children:"always result to a value closer to 1, white."})]}),`
+`]}),`
+`]}),`
+`,(0,n.jsxs)(e.h2,{id:"1-patterns",children:["1. Patterns",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#1-patterns",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(e.p,{children:"In graphics programming, almost everything is defined in the range 0~1, including the canvas we paint (often called the UV)"}),`
+`,(0,n.jsx)(t,{src:"/blogs/TBOS-UV.png",width:"300",height:"300",alt:"Regular UV",sizes:"100vw"}),`
+`,(0,n.jsx)(e.p,{children:"If we scale the UV to 3, and only use the fraction value of the coordinate (0.001 ~ 0.999), we get a repeating image!"}),`
+`,(0,n.jsx)(t,{src:"/blogs/TBOS-UV3.png",width:"300",height:"300",alt:"Scaled UV",sizes:"100vw"}),`
+`,(0,n.jsx)(e.p,{children:"You can still modify the whole image, such as rotating it like so:"}),`
+`,(0,n.jsx)("iframe",{width:"300",height:"300",frameborder:"0",src:"https://www.shadertoy.com/embed/lXGcR3?gui=false&paused=false&muted=true",allowfullscreen:!0}),`
+`,(0,n.jsx)(e.p,{children:`Or even specify a unique animation based on the tile's index! "Moving Polkadots" used alternating directions based on the tile's row and column.`}),`
+`,(0,n.jsx)("iframe",{width:"300",height:"300",frameborder:"0",src:"https://www.shadertoy.com/embed/l3ycR3?gui=false&paused=false&muted=true",allowfullscreen:!0}),`
+`,(0,n.jsxs)(e.h2,{id:"2-randomness",children:["2. Randomness",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#2-randomness",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(e.p,{children:"A surprising discovery was that the basis of randomness is the fraction value of sin!"}),`
+`,(0,n.jsx)(t,{src:"/blogs/TBOS-rand.png",width:"600",height:"300",alt:"fract(sin(x))",sizes:"100vw"}),`
+`,(0,n.jsxs)(e.p,{children:['To "choose" a random value is to use the coordinate numbers itself in the random equation. In this example, we take the ',(0,n.jsx)(e.strong,{children:"integer"})," coordinate of the scaled UV to produce 9 or 100 random values."]}),`
+`,(0,n.jsx)(e.div,{"data-rehype-pretty-code-fragment":"",children:(0,n.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"glsl","data-theme":"default",children:(0,n.jsxs)(e.code,{"data-language":"glsl","data-theme":"default",children:[(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"random"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"vec2 "}),(0,n.jsx)(e.span,{style:{color:"#C4A7E7",fontStyle:"italic"},children:"st"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:")"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"{"})]}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"    "}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"fract"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"sin"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"dot"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"st"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"."}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"xy"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"vec2"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"12.9898"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"78.233"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:")))"}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"*"}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"43758.5453123"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,n.jsx)(e.span,{"data-line":"",children:(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"}"})}),`
+`,(0,n.jsx)(e.span,{"data-line":""}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"void"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"main"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"()"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"{"})]}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"    uv "}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"*="}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"10.0"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:";"}),(0,n.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#908CAA",fontStyle:"italic"},children:"//"}),(0,n.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:" Scale the coordinate system by 10"})]}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"    vec2 ipos "}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"floor"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"uv"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:");"}),(0,n.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:"  "}),(0,n.jsx)(e.span,{style:{color:"#908CAA",fontStyle:"italic"},children:"//"}),(0,n.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:" get the integer coords"})]}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"    "}),(0,n.jsx)(e.span,{style:{color:"#908CAA",fontStyle:"italic"},children:"//"}),(0,n.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:" vec2 fpos = fract(uv);  // the fractional coords"})]}),`
+`,(0,n.jsx)(e.span,{"data-line":""}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"    "}),(0,n.jsx)(e.span,{style:{color:"#908CAA",fontStyle:"italic"},children:"//"}),(0,n.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:" Assign a random value based on the integer coord"})]}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"    vec3 color "}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"vec3"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"random"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" ipos "}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"));"})]}),`
+`,(0,n.jsx)(e.span,{"data-line":""}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"    gl_FragColor "}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"vec4"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"color"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"1.0"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,n.jsx)(e.span,{"data-line":"",children:(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"}"})})]})})}),`
+`,(0,n.jsx)(t,{src:"/blogs/TBOS-randScale.png",width:"600",height:"300",alt:"Scaled randomness",sizes:"100vw"}),`
+`,(0,n.jsx)(e.p,{children:`That's the basis of my very simple "HackerMan" Shader, where I only take values that pass a specific threshold to look like lines of code.`}),`
+`,(0,n.jsx)("iframe",{width:"300",height:"300",frameborder:"0",src:"https://www.shadertoy.com/embed/l3Gyz3?gui=false&paused=false&muted=true",allowfullscreen:!0}),`
+`,(0,n.jsxs)(e.h2,{id:"3-noise",children:["3. Noise",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#3-noise",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(e.p,{children:'Randomness is the very foundation of noise, where graphics starts to look more "organic".'}),`
+`,(0,n.jsxs)(e.p,{children:["Throughout the years, there has been multiple techniques such as Value Noise, Gradient Noise, and Simplex Noise. Without going into too much detail, the concept is to ",(0,n.jsx)(e.strong,{children:"mix multiple random outputs together"}),"."]}),`
+`,(0,n.jsxs)(e.p,{children:["At this point, I finally felt confident in GLSL to mix colours and create the shapes I wanted. As a challenge, I imitated brushstrokes using noise, using Mark Rothko's painting ",(0,n.jsx)(e.em,{children:"Three"})," (1950) as a reference."]}),`
+`,(0,n.jsx)(t,{src:"/blogs/TBOS-MRThree1950.jpg",width:"640",height:"300",alt:"Mark Rothko Three",sizes:"100vw"}),`
+`,(0,n.jsx)(e.p,{children:(0,n.jsx)(e.em,{children:"Mark Rothko, Three (1950)"})}),`
+`,(0,n.jsx)("iframe",{width:"640",height:"360",frameborder:"0",src:"https://www.shadertoy.com/embed/MXycWy?gui=false&paused=true&muted=true",allowfullscreen:!0}),`
+`,(0,n.jsx)(e.p,{children:(0,n.jsx)(e.em,{children:"My shader, three types of brushstrokes"})}),`
+`,(0,n.jsxs)(e.p,{children:["To add on top of our new technique, we can also create fractal-like noise using ",(0,n.jsx)(e.strong,{children:"Fractal Brownian Motion (fBm)"}),", which ",(0,n.jsx)(e.strong,{children:"mix multiple noise textures together"}),". To create finer details, more noise textures can be added at a smaller power."]}),`
+`,(0,n.jsx)(e.p,{children:`"Blue Noise" is my highest viewed shader for it's complexity and beauty, showing the power of fBm.`}),`
+`,(0,n.jsx)("iframe",{width:"640",height:"360",frameborder:"0",src:"https://www.shadertoy.com/embed/4XKcW3?gui=false&paused=false&muted=true",allowfullscreen:!0}),`
+`,(0,n.jsxs)(e.h1,{id:"challenge-recreating-the-fighting-temeraire",children:["Challenge: Recreating ",(0,n.jsx)(e.em,{children:"The Fighting Temeraire"}),(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#challenge-recreating-the-fighting-temeraire",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(e.p,{children:"After a long journey, I decided to challenge myself by recreating this painting."}),`
+`,(0,n.jsx)(t,{src:"/blogs/TBOS-Turner.jpg",width:"640",height:"300",alt:"Mark Rothko Three",sizes:"100vw"}),`
+`,(0,n.jsx)(e.p,{children:(0,n.jsx)(e.em,{children:"William Turner, The Fighting Temeraire (1838)"})}),`
+`,(0,n.jsxs)(e.p,{children:["This was an earlier painting referenced as an exercise from ",(0,n.jsx)(e.em,{children:"The Book of Shaders"})," in very early chapters. I wanted to revisit this painting with my newfound knowledge because ",(0,n.jsx)(e.strong,{children:"the colours were absolutely stunning"}),"."]}),`
+`,(0,n.jsx)(e.p,{children:"There were 2 parts to the painting: The sea and the sky. I used fBm for both the waves and the clouds in different ways."}),`
+`,(0,n.jsxs)(e.ul,{children:[`
+`,(0,n.jsxs)(e.li,{children:[`
+`,(0,n.jsx)(e.p,{children:"The challenge with the sea was the mixture of different gradients. I wanted to approach this in a logical way, separating each main colour in their own gradient mask, then adding them all together. As for the texture, a stretched fBm with a white outline was used."}),`
+`]}),`
+`,(0,n.jsxs)(e.li,{children:[`
+`,(0,n.jsx)(e.p,{children:"As for the sky, I used 2 different threshold ranges of the fBm to render the clouds, one for the blue sky, and another for the sunset influence. I wanted to highlight the halo effect a cloud texture would produce under the sunlight."}),`
+`]}),`
+`]}),`
+`,(0,n.jsx)("iframe",{width:"640",height:"360",frameborder:"0",src:"https://www.shadertoy.com/embed/M33fzr?gui=false&paused=false&muted=true",allowfullscreen:!0}),`
+`,(0,n.jsxs)(e.p,{children:["I would've never imagined that rendering something like this would take ",(0,n.jsx)(e.strong,{children:"less than 130 lines"}),". Given more time, I would definitely look into giving the clouds some density instead of this smog-like texture. I would've also tweaked the colouring to give more of the brilliant sunrays the original painting has."]}),`
+`,(0,n.jsxs)(e.h1,{id:"conclusion",children:["Conclusion",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#conclusion",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(e.p,{children:"The mathematics behind the outputs were heavily rewarded with stunning visuals I never would've expected. Unfortunately, the Book of Shaders discontinued from this chapter onwards, which means that there's still a lot more to learn in shader world. Nevertheless, the knowledge I gained from this challenge will definitely help me in future projects involving shaders."}),`
+`,(0,n.jsx)(e.p,{children:"Thank you for reading through my journey! This is the first out of 24 planned projects to delve further in graphics programming, hopefully the next few projects will be as rewarding as this one!"}),`
+`,(0,n.jsx)(r,{link:"https://www.shadertoy.com/user/raphaeleg",name:"ShaderToy Account and source code",isSolid:!0,isNewPage:!0})]})}function v(l={}){let{wrapper:e}=l.components||{};return e?(0,n.jsx)(e,Object.assign({},l,{children:(0,n.jsx)(c,l)})):c(l)}var k=v;function d(l,e){throw new Error("Expected "+(e?"component":"object")+" `"+l+"` to be defined: you likely forgot to import, pass, or provide it.")}return b(T);})();
+;return Component;2:[null,["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__variable_f367f3 __variable_73ee6c font-mr bg-light","children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":["$","main",null,{"className":"my-32 w-full h-[55vh] flex justify-center font-mr","children":["$","div",null,{"className":"relative flex flex-col items-center justify-center","children":[["$","h1",null,{"className":"inline-block text-dark \n      text-6xl font-bold w-full capitalize xl:text-8xl text-center","children":"404"}],["$","h2",null,{"className":"inline-block text-dark \n      text-5xl font-bold w-full capitalize xl:text-6xl text-center mt-4 tracking-wide leading-snug","children":"Page Not Found!"}],["$","$L7",null,{"href":"/","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light m-12","children":"Go To Home"}]]}]}],"notFoundStyles":[],"childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children",["slug","recreate-william-turner","d"],"children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$L8",[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Recreating \\\"The Fighting Temeraire\\\" using shaders\",\"image\":[\"https://raphaeleg.github.io/blogs/TBOS-cover.gif\"],\"datePublished\":\"2025-01-15T00:00:00.000Z\",\"dateModified\":\"2025-01-15T00:00:00.000Z\",\"author\":[{\"@type\":\"Person\",\"name\":\"Raphaele's Portfolio\",\"url\":\"https://www.linkedin.com/in/raphaele-michelle-guillemot-6a34271a8/\"}]}"}}],["$","article",null,{"children":[["$","div",null,{"className":"mb-8 text-center relative w-full h-[50vh] bg-dark","children":[["$","div",null,{"className":"w-5/6 z-10 flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2","children":[["$","span",null,{"children":[["$","$L7",null,{"href":"/categories/graphics","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#graphics"}],["$","$L7",null,{"href":"/categories/shader","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#shader"}],["$","$L7",null,{"href":"/categories/experiment","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#experiment"}],["$","$L7",null,{"href":"/categories/glsl","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#glsl"}],["$","$L7",null,{"href":"/categories/solo","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#solo\r"}]]}],["$","h1",null,{"className":"inline-block mt-6 font-semibold capitalize text-light text-2xl md:text-3xl lg:text-5xl !leading-normal relative","children":"Recreating \"The Fighting Temeraire\" using shaders"}],"$undefined"]}],["$","div",null,{"className":"absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60"}],["$","$L9",null,{"src":"/blogs/TBOS-cover.gif","placeholder":"blur","blurDataURL":"data:image/gif;base64,R0lGODlhCAAIAIYAAExpcb+jibtzR+esZa2QiruUebuJdH5jT9SPZ7h0RKRiS9WVWbhzSuSlaKViQtefcdaLa96gZIJgVLS5wqx/dsekgtGLV5OSp41YRdSOZLJrQcKLcqFbQqSpt5hcOqRzXsCAbreDd4dTN9GcZcnFr8SGVZadsMWFToRjTbCwtYt8YbCRiJmJbZaixKZ6W52FjtyWX4KEpMeKXMOgf19QQuKpaGJQQ82QWaiNdL+HW6Cgr76Ud8mEa0w+NbasoqRpRs+KXgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFAwAAACwAAAAACAAIAAAHQoATKQE5CScjMy06BSULAzUVHRcrDw0RNzsmMS8bGUAIBiQ+BCE8ECAUKiw4HwocGBI9Nig/AhoeIjQHLjIwFgwOgQA7","alt":"Recreating \"The Fighting Temeraire\" using shaders","width":1280,"height":720,"className":"w-full h-full object-cover object-center false [object Object]","priority":true,"sizes":"100vw"}]]}],["$","div",null,{"className":"grid grid-cols-12  gap-y-8 lg:gap-8 sxl:gap-16 mt-8 px-5 md:px-10","children":[["$","div",null,{"className":"col-span-12  lg:col-span-4","children":["$","details",null,{"className":"border-[1px] border-solid border-dark  text-dark  rounded-lg p-4 sticky top-6 max-h-[80vh] overflow-hidden overflow-y-auto","open":true,"children":[["$","summary",null,{"className":"text-lg font-semibold capitalize cursor-pointer","children":"Table Of Content"}],["$","ul",null,{"className":"mt-4 font-in text-base","children":[["$","li","#what-are-shaders",{"className":"py-1","children":["$","a",null,{"href":"#what-are-shaders","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"What are shaders?"}]]}]}],["$","li","#cool-techniques",{"className":"py-1","children":["$","a",null,{"href":"#cool-techniques","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Cool Techniques"}]]}]}],["$","li","#1-patterns",{"className":"py-1","children":["$","a",null,{"href":"#1-patterns","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"1. Patterns"}]]}]}],["$","li","#2-randomness",{"className":"py-1","children":["$","a",null,{"href":"#2-randomness","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"2. Randomness"}]]}]}],["$","li","#3-noise",{"className":"py-1","children":["$","a",null,{"href":"#3-noise","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"3. Noise"}]]}]}],["$","li","#challenge-recreating-_the-fighting-temeraire_",{"className":"py-1","children":["$","a",null,{"href":"#challenge-recreating-_the-fighting-temeraire_","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Challenge: Recreating _The Fighting Temeraire_"}]]}]}],["$","li","#conclusion",{"className":"py-1","children":["$","a",null,{"href":"#conclusion","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Conclusion"}]]}]}]]}]]}]}],["$","$La",null,{"blog":{"title":"Recreating \"The Fighting Temeraire\" using shaders","publishedAt":"2025-01-15T00:00:00.000Z","desc":"and other techniques for creating stunning graphics in GLSL","image":{"filePath":"../public/blogs/TBOS-cover.gif","relativeFilePath":"../../public/blogs/TBOS-cover.gif","format":"gif","height":720,"width":1280,"aspectRatio":1.7777777777777777,"blurhashDataUrl":"data:image/gif;base64,R0lGODlhCAAIAIYAAExpcb+jibtzR+esZa2QiruUebuJdH5jT9SPZ7h0RKRiS9WVWbhzSuSlaKViQtefcdaLa96gZIJgVLS5wqx/dsekgtGLV5OSp41YRdSOZLJrQcKLcqFbQqSpt5hcOqRzXsCAbreDd4dTN9GcZcnFr8SGVZadsMWFToRjTbCwtYt8YbCRiJmJbZaixKZ6W52FjtyWX4KEpMeKXMOgf19QQuKpaGJQQ82QWaiNdL+HW6Cgr76Ud8mEa0w+NbasoqRpRs+KXgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFAwAAACwAAAAACAAIAAAHQoATKQE5CScjMy06BSULAzUVHRcrDw0RNzsmMS8bGUAIBiQ+BCE8ECAUKiw4HwocGBI9Nig/AhoeIjQHLjIwFgwOgQA7"},"isPublished":true,"redirect":"","tags":["graphics","shader","experiment","glsl","solo\r"],"body":{"raw":"$b","code":"$c"},"_id":"recreate-william-turner/index.mdx","_raw":{"sourceFilePath":"recreate-william-turner/index.mdx","sourceFileName":"index.mdx","sourceFileDir":"recreate-william-turner","contentType":"mdx","flattenedPath":"recreate-william-turner"},"type":"Blog","url":"/blogs/recreate-william-turner","toc":[{"level":"one","text":"What are shaders?","slug":"what-are-shaders"},{"level":"one","text":"Cool Techniques","slug":"cool-techniques"},{"level":"two","text":"1. Patterns","slug":"1-patterns"},{"level":"two","text":"2. Randomness","slug":"2-randomness"},{"level":"two","text":"3. Noise","slug":"3-noise"},{"level":"one","text":"Challenge: Recreating _The Fighting Temeraire_","slug":"challenge-recreating-_the-fighting-temeraire_"},{"level":"one","text":"Conclusion","slug":"conclusion"}]}}]]}]]}]],null],"segment":"__PAGE__?{\"slug\":\"recreate-william-turner\"}"},"styles":[]}],"segment":["slug","recreate-william-turner","d"]},"styles":[]}],"segment":"blogs"},"styles":[]}],["$","$Ld",null,{}]]}]}],null]
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Recreating \"The Fighting Temeraire\" using shaders | Raphaele's Portfolio"}],["$","link","2",{"rel":"manifest","href":"/manifest.webmanifest"}],["$","meta","3",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","4",{"name":"robots","content":"index, follow"}],["$","meta","5",{"name":"googlebot","content":"index, follow, noimageindex, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","6",{"property":"og:title","content":"Recreating \"The Fighting Temeraire\" using shaders"}],["$","meta","7",{"property":"og:url","content":"https://raphaeleg.github.io/blogs/recreate-william-turner"}],["$","meta","8",{"property":"og:site_name","content":"Raphaele's Portfolio"}],["$","meta","9",{"property":"og:locale","content":"en-us"}],["$","meta","10",{"property":"og:image","content":"https://raphaeleg.github.io/blogs/TBOS-cover.gif"}],["$","meta","11",{"property":"og:type","content":"article"}],["$","meta","12",{"property":"article:published_time","content":"2025-01-15T00:00:00.000Z"}],["$","meta","13",{"property":"article:modified_time","content":"2025-01-15T00:00:00.000Z"}],["$","meta","14",{"property":"article:author","content":"Raphaele's Portfolio"}],["$","meta","15",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","16",{"name":"twitter:title","content":"Recreating \"The Fighting Temeraire\" using shaders"}],["$","meta","17",{"name":"twitter:image","content":"https://raphaeleg.github.io/blogs/TBOS-cover.gif"}]]
+8:null

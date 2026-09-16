@@ -1,0 +1,169 @@
+1:HL["/_next/static/css/d5e9b3b11173a82b.css","style",{"crossOrigin":""}]
+0:["cn6t2z2UcSyTY0TP4F4Sg",[[["",{"children":["blogs",{"children":[["slug","tectonicus","d"],{"children":["__PAGE__?{\"slug\":\"tectonicus\"}",{}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d5e9b3b11173a82b.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
+4:I[9447,["326","static/chunks/326-1558ba6b642e03ad.js","185","static/chunks/app/layout-94361ac75333a938.js"],""]
+5:I[6954,[],""]
+6:I[7264,[],""]
+7:I[8326,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],""]
+9:I[413,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],"Image"]
+a:I[794,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],""]
+d:I[5659,["326","static/chunks/326-1558ba6b642e03ad.js","185","static/chunks/app/layout-94361ac75333a938.js"],""]
+b:T1726,
+Interned at Gamucatex for 2 months as a Software Engineer in C#. Heavily contributed towards the pre-production development of _Tectonicus: At the Edge of War_.
+
+<iframe
+	src='https://itch.io/embed/1745993'
+	width='552'
+	height='167'
+	frameborder='0'>
+	<a href='https://gamucatex.itch.io/tectonicus'>
+		Tectonicus: On the Edge of War by GAMUCATEX
+	</a>
+</iframe>
+
+# Background
+
+Gamucatex had undergone structural changes, resulting in a highly **flexible team** of developers.
+
+To adapt to these changes, I worked on **refactoring** the codebase for better adaptability, and effectively **communicating** the development progress.
+
+These efforts had a **significant impact on the pre-production successes of Gamucatex**.
+
+---
+
+## 1. Exclusive features for game's showcase at Roskilde Festival
+
+My onboarding task was to develop key exclusive features for showcasing Tectonicus at the 2023 Roskilde Festival, Northern Europe's largest music and arts festival. This lasted one sprint cycle, where I **oversaw the development to publishing process**.
+
+| Energy-Saving Button                                                                                             | Obtain Exclusive Cards                                                                                                                                                                                                                                                                                       |
+| ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <Image src='/blogs/tectonicus-greenbtn.png' width='250' height='250' alt='Energy-Saving Button' sizes='100vw' /> | <Image src='/blogs/tectonicus-1.jpg' width='450' height='250' alt='Obtain Exclusive Cards' sizes='100vw' />                                                                                                                                                                                                  |
+| The button enabled the game to run on a **lower FPS and lower resolution graphics**, becoming more energy-efficient. | - Created **additional card data** of whether the players have a specific card<br/>- Created a function that takes a unique string to **gift the user new cards.**<br/><br/>This feature had to be written in **generic code** so that game designers could enter any number of exclusive strings and cards they wanted. |
+
+---
+
+## 2. Refactoring the codebase's architecture
+
+<Image src='/blogs/tectonicus-3.png' width='300' height='300' alt='Card Architecture' sizes='100vw' />
+
+In the game, players use units that represent units with specific abilities to win. However, the class architecture for units was **limited in supporting a wider range of required abilities.** To address this, I worked on **refactoring** the units class to make it **easier for future developers and designers to add unique abilities.**
+
+<Image
+	src='/blogs/tectonicus-4.jpg'
+	width='500'
+	height='500'
+	alt='Card Architecture'
+	sizes='100vw'
+/>
+
+
+Let's say we want to make **ability durations** span more than one turn. 
+- This can be achieved by keeping track of the **number of turns that had passed** in the ability class. 
+- This also meant that it was necessary to explicitly write whether an ability was to last forever, like a permanent buff.
+
+Hopefully by writing explication as such, it was easier to read the code, and specify how exactly the abilities should behave.
+
+---
+
+## 3. Directions to better UX/UI
+
+Previously, the game lacked a specialized focus on UXUI, which was a major issue at Roskilde Festival. Having experience in UXUI, I **collaborated with developers and artists** to improve the game's interface.
+
+<Image
+	src='/blogs/tectonicus-2.jpg'
+	width='500'
+	height='500'
+	alt='Card Architecture'
+	sizes='100vw'
+/>
+
+We communicated what technicalities were possible or needed to achieve the UXUI designer's vision (file type, size, and layers needed), leading to a **comprehensive action plan** and streamlined **task delegation** between departments.
+
+---
+
+## 4. Friendly Documentation
+
+Technical documentation is crucial not only for future developers, but also for game designers to better understand the developer's workflow.
+
+I extensively reworked the technical documentation to make it more **reader-friendly** and **efficient for onboarding**. This involved:
+- Eliminating outdated information
+- Adding more test cases
+- Providing examples of certain features
+- Refining the standard development process for writing code, creating SCRUM cards, and version control.
+
+---
+
+# Summary
+
+I positively impacted the pre-production development of _Tectonicus: At the Edge of War_ through my contributions in...
+
+1. **Refactoring** the codebase's architecture to **support more features**, and
+2. Greatly **communicating with cross-functional teams** to improve the cross-disciplinary field of UX/UI;
+
+# What I've Learnt
+
+1. **Complex architecture**: Refactoring the card abilities gave me a glimpse of managing complex architectures
+2. **Agile and Scrum**: Experienced two full **sprint cycles**, including code reviews and version control.
+3. **Collaboration**: Worked with many people in different departments from documentation to initiatives, and saw my work in the **grander pipeline**.
+
+<iframe
+	src='https://itch.io/embed/1745993'
+	width='552'
+	height='167'
+	frameborder='0'>
+	<a href='https://gamucatex.itch.io/tectonicus'>
+		Tectonicus: On the Edge of War by GAMUCATEX
+	</a>
+</iframe>
+c:T2882,var Component=(()=>{var l=Object.create;var a=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,m=Object.prototype.hasOwnProperty;var f=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),b=(t,e)=>{for(var i in e)a(t,i,{get:e[i],enumerable:!0})},c=(t,e,i,o)=>{if(e&&typeof e=="object"||typeof e=="function")for(let r of g(e))!m.call(t,r)&&r!==i&&a(t,r,{get:()=>e[r],enumerable:!(o=u(e,r))||o.enumerable});return t};var w=(t,e,i)=>(i=t!=null?l(p(t)):{},c(e||!t||!t.__esModule?a(i,"default",{value:t,enumerable:!0}):i,t)),v=t=>c(a({},"__esModule",{value:!0}),t);var d=f((C,s)=>{s.exports=_jsx_runtime});var E={};b(E,{default:()=>k,frontmatter:()=>y});var n=w(d()),y={title:"Tectonicus: At the Egde of War",desc:"My Legacy as an Intern at GAMUCATEX.",image:"../../public/blogs/tectonicus-cover.png",publishedAt:"2023-07-10",isPublished:!0,redirect:"",tags:["published","game","unity","csharp","code-architecture","collaboration"]};function h(t){let e=Object.assign({p:"p",em:"em",h1:"h1",a:"a",span:"span",strong:"strong",hr:"hr",h2:"h2",table:"table",thead:"thead",tr:"tr",th:"th",tbody:"tbody",td:"td",ul:"ul",li:"li",ol:"ol"},t.components),{Image:i}=e;return i||I("Image",!0),(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.p,{children:["Interned at Gamucatex for 2 months as a Software Engineer in C#. Heavily contributed towards the pre-production development of ",(0,n.jsx)(e.em,{children:"Tectonicus: At the Edge of War"}),"."]}),`
+`,(0,n.jsx)("iframe",{src:"https://itch.io/embed/1745993",width:"552",height:"167",frameborder:"0",children:(0,n.jsx)("a",{href:"https://gamucatex.itch.io/tectonicus",children:(0,n.jsx)(e.p,{children:"Tectonicus: On the Edge of War by GAMUCATEX"})})}),`
+`,(0,n.jsxs)(e.h1,{id:"background",children:["Background",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#background",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.p,{children:["Gamucatex had undergone structural changes, resulting in a highly ",(0,n.jsx)(e.strong,{children:"flexible team"})," of developers."]}),`
+`,(0,n.jsxs)(e.p,{children:["To adapt to these changes, I worked on ",(0,n.jsx)(e.strong,{children:"refactoring"})," the codebase for better adaptability, and effectively ",(0,n.jsx)(e.strong,{children:"communicating"})," the development progress."]}),`
+`,(0,n.jsxs)(e.p,{children:["These efforts had a ",(0,n.jsx)(e.strong,{children:"significant impact on the pre-production successes of Gamucatex"}),"."]}),`
+`,(0,n.jsx)(e.hr,{}),`
+`,(0,n.jsxs)(e.h2,{id:"1-exclusive-features-for-games-showcase-at-roskilde-festival",children:["1. Exclusive features for game's showcase at Roskilde Festival",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#1-exclusive-features-for-games-showcase-at-roskilde-festival",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.p,{children:["My onboarding task was to develop key exclusive features for showcasing Tectonicus at the 2023 Roskilde Festival, Northern Europe's largest music and arts festival. This lasted one sprint cycle, where I ",(0,n.jsx)(e.strong,{children:"oversaw the development to publishing process"}),"."]}),`
+`,(0,n.jsxs)(e.table,{children:[(0,n.jsx)(e.thead,{children:(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.th,{children:"Energy-Saving Button"}),(0,n.jsx)(e.th,{children:"Obtain Exclusive Cards"})]})}),(0,n.jsxs)(e.tbody,{children:[(0,n.jsxs)(e.tr,{children:[(0,n.jsx)(e.td,{children:(0,n.jsx)(i,{src:"/blogs/tectonicus-greenbtn.png",width:"250",height:"250",alt:"Energy-Saving Button",sizes:"100vw"})}),(0,n.jsx)(e.td,{children:(0,n.jsx)(i,{src:"/blogs/tectonicus-1.jpg",width:"450",height:"250",alt:"Obtain Exclusive Cards",sizes:"100vw"})})]}),(0,n.jsxs)(e.tr,{children:[(0,n.jsxs)(e.td,{children:["The button enabled the game to run on a ",(0,n.jsx)(e.strong,{children:"lower FPS and lower resolution graphics"}),", becoming more energy-efficient."]}),(0,n.jsxs)(e.td,{children:["- Created ",(0,n.jsx)(e.strong,{children:"additional card data"})," of whether the players have a specific card",(0,n.jsx)("br",{}),"- Created a function that takes a unique string to ",(0,n.jsx)(e.strong,{children:"gift the user new cards."}),(0,n.jsx)("br",{}),(0,n.jsx)("br",{}),"This feature had to be written in ",(0,n.jsx)(e.strong,{children:"generic code"})," so that game designers could enter any number of exclusive strings and cards they wanted."]})]})]})]}),`
+`,(0,n.jsx)(e.hr,{}),`
+`,(0,n.jsxs)(e.h2,{id:"2-refactoring-the-codebases-architecture",children:["2. Refactoring the codebase's architecture",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#2-refactoring-the-codebases-architecture",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(i,{src:"/blogs/tectonicus-3.png",width:"300",height:"300",alt:"Card Architecture",sizes:"100vw"}),`
+`,(0,n.jsxs)(e.p,{children:["In the game, players use units that represent units with specific abilities to win. However, the class architecture for units was ",(0,n.jsx)(e.strong,{children:"limited in supporting a wider range of required abilities."})," To address this, I worked on ",(0,n.jsx)(e.strong,{children:"refactoring"})," the units class to make it ",(0,n.jsx)(e.strong,{children:"easier for future developers and designers to add unique abilities."})]}),`
+`,(0,n.jsx)(i,{src:"/blogs/tectonicus-4.jpg",width:"500",height:"500",alt:"Card Architecture",sizes:"100vw"}),`
+`,(0,n.jsxs)(e.p,{children:["Let's say we want to make ",(0,n.jsx)(e.strong,{children:"ability durations"})," span more than one turn."]}),`
+`,(0,n.jsxs)(e.ul,{children:[`
+`,(0,n.jsxs)(e.li,{children:["This can be achieved by keeping track of the ",(0,n.jsx)(e.strong,{children:"number of turns that had passed"})," in the ability class."]}),`
+`,(0,n.jsx)(e.li,{children:"This also meant that it was necessary to explicitly write whether an ability was to last forever, like a permanent buff."}),`
+`]}),`
+`,(0,n.jsx)(e.p,{children:"Hopefully by writing explication as such, it was easier to read the code, and specify how exactly the abilities should behave."}),`
+`,(0,n.jsx)(e.hr,{}),`
+`,(0,n.jsxs)(e.h2,{id:"3-directions-to-better-uxui",children:["3. Directions to better UX/UI",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#3-directions-to-better-uxui",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.p,{children:["Previously, the game lacked a specialized focus on UXUI, which was a major issue at Roskilde Festival. Having experience in UXUI, I ",(0,n.jsx)(e.strong,{children:"collaborated with developers and artists"})," to improve the game's interface."]}),`
+`,(0,n.jsx)(i,{src:"/blogs/tectonicus-2.jpg",width:"500",height:"500",alt:"Card Architecture",sizes:"100vw"}),`
+`,(0,n.jsxs)(e.p,{children:["We communicated what technicalities were possible or needed to achieve the UXUI designer's vision (file type, size, and layers needed), leading to a ",(0,n.jsx)(e.strong,{children:"comprehensive action plan"})," and streamlined ",(0,n.jsx)(e.strong,{children:"task delegation"})," between departments."]}),`
+`,(0,n.jsx)(e.hr,{}),`
+`,(0,n.jsxs)(e.h2,{id:"4-friendly-documentation",children:["4. Friendly Documentation",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#4-friendly-documentation",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(e.p,{children:"Technical documentation is crucial not only for future developers, but also for game designers to better understand the developer's workflow."}),`
+`,(0,n.jsxs)(e.p,{children:["I extensively reworked the technical documentation to make it more ",(0,n.jsx)(e.strong,{children:"reader-friendly"})," and ",(0,n.jsx)(e.strong,{children:"efficient for onboarding"}),". This involved:"]}),`
+`,(0,n.jsxs)(e.ul,{children:[`
+`,(0,n.jsx)(e.li,{children:"Eliminating outdated information"}),`
+`,(0,n.jsx)(e.li,{children:"Adding more test cases"}),`
+`,(0,n.jsx)(e.li,{children:"Providing examples of certain features"}),`
+`,(0,n.jsx)(e.li,{children:"Refining the standard development process for writing code, creating SCRUM cards, and version control."}),`
+`]}),`
+`,(0,n.jsx)(e.hr,{}),`
+`,(0,n.jsxs)(e.h1,{id:"summary",children:["Summary",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#summary",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.p,{children:["I positively impacted the pre-production development of ",(0,n.jsx)(e.em,{children:"Tectonicus: At the Edge of War"})," through my contributions in..."]}),`
+`,(0,n.jsxs)(e.ol,{children:[`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Refactoring"})," the codebase's architecture to ",(0,n.jsx)(e.strong,{children:"support more features"}),", and"]}),`
+`,(0,n.jsxs)(e.li,{children:["Greatly ",(0,n.jsx)(e.strong,{children:"communicating with cross-functional teams"})," to improve the cross-disciplinary field of UX/UI;"]}),`
+`]}),`
+`,(0,n.jsxs)(e.h1,{id:"what-ive-learnt",children:["What I've Learnt",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#what-ive-learnt",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.ol,{children:[`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Complex architecture"}),": Refactoring the card abilities gave me a glimpse of managing complex architectures"]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Agile and Scrum"}),": Experienced two full ",(0,n.jsx)(e.strong,{children:"sprint cycles"}),", including code reviews and version control."]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Collaboration"}),": Worked with many people in different departments from documentation to initiatives, and saw my work in the ",(0,n.jsx)(e.strong,{children:"grander pipeline"}),"."]}),`
+`]}),`
+`,(0,n.jsx)("iframe",{src:"https://itch.io/embed/1745993",width:"552",height:"167",frameborder:"0",children:(0,n.jsx)("a",{href:"https://gamucatex.itch.io/tectonicus",children:(0,n.jsx)(e.p,{children:"Tectonicus: On the Edge of War by GAMUCATEX"})})})]})}function x(t={}){let{wrapper:e}=t.components||{};return e?(0,n.jsx)(e,Object.assign({},t,{children:(0,n.jsx)(h,t)})):h(t)}var k=x;function I(t,e){throw new Error("Expected "+(e?"component":"object")+" `"+t+"` to be defined: you likely forgot to import, pass, or provide it.")}return v(E);})();
+;return Component;2:[null,["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__variable_f367f3 __variable_73ee6c font-mr bg-light","children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":["$","main",null,{"className":"my-32 w-full h-[55vh] flex justify-center font-mr","children":["$","div",null,{"className":"relative flex flex-col items-center justify-center","children":[["$","h1",null,{"className":"inline-block text-dark \n      text-6xl font-bold w-full capitalize xl:text-8xl text-center","children":"404"}],["$","h2",null,{"className":"inline-block text-dark \n      text-5xl font-bold w-full capitalize xl:text-6xl text-center mt-4 tracking-wide leading-snug","children":"Page Not Found!"}],["$","$L7",null,{"href":"/","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light m-12","children":"Go To Home"}]]}]}],"notFoundStyles":[],"childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children",["slug","tectonicus","d"],"children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$L8",[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Tectonicus: At the Egde of War\",\"image\":[\"https://raphaeleg.github.io/blogs/tectonicus-cover.png\"],\"datePublished\":\"2023-07-10T00:00:00.000Z\",\"dateModified\":\"2023-07-10T00:00:00.000Z\",\"author\":[{\"@type\":\"Person\",\"name\":\"Raphaele's Portfolio\",\"url\":\"https://www.linkedin.com/in/raphaele-michelle-guillemot-6a34271a8/\"}]}"}}],["$","article",null,{"children":[["$","div",null,{"className":"mb-8 text-center relative w-full h-[50vh] bg-dark","children":[["$","div",null,{"className":"w-5/6 z-10 flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2","children":[["$","span",null,{"children":[["$","$L7",null,{"href":"/categories/published","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#published"}],["$","$L7",null,{"href":"/categories/game","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#game"}],["$","$L7",null,{"href":"/categories/unity","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#unity"}],["$","$L7",null,{"href":"/categories/csharp","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#csharp"}],["$","$L7",null,{"href":"/categories/code-architecture","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#code-architecture"}],["$","$L7",null,{"href":"/categories/collaboration","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#collaboration\r"}]]}],["$","h1",null,{"className":"inline-block mt-6 font-semibold capitalize text-light text-2xl md:text-3xl lg:text-5xl !leading-normal relative","children":"Tectonicus: At the Egde of War"}],"$undefined"]}],["$","div",null,{"className":"absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60"}],["$","$L9",null,{"src":"/blogs/tectonicus-cover.png","placeholder":"blur","blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAaVBMVEUHGSYVSGIXJisiOD4xEw4kRE81T1ojMjMIIy4UNDYrOUB3iWFxnI9ZiXY0Zmdlj4AaXHROs6UDFBssPEAZDBAnT2IzX3hDXWJVkoxgZk5OX1VLbWiIjlwARGlMQC1Ky8FGuruZiXR+r5A1hlpHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAARUlEQVR4nB3GRRKAMBAEwIlt3HAn8P9HUkWfGtuec213xer9EUt6scQQykkP0kyMMXWBplE5ZSWcEL22RkJzrv8ABh0wfI3IAxz+NnvmAAAAAElFTkSuQmCC","alt":"Tectonicus: At the Egde of War","width":1201,"height":800,"className":"w-full h-full object-cover object-center false [object Object]","priority":true,"sizes":"100vw"}]]}],["$","div",null,{"className":"grid grid-cols-12  gap-y-8 lg:gap-8 sxl:gap-16 mt-8 px-5 md:px-10","children":[["$","div",null,{"className":"col-span-12  lg:col-span-4","children":["$","details",null,{"className":"border-[1px] border-solid border-dark  text-dark  rounded-lg p-4 sticky top-6 max-h-[80vh] overflow-hidden overflow-y-auto","open":true,"children":[["$","summary",null,{"className":"text-lg font-semibold capitalize cursor-pointer","children":"Table Of Content"}],["$","ul",null,{"className":"mt-4 font-in text-base","children":[["$","li","#background",{"className":"py-1","children":["$","a",null,{"href":"#background","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Background"}]]}]}],["$","li","#1-exclusive-features-for-games-showcase-at-roskilde-festival",{"className":"py-1","children":["$","a",null,{"href":"#1-exclusive-features-for-games-showcase-at-roskilde-festival","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"1. Exclusive features for game's showcase at Roskilde Festival"}]]}]}],["$","li","#2-refactoring-the-codebases-architecture",{"className":"py-1","children":["$","a",null,{"href":"#2-refactoring-the-codebases-architecture","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"2. Refactoring the codebase's architecture"}]]}]}],["$","li","#3-directions-to-better-uxui",{"className":"py-1","children":["$","a",null,{"href":"#3-directions-to-better-uxui","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"3. Directions to better UX/UI"}]]}]}],["$","li","#4-friendly-documentation",{"className":"py-1","children":["$","a",null,{"href":"#4-friendly-documentation","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"4. Friendly Documentation"}]]}]}],["$","li","#summary",{"className":"py-1","children":["$","a",null,{"href":"#summary","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Summary"}]]}]}],["$","li","#what-ive-learnt",{"className":"py-1","children":["$","a",null,{"href":"#what-ive-learnt","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"What I've Learnt"}]]}]}]]}]]}]}],["$","$La",null,{"blog":{"title":"Tectonicus: At the Egde of War","publishedAt":"2023-07-10T00:00:00.000Z","desc":"My Legacy as an Intern at GAMUCATEX.","image":{"filePath":"../public/blogs/tectonicus-cover.png","relativeFilePath":"../../public/blogs/tectonicus-cover.png","format":"png","height":800,"width":1201,"aspectRatio":1.50125,"blurhashDataUrl":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAaVBMVEUHGSYVSGIXJisiOD4xEw4kRE81T1ojMjMIIy4UNDYrOUB3iWFxnI9ZiXY0Zmdlj4AaXHROs6UDFBssPEAZDBAnT2IzX3hDXWJVkoxgZk5OX1VLbWiIjlwARGlMQC1Ky8FGuruZiXR+r5A1hlpHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAARUlEQVR4nB3GRRKAMBAEwIlt3HAn8P9HUkWfGtuec213xer9EUt6scQQykkP0kyMMXWBplE5ZSWcEL22RkJzrv8ABh0wfI3IAxz+NnvmAAAAAElFTkSuQmCC"},"isPublished":true,"redirect":"","tags":["published","game","unity","csharp","code-architecture","collaboration\r"],"body":{"raw":"$b","code":"$c"},"_id":"tectonicus/index.mdx","_raw":{"sourceFilePath":"tectonicus/index.mdx","sourceFileName":"index.mdx","sourceFileDir":"tectonicus","contentType":"mdx","flattenedPath":"tectonicus"},"type":"Blog","url":"/blogs/tectonicus","toc":[{"level":"one","text":"Background","slug":"background"},{"level":"two","text":"1. Exclusive features for game's showcase at Roskilde Festival","slug":"1-exclusive-features-for-games-showcase-at-roskilde-festival"},{"level":"two","text":"2. Refactoring the codebase's architecture","slug":"2-refactoring-the-codebases-architecture"},{"level":"two","text":"3. Directions to better UX/UI","slug":"3-directions-to-better-uxui"},{"level":"two","text":"4. Friendly Documentation","slug":"4-friendly-documentation"},{"level":"one","text":"Summary","slug":"summary"},{"level":"one","text":"What I've Learnt","slug":"what-ive-learnt"}]}}]]}]]}]],null],"segment":"__PAGE__?{\"slug\":\"tectonicus\"}"},"styles":[]}],"segment":["slug","tectonicus","d"]},"styles":[]}],"segment":"blogs"},"styles":[]}],["$","$Ld",null,{}]]}]}],null]
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Tectonicus: At the Egde of War | Raphaele's Portfolio"}],["$","link","2",{"rel":"manifest","href":"/manifest.webmanifest"}],["$","meta","3",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","4",{"name":"robots","content":"index, follow"}],["$","meta","5",{"name":"googlebot","content":"index, follow, noimageindex, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","6",{"property":"og:title","content":"Tectonicus: At the Egde of War"}],["$","meta","7",{"property":"og:url","content":"https://raphaeleg.github.io/blogs/tectonicus"}],["$","meta","8",{"property":"og:site_name","content":"Raphaele's Portfolio"}],["$","meta","9",{"property":"og:locale","content":"en-us"}],["$","meta","10",{"property":"og:image","content":"https://raphaeleg.github.io/blogs/tectonicus-cover.png"}],["$","meta","11",{"property":"og:type","content":"article"}],["$","meta","12",{"property":"article:published_time","content":"2023-07-10T00:00:00.000Z"}],["$","meta","13",{"property":"article:modified_time","content":"2023-07-10T00:00:00.000Z"}],["$","meta","14",{"property":"article:author","content":"Raphaele's Portfolio"}],["$","meta","15",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","16",{"name":"twitter:title","content":"Tectonicus: At the Egde of War"}],["$","meta","17",{"name":"twitter:image","content":"https://raphaeleg.github.io/blogs/tectonicus-cover.png"}]]
+8:null

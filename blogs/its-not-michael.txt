@@ -1,0 +1,168 @@
+1:HL["/_next/static/css/d5e9b3b11173a82b.css","style",{"crossOrigin":""}]
+0:["cn6t2z2UcSyTY0TP4F4Sg",[[["",{"children":["blogs",{"children":[["slug","its-not-michael","d"],{"children":["__PAGE__?{\"slug\":\"its-not-michael\"}",{}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d5e9b3b11173a82b.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
+4:I[9447,["326","static/chunks/326-1558ba6b642e03ad.js","185","static/chunks/app/layout-94361ac75333a938.js"],""]
+5:I[6954,[],""]
+6:I[7264,[],""]
+7:I[8326,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],""]
+9:I[413,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],"Image"]
+a:I[794,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],""]
+d:I[5659,["326","static/chunks/326-1558ba6b642e03ad.js","185","static/chunks/app/layout-94361ac75333a938.js"],""]
+b:Teeb,
+Learnt the fundamentals of level design by creating a horror game, which heavily relies on evoking the right emotions.
+
+<iframe
+	width='560'
+	height='315'
+	src='https://www.youtube.com/embed/zq8Z-0FiINI?si=8ApO3UrQgiUvDzdW'
+	title='YouTube video player'
+	frameborder='0'
+	allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+	referrerpolicy='strict-origin-when-cross-origin'
+	allowfullscreen></iframe>
+
+# Project Goals
+
+1. Plan and design a level layout to enhance the gameplay, given the strict requirements
+2. Use framing and composition to present the level and guide the player
+3. World-building, narrative and implicit storytelling elements;
+4. Production steps involved in designing and creating a game level.
+
+# Core Challenges
+
+1. **Setting the story**: Can players understand the story and their objective when they start playing the game?
+2. **Evoking fear**: How to engage the player with tension and paranoia?
+3. **Guided Maze**: Can all players navigate through a “maze” experience without getting lost or frustrated?
+
+# Solutions
+
+<Image
+	src='/blogs/notmichael-l1-babycry.gif'
+	width='300'
+	height='300'
+	alt='Approach Baby'
+	sizes='100vw'
+/> | <Image
+	src='/blogs/notmichael-l2-1684-638x359.png'
+	width='300'
+	height='300'
+	alt='1684 on a Wall'
+	sizes='100vw'
+/> | <Image
+	src='/blogs/notmichael-l3-playground.gif'
+	width='300'
+	height='300'
+	alt='Playground'
+	sizes='100vw'
+/>
+---|---|--- **Onboarding section**: Start the game with a simple yet effective cutscene,
+and collectible items that shed hints about the story | **Slow-burn rising action**:
+As players explore, include more events and cues based on every action they take,
+suggesting an unknown presence. | **The illusion of non-linearity**: 1) Make a primary
+critical path that never allows backtracking naturally. 2) Keep the maze small yet
+highly explorable. 3) Orient players with landmarks and signs
+
+# How players are guided
+
+<Image
+	src='/blogs/notmichael-l2-hallway.gif'
+	width='270'
+	height='270'
+	alt='Playground'
+	sizes='100vw'
+/> | <Image
+	src='/blogs/notmichael-l3-beginning.gif'
+	width='270'
+	height='270'
+	alt='Enter ChildCare Facility'
+	sizes='100vw'
+/> | <Image
+	src='/blogs/notmichael-l3-toyshelffull.gif'
+	width='270'
+	height='270'
+	alt='Barrier'
+	sizes='100vw'
+/>
+---|---|--- **Lighting** heavily encourages players to favour certain routes, and
+changes when obtaining the flashlight | **Audio lines and spatial sound** serves
+as a progression through the maze | Locking doors, keys, and physical **barriers**
+determines how the player **navigate** through the level
+
+<Image
+	src='/blogs/notmichael-1.png'
+	width='1200'
+	height='1200'
+	alt='map'
+	sizes='100vw'
+/>
+
+## Using Blueprints to create events
+
+<Image
+	src='/blogs/notmichael-blueprints.png'
+	width='1200'
+	height='1200'
+	alt='Barrier'
+	sizes='100vw'
+/>
+For this specific example: 1. Trigger when the player enters a box collider 2. Checks
+information about current game state 3. If true, Play Sound and Timeline of an object
+changing rotation through time 4. Confirm event completion by changing game state
+
+# What I've Learnt
+
+1. **Tools**: Lighting, audio and physical barriers are good methods to guide the players through a level
+2. **Set Dressing**: Effective set dress doesn’t use too much that confuses the players, nor too little to keep the players immersed.
+3. **For an emotionally evoking genre such as horror:**
+   1. Set dressing and audio matters and cannot be fully realized in whitebox
+   2. Each experience is different, some people are more sensitive to jumpscares or cues than others
+   3. The playtesting environment heavily affects the player’s experience and feelings
+c:T1d3f,var Component=(()=>{var d=Object.create;var a=Object.defineProperty;var g=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,m=Object.prototype.hasOwnProperty;var y=(i,e)=>()=>(e||i((e={exports:{}}).exports,e),e.exports),b=(i,e)=>{for(var t in e)a(i,t,{get:e[t],enumerable:!0})},o=(i,e,t,l)=>{if(e&&typeof e=="object"||typeof e=="function")for(let r of p(e))!m.call(i,r)&&r!==t&&a(i,r,{get:()=>e[r],enumerable:!(l=g(e,r))||l.enumerable});return i};var f=(i,e,t)=>(t=i!=null?d(u(i)):{},o(e||!i||!i.__esModule?a(t,"default",{value:i,enumerable:!0}):t,i)),v=i=>o(a({},"__esModule",{value:!0}),i);var h=y((C,s)=>{s.exports=_jsx_runtime});var j={};b(j,{default:()=>k,frontmatter:()=>w});var n=f(h()),w={title:"It's Not Michael",desc:"Find your son and escape the hospital",image:"../../public/blogs/notmichael-cover.png",publishedAt:"2023-11-23",isPublished:!0,redirect:"",tags:["level design","game","UE5-blueprints","collaboration"]};function c(i){let e=Object.assign({p:"p",h1:"h1",a:"a",span:"span",ol:"ol",li:"li",strong:"strong",h2:"h2"},i.components),{Image:t}=e;return t||z("Image",!0),(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(e.p,{children:"Learnt the fundamentals of level design by creating a horror game, which heavily relies on evoking the right emotions."}),`
+`,(0,n.jsx)("iframe",{width:"560",height:"315",src:"https://www.youtube.com/embed/zq8Z-0FiINI?si=8ApO3UrQgiUvDzdW",title:"YouTube video player",frameborder:"0",allow:"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",referrerpolicy:"strict-origin-when-cross-origin",allowfullscreen:!0}),`
+`,(0,n.jsxs)(e.h1,{id:"project-goals",children:["Project Goals",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#project-goals",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.ol,{children:[`
+`,(0,n.jsx)(e.li,{children:"Plan and design a level layout to enhance the gameplay, given the strict requirements"}),`
+`,(0,n.jsx)(e.li,{children:"Use framing and composition to present the level and guide the player"}),`
+`,(0,n.jsx)(e.li,{children:"World-building, narrative and implicit storytelling elements;"}),`
+`,(0,n.jsx)(e.li,{children:"Production steps involved in designing and creating a game level."}),`
+`]}),`
+`,(0,n.jsxs)(e.h1,{id:"core-challenges",children:["Core Challenges",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#core-challenges",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.ol,{children:[`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Setting the story"}),": Can players understand the story and their objective when they start playing the game?"]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Evoking fear"}),": How to engage the player with tension and paranoia?"]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Guided Maze"}),": Can all players navigate through a \u201Cmaze\u201D experience without getting lost or frustrated?"]}),`
+`]}),`
+`,(0,n.jsxs)(e.h1,{id:"solutions",children:["Solutions",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#solutions",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(t,{src:"/blogs/notmichael-l1-babycry.gif",width:"300",height:"300",alt:"Approach Baby",sizes:"100vw"})," | ",(0,n.jsx)(t,{src:"/blogs/notmichael-l2-1684-638x359.png",width:"300",height:"300",alt:"1684 on a Wall",sizes:"100vw"})," | ",(0,n.jsx)(t,{src:"/blogs/notmichael-l3-playground.gif",width:"300",height:"300",alt:"Playground",sizes:"100vw"}),`\r
+---|---|--- `,(0,n.jsx)(e.strong,{children:"Onboarding section"}),`: Start the game with a simple yet effective cutscene,\r
+and collectible items that shed hints about the story | `,(0,n.jsx)(e.strong,{children:"Slow-burn rising action"}),`:\r
+As players explore, include more events and cues based on every action they take,\r
+suggesting an unknown presence. | `,(0,n.jsx)(e.strong,{children:"The illusion of non-linearity"}),`: 1) Make a primary\r
+critical path that never allows backtracking naturally. 2) Keep the maze small yet\r
+highly explorable. 3) Orient players with landmarks and signs`]}),`
+`,(0,n.jsxs)(e.h1,{id:"how-players-are-guided",children:["How players are guided",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#how-players-are-guided",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(t,{src:"/blogs/notmichael-l2-hallway.gif",width:"270",height:"270",alt:"Playground",sizes:"100vw"})," | ",(0,n.jsx)(t,{src:"/blogs/notmichael-l3-beginning.gif",width:"270",height:"270",alt:"Enter ChildCare Facility",sizes:"100vw"})," | ",(0,n.jsx)(t,{src:"/blogs/notmichael-l3-toyshelffull.gif",width:"270",height:"270",alt:"Barrier",sizes:"100vw"}),`\r
+---|---|--- `,(0,n.jsx)(e.strong,{children:"Lighting"}),` heavily encourages players to favour certain routes, and\r
+changes when obtaining the flashlight | `,(0,n.jsx)(e.strong,{children:"Audio lines and spatial sound"}),` serves\r
+as a progression through the maze | Locking doors, keys, and physical `,(0,n.jsx)(e.strong,{children:"barriers"}),`\r
+determines how the player `,(0,n.jsx)(e.strong,{children:"navigate"})," through the level"]}),`
+`,(0,n.jsx)(t,{src:"/blogs/notmichael-1.png",width:"1200",height:"1200",alt:"map",sizes:"100vw"}),`
+`,(0,n.jsxs)(e.h2,{id:"using-blueprints-to-create-events",children:["Using Blueprints to create events",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#using-blueprints-to-create-events",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(t,{src:"/blogs/notmichael-blueprints.png",width:"1200",height:"1200",alt:"Barrier",sizes:"100vw"}),`
+`,(0,n.jsx)(e.p,{children:`For this specific example: 1. Trigger when the player enters a box collider 2. Checks\r
+information about current game state 3. If true, Play Sound and Timeline of an object\r
+changing rotation through time 4. Confirm event completion by changing game state`}),`
+`,(0,n.jsxs)(e.h1,{id:"what-ive-learnt",children:["What I've Learnt",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#what-ive-learnt",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.ol,{children:[`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Tools"}),": Lighting, audio and physical barriers are good methods to guide the players through a level"]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"Set Dressing"}),": Effective set dress doesn\u2019t use too much that confuses the players, nor too little to keep the players immersed."]}),`
+`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:"For an emotionally evoking genre such as horror:"}),`
+`,(0,n.jsxs)(e.ol,{children:[`
+`,(0,n.jsx)(e.li,{children:"Set dressing and audio matters and cannot be fully realized in whitebox"}),`
+`,(0,n.jsx)(e.li,{children:"Each experience is different, some people are more sensitive to jumpscares or cues than others"}),`
+`,(0,n.jsx)(e.li,{children:"The playtesting environment heavily affects the player\u2019s experience and feelings"}),`
+`]}),`
+`]}),`
+`]})]})}function x(i={}){let{wrapper:e}=i.components||{};return e?(0,n.jsx)(e,Object.assign({},i,{children:(0,n.jsx)(c,i)})):c(i)}var k=x;function z(i,e){throw new Error("Expected "+(e?"component":"object")+" `"+i+"` to be defined: you likely forgot to import, pass, or provide it.")}return v(j);})();
+;return Component;2:[null,["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__variable_f367f3 __variable_73ee6c font-mr bg-light","children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":["$","main",null,{"className":"my-32 w-full h-[55vh] flex justify-center font-mr","children":["$","div",null,{"className":"relative flex flex-col items-center justify-center","children":[["$","h1",null,{"className":"inline-block text-dark \n      text-6xl font-bold w-full capitalize xl:text-8xl text-center","children":"404"}],["$","h2",null,{"className":"inline-block text-dark \n      text-5xl font-bold w-full capitalize xl:text-6xl text-center mt-4 tracking-wide leading-snug","children":"Page Not Found!"}],["$","$L7",null,{"href":"/","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light m-12","children":"Go To Home"}]]}]}],"notFoundStyles":[],"childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children",["slug","its-not-michael","d"],"children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$L8",[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"It's Not Michael\",\"image\":[\"https://raphaeleg.github.io/blogs/notmichael-cover.png\"],\"datePublished\":\"2023-11-23T00:00:00.000Z\",\"dateModified\":\"2023-11-23T00:00:00.000Z\",\"author\":[{\"@type\":\"Person\",\"name\":\"Raphaele's Portfolio\",\"url\":\"https://www.linkedin.com/in/raphaele-michelle-guillemot-6a34271a8/\"}]}"}}],["$","article",null,{"children":[["$","div",null,{"className":"mb-8 text-center relative w-full h-[50vh] bg-dark","children":[["$","div",null,{"className":"w-5/6 z-10 flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2","children":[["$","span",null,{"children":[["$","$L7",null,{"href":"/categories/level-design","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#level design"}],["$","$L7",null,{"href":"/categories/game","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#game"}],["$","$L7",null,{"href":"/categories/ue5-blueprints","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#UE5-blueprints"}],["$","$L7",null,{"href":"/categories/collaboration","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#collaboration\r"}]]}],["$","h1",null,{"className":"inline-block mt-6 font-semibold capitalize text-light text-2xl md:text-3xl lg:text-5xl !leading-normal relative","children":"It's Not Michael"}],"$undefined"]}],["$","div",null,{"className":"absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60"}],["$","$L9",null,{"src":"/blogs/notmichael-cover.png","placeholder":"blur","blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAPFBMVEUqKiRycWdJQztARTxPU0q7vLWVmY46OjN7f3SLjoRGS0KsrqWfpZtgXVStsqhrZVwsGxeutK8aCQgeCghuZ9iEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAXBBwKAMAgEsIMyCx3q//9qAgA+VgjcIbUzMIaEahumxKNahjmps7bB+QRZG3D9UCbh/S6vxfwDPREB4dAGkvoAAAAASUVORK5CYII=","alt":"It's Not Michael","width":1280,"height":800,"className":"w-full h-full object-cover object-center false [object Object]","priority":true,"sizes":"100vw"}]]}],["$","div",null,{"className":"grid grid-cols-12  gap-y-8 lg:gap-8 sxl:gap-16 mt-8 px-5 md:px-10","children":[["$","div",null,{"className":"col-span-12  lg:col-span-4","children":["$","details",null,{"className":"border-[1px] border-solid border-dark  text-dark  rounded-lg p-4 sticky top-6 max-h-[80vh] overflow-hidden overflow-y-auto","open":true,"children":[["$","summary",null,{"className":"text-lg font-semibold capitalize cursor-pointer","children":"Table Of Content"}],["$","ul",null,{"className":"mt-4 font-in text-base","children":[["$","li","#project-goals",{"className":"py-1","children":["$","a",null,{"href":"#project-goals","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Project Goals"}]]}]}],["$","li","#core-challenges",{"className":"py-1","children":["$","a",null,{"href":"#core-challenges","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Core Challenges"}]]}]}],["$","li","#solutions",{"className":"py-1","children":["$","a",null,{"href":"#solutions","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Solutions"}]]}]}],["$","li","#how-players-are-guided",{"className":"py-1","children":["$","a",null,{"href":"#how-players-are-guided","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"How players are guided"}]]}]}],["$","li","#using-blueprints-to-create-events",{"className":"py-1","children":["$","a",null,{"href":"#using-blueprints-to-create-events","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Using Blueprints to create events"}]]}]}],["$","li","#what-ive-learnt",{"className":"py-1","children":["$","a",null,{"href":"#what-ive-learnt","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"What I've Learnt"}]]}]}]]}]]}]}],["$","$La",null,{"blog":{"title":"It's Not Michael","publishedAt":"2023-11-23T00:00:00.000Z","desc":"Find your son and escape the hospital","image":{"filePath":"../public/blogs/notmichael-cover.png","relativeFilePath":"../../public/blogs/notmichael-cover.png","format":"png","height":800,"width":1280,"aspectRatio":1.6,"blurhashDataUrl":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAPFBMVEUqKiRycWdJQztARTxPU0q7vLWVmY46OjN7f3SLjoRGS0KsrqWfpZtgXVStsqhrZVwsGxeutK8aCQgeCghuZ9iEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPklEQVR4nAXBBwKAMAgEsIMyCx3q//9qAgA+VgjcIbUzMIaEahumxKNahjmps7bB+QRZG3D9UCbh/S6vxfwDPREB4dAGkvoAAAAASUVORK5CYII="},"isPublished":true,"redirect":"","tags":["level design","game","UE5-blueprints","collaboration\r"],"body":{"raw":"$b","code":"$c"},"_id":"its-not-michael/index.mdx","_raw":{"sourceFilePath":"its-not-michael/index.mdx","sourceFileName":"index.mdx","sourceFileDir":"its-not-michael","contentType":"mdx","flattenedPath":"its-not-michael"},"type":"Blog","url":"/blogs/its-not-michael","toc":[{"level":"one","text":"Project Goals","slug":"project-goals"},{"level":"one","text":"Core Challenges","slug":"core-challenges"},{"level":"one","text":"Solutions","slug":"solutions"},{"level":"one","text":"How players are guided","slug":"how-players-are-guided"},{"level":"two","text":"Using Blueprints to create events","slug":"using-blueprints-to-create-events"},{"level":"one","text":"What I've Learnt","slug":"what-ive-learnt"}]}}]]}]]}]],null],"segment":"__PAGE__?{\"slug\":\"its-not-michael\"}"},"styles":[]}],"segment":["slug","its-not-michael","d"]},"styles":[]}],"segment":"blogs"},"styles":[]}],["$","$Ld",null,{}]]}]}],null]
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"It's Not Michael | Raphaele's Portfolio"}],["$","link","2",{"rel":"manifest","href":"/manifest.webmanifest"}],["$","meta","3",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","4",{"name":"robots","content":"index, follow"}],["$","meta","5",{"name":"googlebot","content":"index, follow, noimageindex, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","6",{"property":"og:title","content":"It's Not Michael"}],["$","meta","7",{"property":"og:url","content":"https://raphaeleg.github.io/blogs/its-not-michael"}],["$","meta","8",{"property":"og:site_name","content":"Raphaele's Portfolio"}],["$","meta","9",{"property":"og:locale","content":"en-us"}],["$","meta","10",{"property":"og:image","content":"https://raphaeleg.github.io/blogs/notmichael-cover.png"}],["$","meta","11",{"property":"og:type","content":"article"}],["$","meta","12",{"property":"article:published_time","content":"2023-11-23T00:00:00.000Z"}],["$","meta","13",{"property":"article:modified_time","content":"2023-11-23T00:00:00.000Z"}],["$","meta","14",{"property":"article:author","content":"Raphaele's Portfolio"}],["$","meta","15",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","16",{"name":"twitter:title","content":"It's Not Michael"}],["$","meta","17",{"name":"twitter:image","content":"https://raphaeleg.github.io/blogs/notmichael-cover.png"}]]
+8:null

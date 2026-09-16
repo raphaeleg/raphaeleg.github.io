@@ -1,0 +1,260 @@
+1:HL["/_next/static/css/d5e9b3b11173a82b.css","style",{"crossOrigin":""}]
+0:["cn6t2z2UcSyTY0TP4F4Sg",[[["",{"children":["blogs",{"children":[["slug","when-stars-collapse","d"],{"children":["__PAGE__?{\"slug\":\"when-stars-collapse\"}",{}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d5e9b3b11173a82b.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
+4:I[9447,["326","static/chunks/326-1558ba6b642e03ad.js","185","static/chunks/app/layout-94361ac75333a938.js"],""]
+5:I[6954,[],""]
+6:I[7264,[],""]
+7:I[8326,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],""]
+9:I[413,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],"Image"]
+a:I[794,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],""]
+d:I[5659,["326","static/chunks/326-1558ba6b642e03ad.js","185","static/chunks/app/layout-94361ac75333a938.js"],""]
+b:T19e2,
+Watch as your stars live, thrive and die...and all over again.
+
+<iframe
+	frameborder='0'
+	src='https://itch.io/embed/2890438?bg_color=4e3a3a&amp;fg_color=f6cabc&amp;border_color=181017'
+	width='552'
+	height='167'>
+	<a href='https://megaletan.itch.io/when-stars-collapse'>
+		When Stars Collapse by megaletan, Nick_MC, luneatic-art, Raphaele Guillemot,
+		Cog, thomasbrownnn
+	</a>
+</iframe>
+
+<Tag
+	link='https://github.com/raphaeleg/WhenStarsCollapse'
+	name='GitHub Source Code'
+	isNewPage={true}
+/>
+
+Game development often thrives on creativity, communication and collaboration, especially during events like game jams. _When Stars Collapse_ began as a submission for the 8th Ludum Dare Discord Jam, where our team of six, including one seasoned developer, transform our ideas into a playable experience within **48 hours**. Out of 168 entries, our game ranked 29th, placing us in the **top 20%**. Inspired by this achievement, I dedicated a week to refining and polishing the project, focusing on clean code and overall game completion. 
+
+I’ll detail the game, and my contributions to the project.
+
+# The Game
+<Image
+	src='/blogs/starscollapse-heal.gif'
+	width='600'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+_When Stars Collapse_ plays as an arcade universe survival management game, where you play as the Sun God, tasked with looking over your universe of stars. 
+
+Players have to ensure to heal their sick stars before they turn into black holes and suck other stars. Stars are healed by dragging a healing rune to the sick star. A healing rune is created when 3 meteors of the same colour are collected by catching it before it flies away. The game is over when too many black holes have taken over the player's universe.
+
+# My Contributions
+
+## Post Jam
+
+Although the game was ranked quite highly, the game wasn't fully complete, as it had many bugs and was missing many components that made it a proper game. As a challenge, **I decided to refactor the entire codebase from scratch within a week**, making a clear hierarchy of code.
+
+I essentially got to experience the **full development cycle**, starting from a blank Unity Project, to a fleshed out, working system, with proper implementation of code patterns and architecture. This ranged from 
+- Events System
+- State Machine
+- Animation states 
+- Audio Management
+- WebGL optimisation. 
+
+I additionally diagrammed such systems as a form of documentation for both the team and my blog.
+
+Details of my activity can be seen here:
+
+<Tag
+	link='/blogs/when-stars-collapse-refactor/'
+	name='Part 2: An overview of the refactoring process'
+	isNewPage={true}
+/>
+<Tag
+	link='/blogs/how-to-make-project-more-extend/'
+	name='Part 3: Events, State Machine, and more clean architecture.'
+	isSolid={true}
+	isNewPage={true}
+/>
+
+## During the Game Jam
+Because of the short time limit, it was essential to have clear work delegation. I was tasked to handle:
+### 1. The `Planets` class and states
+<Image
+	src='/blogs/starscollapse-planets.png'
+	width='600'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+- I needed to instantiate the Planet's `INITIAL` State in order to make sure that it safely instantiated without any Black Holes sucking it away.
+
+- Animation process of being sucked in by a Black Hole 
+```cs caption="Animation process of being destroyed"
+public void ShrinkUntilDestroy()
+{
+	StartCoroutine(Shrink());
+}
+
+IEnumerator Shrink()
+{
+	Transform t = gameObject.transform;
+	while (t.localScale.x > 0f)
+	{
+		t.localScale -= new Vector3(0.1f, 0.1f, 0f);
+		yield return new WaitForSeconds(0.1f);
+	}
+	Destroy(gameObject);
+}
+```
+### 2. Particle Effects
+- Using Unity's Particle System, I was able to update the 2D raw image of each particle. <Image
+	src='/blogs/starscollapse-SicknessParticle_Green.png'
+	width='600'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/> <Image
+	src='/blogs/starscollapse-greensick.gif'
+	width='200'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+
+### 3. Polished HighScore Scene
+- Made a highly custom, highly polished Highscore Screen that displayed all the scores in a digestible way using Unity Coroutines. <Image
+	src='/blogs/starscollapse-highscore.gif'
+	width='400'
+	height='250'
+	alt='Planets'
+	sizes='100vw'
+/>
+
+### 4. Crisis Management
+
+
+With just one hour left before the submission deadline, I discovered that the Wwise Audio System was **incompatible** with Unity WebGL, **preventing the build from completing**. 
+
+Thinking quickly, I informed the team and suggested to remove sound entirely from the WebGL version, while retaining audio for the Windows build. I calmly delegated the task of building the Windows and Mac versions to the other developers, allowing me to focus on going through each script to eliminate any audio commands.
+
+---
+
+# What I've Learnt
+
+### 1. Management in a bigger team setting
+
+	To see the grander picture and everyone's role in creating the game required me to delegate tasks and see the missing pieces. Not only within developers, but also with the UXUI designers, game designers, and artist.
+### 2. Complete and polished game
+
+	The refactoring process gave me greater insight into not only the full development cycle of a game, but also the different disciplines a game involves to create the product it is, and how to achieve each aspect until publishing. 
+	
+	If anything, it has given me greater appreciation for the different specialisations needed to create a great game, and enforced my ideas that a game is a collaborative project that celebrates everyone's role.
+
+### 3. Code Architecture
+
+	The refactoring process also allowed me to develop a game with a strong, clean code architecture utilising code patterns and good practices. This allows the project to be extendable, where I'm able to add and change features easily.
+
+For further information, here are some related posts:
+
+<Tag
+	link='/blogs/how-to-make-project-more-extend/'
+	name='How to: Make a project more Extendable'
+	isSolid={true}
+/><Tag
+	link='/blogs/when-stars-collapse-refactor/'
+	name='The refactoring process'
+	
+/>
+
+<iframe
+	frameborder='0'
+	src='https://itch.io/embed/2890438?bg_color=4e3a3a&amp;fg_color=f6cabc&amp;border_color=181017'
+	width='552'
+	height='167'>
+	<a href='https://megaletan.itch.io/when-stars-collapse'>
+		When Stars Collapse by megaletan, Nick_MC, luneatic-art, Raphaele Guillemot,
+		Cog, thomasbrownnn
+	</a>
+</iframe>
+<Tag
+	link='https://github.com/raphaeleg/WhenStarsCollapse'
+	name='GitHub Source Code'
+	isNewPage={true}
+/>
+c:T459e,var Component=(()=>{var p=Object.create;var r=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var y=Object.getPrototypeOf,u=Object.prototype.hasOwnProperty;var f=(a,e)=>()=>(e||a((e={exports:{}}).exports,e),e.exports),b=(a,e)=>{for(var t in e)r(a,t,{get:e[t],enumerable:!0})},s=(a,e,t,l)=>{if(e&&typeof e=="object"||typeof e=="function")for(let i of g(e))!u.call(a,i)&&i!==t&&r(a,i,{get:()=>e[i],enumerable:!(l=m(e,i))||l.enumerable});return a};var E=(a,e,t)=>(t=a!=null?p(y(a)):{},s(e||!a||!a.__esModule?r(t,"default",{value:a,enumerable:!0}):t,a)),A=a=>s(r({},"__esModule",{value:!0}),a);var c=f((D,o)=>{o.exports=_jsx_runtime});var F={};b(F,{default:()=>k,frontmatter:()=>w});var n=E(c()),w={title:"When Stars Collapse",desc:"A polished universe survival management game, originally submitted for the 8th Ludum Dare Discord Jam.",image:"../../public/blogs/starscollapse-cover.png",publishedAt:"2024-08-12",isPublished:!0,redirect:"",tags:["published","game","game jam","unity","csharp","collaboration"]};function h(a){let e=Object.assign({p:"p",em:"em",strong:"strong",h1:"h1",a:"a",span:"span",h2:"h2",ul:"ul",li:"li",h3:"h3",code:"code",div:"div",pre:"pre",hr:"hr"},a.components),{Tag:t,Image:l}=e;return l||d("Image",!0),t||d("Tag",!0),(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(e.p,{children:"Watch as your stars live, thrive and die...and all over again."}),`
+`,(0,n.jsx)("iframe",{frameborder:"0",src:"https://itch.io/embed/2890438?bg_color=4e3a3a&fg_color=f6cabc&border_color=181017",width:"552",height:"167",children:(0,n.jsx)("a",{href:"https://megaletan.itch.io/when-stars-collapse",children:(0,n.jsx)(e.p,{children:`When Stars Collapse by megaletan, Nick_MC, luneatic-art, Raphaele Guillemot,\r
+Cog, thomasbrownnn`})})}),`
+`,(0,n.jsx)(t,{link:"https://github.com/raphaeleg/WhenStarsCollapse",name:"GitHub Source Code",isNewPage:!0}),`
+`,(0,n.jsxs)(e.p,{children:["Game development often thrives on creativity, communication and collaboration, especially during events like game jams. ",(0,n.jsx)(e.em,{children:"When Stars Collapse"})," began as a submission for the 8th Ludum Dare Discord Jam, where our team of six, including one seasoned developer, transform our ideas into a playable experience within ",(0,n.jsx)(e.strong,{children:"48 hours"}),". Out of 168 entries, our game ranked 29th, placing us in the ",(0,n.jsx)(e.strong,{children:"top 20%"}),". Inspired by this achievement, I dedicated a week to refining and polishing the project, focusing on clean code and overall game completion."]}),`
+`,(0,n.jsx)(e.p,{children:"I\u2019ll detail the game, and my contributions to the project."}),`
+`,(0,n.jsxs)(e.h1,{id:"the-game",children:["The Game",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#the-game",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(l,{src:"/blogs/starscollapse-heal.gif",width:"600",height:"250",alt:"Planets",sizes:"100vw"}),`
+`,(0,n.jsxs)(e.p,{children:[(0,n.jsx)(e.em,{children:"When Stars Collapse"})," plays as an arcade universe survival management game, where you play as the Sun God, tasked with looking over your universe of stars."]}),`
+`,(0,n.jsx)(e.p,{children:"Players have to ensure to heal their sick stars before they turn into black holes and suck other stars. Stars are healed by dragging a healing rune to the sick star. A healing rune is created when 3 meteors of the same colour are collected by catching it before it flies away. The game is over when too many black holes have taken over the player's universe."}),`
+`,(0,n.jsxs)(e.h1,{id:"my-contributions",children:["My Contributions",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#my-contributions",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.h2,{id:"post-jam",children:["Post Jam",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#post-jam",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.p,{children:["Although the game was ranked quite highly, the game wasn't fully complete, as it had many bugs and was missing many components that made it a proper game. As a challenge, ",(0,n.jsx)(e.strong,{children:"I decided to refactor the entire codebase from scratch within a week"}),", making a clear hierarchy of code."]}),`
+`,(0,n.jsxs)(e.p,{children:["I essentially got to experience the ",(0,n.jsx)(e.strong,{children:"full development cycle"}),", starting from a blank Unity Project, to a fleshed out, working system, with proper implementation of code patterns and architecture. This ranged from"]}),`
+`,(0,n.jsxs)(e.ul,{children:[`
+`,(0,n.jsx)(e.li,{children:"Events System"}),`
+`,(0,n.jsx)(e.li,{children:"State Machine"}),`
+`,(0,n.jsx)(e.li,{children:"Animation states"}),`
+`,(0,n.jsx)(e.li,{children:"Audio Management"}),`
+`,(0,n.jsx)(e.li,{children:"WebGL optimisation."}),`
+`]}),`
+`,(0,n.jsx)(e.p,{children:"I additionally diagrammed such systems as a form of documentation for both the team and my blog."}),`
+`,(0,n.jsx)(e.p,{children:"Details of my activity can be seen here:"}),`
+`,(0,n.jsx)(t,{link:"/blogs/when-stars-collapse-refactor/",name:"Part 2: An overview of the refactoring process",isNewPage:!0}),`
+`,(0,n.jsx)(t,{link:"/blogs/how-to-make-project-more-extend/",name:"Part 3: Events, State Machine, and more clean architecture.",isSolid:!0,isNewPage:!0}),`
+`,(0,n.jsxs)(e.h2,{id:"during-the-game-jam",children:["During the Game Jam",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#during-the-game-jam",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(e.p,{children:"Because of the short time limit, it was essential to have clear work delegation. I was tasked to handle:"}),`
+`,(0,n.jsxs)(e.h3,{id:"1-the-planets-class-and-states",children:["1. The ",(0,n.jsx)(e.code,{children:"Planets"})," class and states",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#1-the-planets-class-and-states",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(l,{src:"/blogs/starscollapse-planets.png",width:"600",height:"250",alt:"Planets",sizes:"100vw"}),`
+`,(0,n.jsxs)(e.ul,{children:[`
+`,(0,n.jsxs)(e.li,{children:[`
+`,(0,n.jsxs)(e.p,{children:["I needed to instantiate the Planet's ",(0,n.jsx)(e.code,{children:"INITIAL"})," State in order to make sure that it safely instantiated without any Black Holes sucking it away."]}),`
+`]}),`
+`,(0,n.jsxs)(e.li,{children:[`
+`,(0,n.jsx)(e.p,{children:"Animation process of being sucked in by a Black Hole"}),`
+`]}),`
+`]}),`
+`,(0,n.jsxs)(e.div,{"data-rehype-pretty-code-fragment":"",children:[(0,n.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"cs","data-theme":"default",children:(0,n.jsxs)(e.code,{"data-language":"cs","data-theme":"default",children:[(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"public"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"void"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"ShrinkUntilDestroy"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"()"})]}),`
+`,(0,n.jsx)(e.span,{"data-line":"",children:(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"{"})}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"StartCoroutine"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"Shrink"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"());"})]}),`
+`,(0,n.jsx)(e.span,{"data-line":"",children:(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"}"})}),`
+`,(0,n.jsx)(e.span,{"data-line":""}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#9CCFD8"},children:"IEnumerator"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"Shrink"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"()"})]}),`
+`,(0,n.jsx)(e.span,{"data-line":"",children:(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"{"})}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,n.jsx)(e.span,{style:{color:"#9CCFD8"},children:"Transform"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"t"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"gameObject"}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"transform"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"while"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"t"}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"localScale"}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"x"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:">"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"0f"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:")"})]}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"{"})]}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"		"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"t"}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"localScale"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"-="}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"new"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#9CCFD8"},children:"Vector3"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"0.1f"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"0.1f"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"0f"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"		"}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"yield"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#3E8FB0"},children:"new"}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,n.jsx)(e.span,{style:{color:"#9CCFD8"},children:"WaitForSeconds"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"0.1f"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"}"})]}),`
+`,(0,n.jsxs)(e.span,{"data-line":"",children:[(0,n.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,n.jsx)(e.span,{style:{color:"#EA9A97"},children:"Destroy"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,n.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"gameObject"}),(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,n.jsx)(e.span,{"data-line":"",children:(0,n.jsx)(e.span,{style:{color:"#908CAA"},children:"}"})})]})}),(0,n.jsx)(e.div,{"data-rehype-pretty-code-caption":"","data-language":"cs","data-theme":"default",children:"Animation process of being destroyed"})]}),`
+`,(0,n.jsxs)(e.h3,{id:"2-particle-effects",children:["2. Particle Effects",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#2-particle-effects",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.ul,{children:[`
+`,(0,n.jsxs)(e.li,{children:["Using Unity's Particle System, I was able to update the 2D raw image of each particle. ",(0,n.jsx)(l,{src:"/blogs/starscollapse-SicknessParticle_Green.png",width:"600",height:"250",alt:"Planets",sizes:"100vw"})," ",(0,n.jsx)(l,{src:"/blogs/starscollapse-greensick.gif",width:"200",height:"250",alt:"Planets",sizes:"100vw"})]}),`
+`]}),`
+`,(0,n.jsxs)(e.h3,{id:"3-polished-highscore-scene",children:["3. Polished HighScore Scene",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#3-polished-highscore-scene",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.ul,{children:[`
+`,(0,n.jsxs)(e.li,{children:["Made a highly custom, highly polished Highscore Screen that displayed all the scores in a digestible way using Unity Coroutines. ",(0,n.jsx)(l,{src:"/blogs/starscollapse-highscore.gif",width:"400",height:"250",alt:"Planets",sizes:"100vw"})]}),`
+`]}),`
+`,(0,n.jsxs)(e.h3,{id:"4-crisis-management",children:["4. Crisis Management",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#4-crisis-management",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.p,{children:["With just one hour left before the submission deadline, I discovered that the Wwise Audio System was ",(0,n.jsx)(e.strong,{children:"incompatible"})," with Unity WebGL, ",(0,n.jsx)(e.strong,{children:"preventing the build from completing"}),"."]}),`
+`,(0,n.jsx)(e.p,{children:"Thinking quickly, I informed the team and suggested to remove sound entirely from the WebGL version, while retaining audio for the Windows build. I calmly delegated the task of building the Windows and Mac versions to the other developers, allowing me to focus on going through each script to eliminate any audio commands."}),`
+`,(0,n.jsx)(e.hr,{}),`
+`,(0,n.jsxs)(e.h1,{id:"what-ive-learnt",children:["What I've Learnt",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#what-ive-learnt",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsxs)(e.h3,{id:"1-management-in-a-bigger-team-setting",children:["1. Management in a bigger team setting",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#1-management-in-a-bigger-team-setting",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(e.p,{children:"To see the grander picture and everyone's role in creating the game required me to delegate tasks and see the missing pieces. Not only within developers, but also with the UXUI designers, game designers, and artist."}),`
+`,(0,n.jsxs)(e.h3,{id:"2-complete-and-polished-game",children:["2. Complete and polished game",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#2-complete-and-polished-game",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(e.p,{children:"The refactoring process gave me greater insight into not only the full development cycle of a game, but also the different disciplines a game involves to create the product it is, and how to achieve each aspect until publishing."}),`
+`,(0,n.jsx)(e.p,{children:"If anything, it has given me greater appreciation for the different specialisations needed to create a great game, and enforced my ideas that a game is a collaborative project that celebrates everyone's role."}),`
+`,(0,n.jsxs)(e.h3,{id:"3-code-architecture",children:["3. Code Architecture",(0,n.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#3-code-architecture",children:(0,n.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,n.jsx)(e.p,{children:"The refactoring process also allowed me to develop a game with a strong, clean code architecture utilising code patterns and good practices. This allows the project to be extendable, where I'm able to add and change features easily."}),`
+`,(0,n.jsx)(e.p,{children:"For further information, here are some related posts:"}),`
+`,(0,n.jsx)(t,{link:"/blogs/how-to-make-project-more-extend/",name:"How to: Make a project more Extendable",isSolid:!0}),`
+`,(0,n.jsx)(t,{link:"/blogs/when-stars-collapse-refactor/",name:"The refactoring process"}),`
+`,(0,n.jsx)("iframe",{frameborder:"0",src:"https://itch.io/embed/2890438?bg_color=4e3a3a&fg_color=f6cabc&border_color=181017",width:"552",height:"167",children:(0,n.jsx)("a",{href:"https://megaletan.itch.io/when-stars-collapse",children:(0,n.jsx)(e.p,{children:`When Stars Collapse by megaletan, Nick_MC, luneatic-art, Raphaele Guillemot,\r
+Cog, thomasbrownnn`})})}),`
+`,(0,n.jsx)(t,{link:"https://github.com/raphaeleg/WhenStarsCollapse",name:"GitHub Source Code",isNewPage:!0})]})}function v(a={}){let{wrapper:e}=a.components||{};return e?(0,n.jsx)(e,Object.assign({},a,{children:(0,n.jsx)(h,a)})):h(a)}var k=v;function d(a,e){throw new Error("Expected "+(e?"component":"object")+" `"+a+"` to be defined: you likely forgot to import, pass, or provide it.")}return A(F);})();
+;return Component;2:[null,["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__variable_f367f3 __variable_73ee6c font-mr bg-light","children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":["$","main",null,{"className":"my-32 w-full h-[55vh] flex justify-center font-mr","children":["$","div",null,{"className":"relative flex flex-col items-center justify-center","children":[["$","h1",null,{"className":"inline-block text-dark \n      text-6xl font-bold w-full capitalize xl:text-8xl text-center","children":"404"}],["$","h2",null,{"className":"inline-block text-dark \n      text-5xl font-bold w-full capitalize xl:text-6xl text-center mt-4 tracking-wide leading-snug","children":"Page Not Found!"}],["$","$L7",null,{"href":"/","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light m-12","children":"Go To Home"}]]}]}],"notFoundStyles":[],"childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children",["slug","when-stars-collapse","d"],"children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$L8",[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"When Stars Collapse\",\"image\":[\"https://raphaeleg.github.io/blogs/starscollapse-cover.png\"],\"datePublished\":\"2024-08-12T00:00:00.000Z\",\"dateModified\":\"2024-08-12T00:00:00.000Z\",\"author\":[{\"@type\":\"Person\",\"name\":\"Raphaele's Portfolio\",\"url\":\"https://www.linkedin.com/in/raphaele-michelle-guillemot-6a34271a8/\"}]}"}}],["$","article",null,{"children":[["$","div",null,{"className":"mb-8 text-center relative w-full h-[50vh] bg-dark","children":[["$","div",null,{"className":"w-5/6 z-10 flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2","children":[["$","span",null,{"children":[["$","$L7",null,{"href":"/categories/published","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#published"}],["$","$L7",null,{"href":"/categories/game","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#game"}],["$","$L7",null,{"href":"/categories/game-jam","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#game jam"}],["$","$L7",null,{"href":"/categories/unity","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#unity"}],["$","$L7",null,{"href":"/categories/csharp","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#csharp"}],["$","$L7",null,{"href":"/categories/collaboration","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#collaboration\r"}]]}],["$","h1",null,{"className":"inline-block mt-6 font-semibold capitalize text-light text-2xl md:text-3xl lg:text-5xl !leading-normal relative","children":"When Stars Collapse"}],"$undefined"]}],["$","div",null,{"className":"absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60"}],["$","$L9",null,{"src":"/blogs/starscollapse-cover.png","placeholder":"blur","blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAP1BMVEVYIywyGh9qMTGpd3VhLzmpa21iKi5CGCNKGilRHymycHE8IidcP0RLKi9yOEApEhpuQ0OHYlt8Wk6cd3V7RUmk1CuHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAPklEQVR4nAXBiQHAIAgAsVNBwN+2+8/ahNRljGmVGOW+BYipzy3H8NS/092xPVsTd3bKqlIzVldTyQGwVmA/TwMCBRX6HpoAAAAASUVORK5CYII=","alt":"When Stars Collapse","width":1200,"height":800,"className":"w-full h-full object-cover object-center false [object Object]","priority":true,"sizes":"100vw"}]]}],["$","div",null,{"className":"grid grid-cols-12  gap-y-8 lg:gap-8 sxl:gap-16 mt-8 px-5 md:px-10","children":[["$","div",null,{"className":"col-span-12  lg:col-span-4","children":["$","details",null,{"className":"border-[1px] border-solid border-dark  text-dark  rounded-lg p-4 sticky top-6 max-h-[80vh] overflow-hidden overflow-y-auto","open":true,"children":[["$","summary",null,{"className":"text-lg font-semibold capitalize cursor-pointer","children":"Table Of Content"}],["$","ul",null,{"className":"mt-4 font-in text-base","children":[["$","li","#the-game",{"className":"py-1","children":["$","a",null,{"href":"#the-game","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"The Game"}]]}]}],["$","li","#my-contributions",{"className":"py-1","children":["$","a",null,{"href":"#my-contributions","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"My Contributions"}]]}]}],["$","li","#post-jam",{"className":"py-1","children":["$","a",null,{"href":"#post-jam","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Post Jam"}]]}]}],["$","li","#during-the-game-jam",{"className":"py-1","children":["$","a",null,{"href":"#during-the-game-jam","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"During the Game Jam"}]]}]}],["$","li","#1-the-planets-class-and-states",{"className":"py-1","children":["$","a",null,{"href":"#1-the-planets-class-and-states","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"1. The `Planets` class and states"}]]}]}],["$","li","#2-particle-effects",{"className":"py-1","children":["$","a",null,{"href":"#2-particle-effects","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"2. Particle Effects"}]]}]}],["$","li","#3-polished-highscore-scene",{"className":"py-1","children":["$","a",null,{"href":"#3-polished-highscore-scene","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"3. Polished HighScore Scene"}]]}]}],["$","li","#4-crisis-management",{"className":"py-1","children":["$","a",null,{"href":"#4-crisis-management","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"4. Crisis Management"}]]}]}],["$","li","#what-ive-learnt",{"className":"py-1","children":["$","a",null,{"href":"#what-ive-learnt","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"What I've Learnt"}]]}]}],["$","li","#1-management-in-a-bigger-team-setting",{"className":"py-1","children":["$","a",null,{"href":"#1-management-in-a-bigger-team-setting","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"1. Management in a bigger team setting"}]]}]}],["$","li","#2-complete-and-polished-game",{"className":"py-1","children":["$","a",null,{"href":"#2-complete-and-polished-game","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"2. Complete and polished game"}]]}]}],["$","li","#3-code-architecture",{"className":"py-1","children":["$","a",null,{"href":"#3-code-architecture","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"3. Code Architecture"}]]}]}]]}]]}]}],["$","$La",null,{"blog":{"title":"When Stars Collapse","publishedAt":"2024-08-12T00:00:00.000Z","desc":"A polished universe survival management game, originally submitted for the 8th Ludum Dare Discord Jam.","image":{"filePath":"../public/blogs/starscollapse-cover.png","relativeFilePath":"../../public/blogs/starscollapse-cover.png","format":"png","height":800,"width":1200,"aspectRatio":1.5,"blurhashDataUrl":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAP1BMVEVYIywyGh9qMTGpd3VhLzmpa21iKi5CGCNKGilRHymycHE8IidcP0RLKi9yOEApEhpuQ0OHYlt8Wk6cd3V7RUmk1CuHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAPklEQVR4nAXBiQHAIAgAsVNBwN+2+8/ahNRljGmVGOW+BYipzy3H8NS/092xPVsTd3bKqlIzVldTyQGwVmA/TwMCBRX6HpoAAAAASUVORK5CYII="},"isPublished":true,"redirect":"","tags":["published","game","game jam","unity","csharp","collaboration\r"],"body":{"raw":"$b","code":"$c"},"_id":"when-stars-collapse/index.mdx","_raw":{"sourceFilePath":"when-stars-collapse/index.mdx","sourceFileName":"index.mdx","sourceFileDir":"when-stars-collapse","contentType":"mdx","flattenedPath":"when-stars-collapse"},"type":"Blog","url":"/blogs/when-stars-collapse","toc":[{"level":"one","text":"The Game","slug":"the-game"},{"level":"one","text":"My Contributions","slug":"my-contributions"},{"level":"two","text":"Post Jam","slug":"post-jam"},{"level":"two","text":"During the Game Jam","slug":"during-the-game-jam"},{"level":"three","text":"1. The `Planets` class and states","slug":"1-the-planets-class-and-states"},{"level":"three","text":"2. Particle Effects","slug":"2-particle-effects"},{"level":"three","text":"3. Polished HighScore Scene","slug":"3-polished-highscore-scene"},{"level":"three","text":"4. Crisis Management","slug":"4-crisis-management"},{"level":"one","text":"What I've Learnt","slug":"what-ive-learnt"},{"level":"three","text":"1. Management in a bigger team setting","slug":"1-management-in-a-bigger-team-setting"},{"level":"three","text":"2. Complete and polished game","slug":"2-complete-and-polished-game"},{"level":"three","text":"3. Code Architecture","slug":"3-code-architecture"}]}}]]}]]}]],null],"segment":"__PAGE__?{\"slug\":\"when-stars-collapse\"}"},"styles":[]}],"segment":["slug","when-stars-collapse","d"]},"styles":[]}],"segment":"blogs"},"styles":[]}],["$","$Ld",null,{}]]}]}],null]
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"When Stars Collapse | Raphaele's Portfolio"}],["$","link","2",{"rel":"manifest","href":"/manifest.webmanifest"}],["$","meta","3",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","4",{"name":"robots","content":"index, follow"}],["$","meta","5",{"name":"googlebot","content":"index, follow, noimageindex, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","6",{"property":"og:title","content":"When Stars Collapse"}],["$","meta","7",{"property":"og:url","content":"https://raphaeleg.github.io/blogs/when-stars-collapse"}],["$","meta","8",{"property":"og:site_name","content":"Raphaele's Portfolio"}],["$","meta","9",{"property":"og:locale","content":"en-us"}],["$","meta","10",{"property":"og:image","content":"https://raphaeleg.github.io/blogs/starscollapse-cover.png"}],["$","meta","11",{"property":"og:type","content":"article"}],["$","meta","12",{"property":"article:published_time","content":"2024-08-12T00:00:00.000Z"}],["$","meta","13",{"property":"article:modified_time","content":"2024-08-12T00:00:00.000Z"}],["$","meta","14",{"property":"article:author","content":"Raphaele's Portfolio"}],["$","meta","15",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","16",{"name":"twitter:title","content":"When Stars Collapse"}],["$","meta","17",{"name":"twitter:image","content":"https://raphaeleg.github.io/blogs/starscollapse-cover.png"}]]
+8:null

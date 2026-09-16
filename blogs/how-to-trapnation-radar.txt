@@ -1,0 +1,691 @@
+1:HL["/_next/static/css/d5e9b3b11173a82b.css","style",{"crossOrigin":""}]
+0:["cn6t2z2UcSyTY0TP4F4Sg",[[["",{"children":["blogs",{"children":[["slug","how-to-trapnation-radar","d"],{"children":["__PAGE__?{\"slug\":\"how-to-trapnation-radar\"}",{}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d5e9b3b11173a82b.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
+4:I[9447,["326","static/chunks/326-1558ba6b642e03ad.js","185","static/chunks/app/layout-94361ac75333a938.js"],""]
+5:I[6954,[],""]
+6:I[7264,[],""]
+7:I[8326,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],""]
+9:I[413,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],"Image"]
+b:I[794,["326","static/chunks/326-1558ba6b642e03ad.js","413","static/chunks/413-363e56e9c0e63444.js","688","static/chunks/app/blogs/%5Bslug%5D/page-85bcff72f59b9870.js"],""]
+f:I[5659,["326","static/chunks/326-1558ba6b642e03ad.js","185","static/chunks/app/layout-94361ac75333a938.js"],""]
+a:T4ae,data:image/gif;base64,R0lGODlhCAAIAIcAAExpcfxs/7T8ABQkVWy0ANjYVbQk/wBsAGxsqmz8qrS0qgBsqpCQqvz8qrT8/2y0VbSQqgAkALS0//y0qti0VbRsAEhIAEi0/5DYAPxIVbRIqvz8//y0/0hI/2xI/5CQ/2zYVbQAqvxI/wDY/2yQVbS0VbRI/0hsqpD8VdgA/9hIANhIqmy0qpDY/0hIqiT8AJAAVfyQVZAk/2z8VUhs/5D8/5BIVSS0VQAA/2y0/5AkVSRI/0gAACT8qpD8qpC0qkhIVZAA/5BsVQBIqki0VQC0qpC0ANjYqiRsANi0qpCQVZBsqmxIqkgkVZDYVdgkqkj8//zYVZBsACS0//xIAGxsVZBIAAD8Vdj8/9i0/yQAAJD8AEgAqrS0ACQAqtjYAJBIqrT8VWzYALQAANj8AGxsAGwk/0j8qthsVbQA//wkVUjYAEhsVUiQVUi0qmwAAEjYVZCQAEgk/yRsqkj8VSTYqkhsAACQ/yS0qrQAVUiQ/2wA/5DYqkjYqkiQAPyQALQkANhI/0gkALTYAGz8/xQAVSRs/9jY/0gAVbTYqiQA/9gAALRs/yTYVSTY/ySQVWxIVdiQqiT8VdiQ/7T8qthsACQkqgBIVfwAVWyQ/yQkANgk/wDYqtgkVWwAVQCQALSQVQAk//wAqrRIVfxIqpAkANgAqmxs/7RsVWxIAPwAACRIAJC0VSRIqtgAVSQk//z8VWzY/5AAAGzYqrSQ//y0VZAAqvyQ/0j8ANiQVWwAqtj8VUjY/9i0APwA//xsVfz8AGwkAACQVfzYqvxsqrRIAAC0VST8/0i0AGz8AAD8ANhs/yRsVdhIVQAAACSQ/wAkqmyQqgBIAJAkqiS0ALTY/wBsVZBs//y0APzY/wC0//yQqrQkqtj8qgDYANiQAPwkqmwkVQD8qiSQAGwkqrSQAAD8/9gkAPwk/5BI/wAAqiRIVfwkAJC0/wCQqthsqrRsqrTYVbQkVWyQAEgA//zYAPxsACTYACSQqkgkqgBs/wBI/wC0AADYVUiQqgAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFAwAAACwAAAAACAAIAAAIPAAVJBHIABIQIEmOHFEAqWE4JUqGMYRUBZICBUeSNDyoUCGEKgchKIAgRAkoUCIVVGlSJYnLkUoYpFQQEAA7c:T4ae,data:image/gif;base64,R0lGODlhCAAIAIcAAExpcfxs/7T8ABQkVWy0ANjYVbQk/wBsAGxsqmz8qrS0qgBsqpCQqvz8qrT8/2y0VbSQqgAkALS0//y0qti0VbRsAEhIAEi0/5DYAPxIVbRIqvz8//y0/0hI/2xI/5CQ/2zYVbQAqvxI/wDY/2yQVbS0VbRI/0hsqpD8VdgA/9hIANhIqmy0qpDY/0hIqiT8AJAAVfyQVZAk/2z8VUhs/5D8/5BIVSS0VQAA/2y0/5AkVSRI/0gAACT8qpD8qpC0qkhIVZAA/5BsVQBIqki0VQC0qpC0ANjYqiRsANi0qpCQVZBsqmxIqkgkVZDYVdgkqkj8//zYVZBsACS0//xIAGxsVZBIAAD8Vdj8/9i0/yQAAJD8AEgAqrS0ACQAqtjYAJBIqrT8VWzYALQAANj8AGxsAGwk/0j8qthsVbQA//wkVUjYAEhsVUiQVUi0qmwAAEjYVZCQAEgk/yRsqkj8VSTYqkhsAACQ/yS0qrQAVUiQ/2wA/5DYqkjYqkiQAPyQALQkANhI/0gkALTYAGz8/xQAVSRs/9jY/0gAVbTYqiQA/9gAALRs/yTYVSTY/ySQVWxIVdiQqiT8VdiQ/7T8qthsACQkqgBIVfwAVWyQ/yQkANgk/wDYqtgkVWwAVQCQALSQVQAk//wAqrRIVfxIqpAkANgAqmxs/7RsVWxIAPwAACRIAJC0VSRIqtgAVSQk//z8VWzY/5AAAGzYqrSQ//y0VZAAqvyQ/0j8ANiQVWwAqtj8VUjY/9i0APwA//xsVfz8AGwkAACQVfzYqvxsqrRIAAC0VST8/0i0AGz8AAD8ANhs/yRsVdhIVQAAACSQ/wAkqmyQqgBIAJAkqiS0ALTY/wBsVZBs//y0APzY/wC0//yQqrQkqtj8qgDYANiQAPwkqmwkVQD8qiSQAGwkqrSQAAD8/9gkAPwk/5BI/wAAqiRIVfwkAJC0/wCQqthsqrRsqrTYVbQkVWyQAEgA//zYAPxsACTYACSQqkgkqgBs/wBI/wC0AADYVUiQqgAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFAwAAACwAAAAACAAIAAAIPAAVJBHIABIQIEmOHFEAqWE4JUqGMYRUBZICBUeSNDyoUCGEKgchKIAgRAkoUCIVVGlSJYnLkUoYpFQQEAA7d:T3343,
+From the original submission's feedback, we have introduced a new mechanic that helps players **find the direction of the exit**.
+
+<Image
+	src='/blogs/luminth-3.gif'
+	width='500'
+	height='500'
+	alt='Trap Nation'
+	sizes='100vw'
+/>
+
+# Ideation
+
+Luminth is a dreamy game, so it felt fitting to have a "focus" mechanic to listen closely, and sense the direction of the exit.
+
+I took inspiration from Trap Nation's music videos, where their beats created a trail of chromatic abbreviation.
+
+<Image src='/blogs/luminth-focusplan.png' width='460' height='500' alt='Plan' sizes='100vw' />| <Image src='/blogs/luminth-inspo.jpg' width='500' height='500' alt='Trap Nation' sizes='100vw' />
+---|---
+
+# Planning
+
+First, let's look at how we might create a sense to where the exit is. There are three important actors:
+- **Exit:** the location on the circle that will produce a bump.
+- **Player:** determines the relative location the exit is.
+- **Mouse:** the position the player is "focusing" at, which will go around the circle in search for a bump.
+
+### Finding the Wave Equation
+
+Let's use Desmos to figure out how to achieve this bumpy circle.
+
+1. r = θ is the equation to make a "loop" pattern <Image
+   	src='/blogs/luminth-ogr.png'
+   	width='300'
+   	height='300'
+   	alt='Formula'
+   	sizes='100vw'
+   />
+2. Recall the transformation of functions. <Image
+   	src='/blogs/luminth-eqexplain.png'
+   	width='200'
+   	height='200'
+   	alt='Formula'
+   	sizes='100vw'
+   /> The equivalent to transform our function is r = a ( θ - h ) + k. 
+	- Since this is a loop/circular function, h and k behave similarly. Therefore, Let's say k = 0.  <Image
+   	src='/blogs/luminth-sqirl.png'
+   	width='500'
+   	height='500'
+   	alt='Formula'
+   	sizes='100vw'
+   />
+3. Let's turn the loop pattern into a wave to make it an enclosed circle! We can simply use sin. <Image
+   	src='/blogs/luminth-closeloop.png'
+   	width='500'
+   	height='500'
+   	alt='Formula'
+   	sizes='100vw'
+   /> 
+4. To actually produce a bump, we have to add a few more variables <Image
+   	src='/blogs/luminth-sin2.png'
+   	width='500'
+   	height='500'
+   	alt='Formula'
+   	sizes='100vw'
+   /> 
+	- as long as c<sub>amplitude</sub> is an integer, it produces one single bump. Let's use this to show the "peak". <br/>Subsituting 1 gives two bumps, so let's use 2. 
+	- c<sub>intensity</sub> determines how "slim" the bump is. 
+	- c<sub>radius</sub> is the radius of the base circle. Since we're dealing with texturespace, 1 is a good value.
+
+So our wave function is <br/>f<sub>wave</sub>(x,k) = c<sub>amplitude</sub>sin( (x-k)/c<sub>amplitude</sub>) )<sup>c<sub>intensity</sub></sup> + c<sub>radius</sub><br/>f<sub>wave</sub>(x,k) = 2sin( (x-k)/2) )<sup>80</sup> + 1
+
+Now the rest is easy.
+To show two different bumps, we simply multiply two equations like so:<Image
+	src='/blogs/luminth-twobumps.png'
+	width='500'
+	height='500'
+	alt='Formula'
+	sizes='100vw'
+/>
+
+Adding a few more constants to create the desired shape and _voila_, it's perfect. <Image
+	src='/blogs/luminth-finaldesmo.gif'
+	width='700'
+	height='700'
+	alt='Formula'
+	sizes='100vw'
+/> v<sub>exit</sub> and v<sub>mouse</sub> has a big bump whenever I go around it, and shows nothing if they aren't aligned.
+
+The final equation is r = f<sub>wave</sub>(θ,v<sub>exit</sub>) × f<sub>wave</sub>(θ,v<sub>mouse</sub>) × c<sub>size</sub> + c<sub>radius</sub>
+
+
+## Rendering
+
+Let's import these equations to our project.
+
+```hlsl /wave/ /peakEquation/ title="FocusRadar.shader"
+float _Intensity, _ExitAngle, _MouseAngle;
+
+fixed wave(float theta, float pos){
+	float eq = 2*sin(0.5*(theta-pos))+1;
+	return pow(eq,_Intensity);
+}
+fixed peakEquation(float uvAngle, float refAngle) {
+	return wave(uvAngle, _ExitAngle) * wave(uvAngle, refAngle) * 1/10 + 1;
+}
+```
+
+If we want to render this in the frag function, we notice that we're missing a few steps:
+
+- Getting the "θ", as it's not simply the texture coordinates.
+- Rendering a circle based on the equation.
+
+```hlsl /???/ /1/
+fixed4 frag (Interpolator i) : SV_Target{
+	float eq = peakEquation(???(i.uv), _MouseAngle);
+	return fixed4(1);
+}
+```
+
+### A Simple Circle base
+
+Firstly, we can reference the [previous code](/blogs/how-to-mask-feathered-holes#1-draw-a-transparent-soft-circle-on-texture) to render a circle like so:
+
+```hlsl {7} /???/
+fixed renderCircle(float2 uv, float r) {
+	float res = step(0,length(uv) - r); // using sdf method
+	return 1-res;
+}
+fixed4 frag (Interpolator i) : SV_Target{
+	float eq = peakEquation(???(i.uv), _MouseAngle);
+	return fixed4(renderCircle(uv,eq));
+}
+```
+
+### Getting the Theta Angle
+
+As for the angle, we might want to look at our texturespace as we do a Unit Circle. The Unit Circle has the same domains!
+
+<Image
+	src='/blogs/The-Unit-Circle-Chart.webp'
+	width='500'
+	height='500'
+	alt='Formula'
+	sizes='100vw'
+/>
+
+```hlsl caption="Get angle using the Unit Circle coordinate system"
+#define PI 3.14159
+
+fixed findAngle(float2 v) {
+	fixed2 o = fixed2(1,0);				// The starting point
+	float dot = o.x*v.x + o.y*v.y;
+	float len = 1 * length(v);
+	float angle = acos(dot/len)*0.5;	// Cosine Rule Equation
+
+	// If negative-x, other side of the circle
+	if (v.y < 0) {angle = PI-angle;}
+
+	return angle/PI;
+}
+```
+
+```hlsl /findAngle/ caption="Now we're using the Unit Circle Coordinates instead of the UV Coordinates!"
+fixed4 frag (Interpolator i) : SV_Target{
+	float2 uv = i.uv*2-1;	// Make (0,0) at the center of the screen
+	float eq = peakEquation(findAngle(uv), _MouseAngle);
+	return fixed4(renderCircle(uv,eq));
+}
+```
+
+We just need to adjust the formula slightly to align with the new changes.
+
+```hlsl {5,9}
+#define TAU 6.283185
+#define PI 3.14159
+
+fixed wave(float theta, float pos){
+	float eq = 0.5*sin(TAU*(theta-pos)+PI/2)+0.5+_Intensity*0.00012;
+	return pow(eq,_Intensity);
+}
+fixed peakEquation(float uvAngle, float refAngle) {
+	return wave(uvAngle, _ExitAngle) * wave(uvAngle, refAngle)/2.5 * 1/10 + 0.3;
+}
+```
+
+## Data
+
+Now that we have a shader that takes any angle and renders a radar, let's see how we can actually get those data from Unity.
+
+First, let's define the data we have to send to the shader:
+
+```cs /???/ title="FocusRadar.cs"
+public Material ringMat;
+
+private void FixedUpdate()
+{
+	ringMat.SetFloat("_MouseAngle", ???);	// the angle the mouse is pointing at
+	ringMat.SetFloat("_ExitAngle", ???);	// the angle the exit is located at
+	ringMat.SetFloat("_Intensity", ???);	// how "slim" the bump should loop
+}
+```
+
+### Calculating Angle Data
+
+First, let's make a similar `findAngle` function as we wrote in the shader.
+
+```cs caption="Using the Unit Circle Coordinates"
+private float FindAngle(Vector2 v)
+{
+	var angleRadians = Mathf.Atan2(v.y, v.x);
+	if (angleRadians < 0) { angleRadians += Mathf.PI * 2; }
+
+	angleRadians /= Mathf.PI*2;
+	return angleRadians;
+}
+```
+
+Now it's as simple as adding the input in the function to get the correct values!
+
+```cs caption="Mouse and Exit Angles"
+public float GetMouseAngle()
+{
+	// Getting the Mouse angle, relative to the screen's origin
+	Vector3 screenOrigin = new Vector3(screen.w / 2, screen.h / 2, 0);
+	return FindAngle(Input.mousePosition - screenOrigin);
+}
+public float GetExitAngle()
+{
+	// Getting the Exit angle, relative to the player's position
+	float line = values.exitPos - values.playerPos;
+	return FindAngle(line);
+}
+```
+
+### Intensity
+
+Intensity should be based on how close or far the player is from the exit.
+
+```cs
+public float GetIntensity()
+{
+	float distance = Vector2.Distance(values.exitPos, values.playerPos);
+	return distance;
+}
+```
+
+However, distance can range from 0 to 1920. Let's cap this so that the bump doesn't cover the full screen
+
+```cs {3,6}
+public float GetIntensity()
+{
+	float longestDistance = 30;
+	float distance = Vector2.Distance(values.exitPos, values.playerPos);
+
+	float intensity = 1-(distance/longestDistance);
+	return intensity;
+}
+```
+
+Now it ranges from 0 to 30! However, players wouldn't be able to see any bump despite pointing at the right direction. Let's change this:
+
+```cs {4-5,8} caption="Now the value will always be 5 or above, showing at least a small bump."
+public float GetIntensity()
+{
+	float longestDistance = 30;
+	float minI = 5;
+	float maxI = 90;
+	float distance = Vector2.Distance(values.exitPos, values.playerPos);
+
+	float intensity = minI+(maxI-minI)*(1-(distance/longestDistance));
+	return intensity;
+}
+```
+
+---
+
+Adding all the functions into `FixedUpdate()` gives
+
+```cs /GetMouseAngle()/ /GetExitAngle()/ /GetIntensity()/
+public Material ringMat;
+
+private void FixedUpdate()
+{
+	ringMat.SetFloat("_MouseAngle", GetMouseAngle());
+	ringMat.SetFloat("_ExitAngle", GetExitAngle());
+	ringMat.SetFloat("_Intensity", GetIntensity());
+}
+```
+
+# Final Touches
+
+We successfully have a working radar! But if you recall, TrapNation's MVs has more than just a bump. We're missing two things: <Image
+	src='/blogs/luminth-inspo.jpg'
+	width='300'
+	height='300'
+	alt='Trap Nation'
+	sizes='100vw'
+/>
+
+- Black circle base
+- Chromatic Abbreviation
+
+### Simple Black Circle base
+
+We can simply use the `renderCircle()` function we made [earlier](/blogs/how-to-radar#a-simple-circle-base), right after our previous work
+
+```hlsl {1,12} title="FocusRadar.shader"
+fixed4 renderInnerBlack(fixed4 col, fixed2 uv){
+	float circ = 1-renderCircle(uv,0.28);
+	return fixed4(circ.xxx,1-circ);
+}
+fixed4 renderFocus(fixed2 uv){
+	float eq = peakEquation(findAngle(uv), _MouseAngle);
+	return fixed4(eq.xxx,1);
+}
+fixed4 frag (Interpolator i) : SV_Target {
+	float2 uv = i.uv*2-1;
+	fixed4 col = renderFocus(uv);
+	col *= fixed4(renderInnerBlack(col, uv).rgb,col.a);
+	return col;
+}
+```
+
+### Chromatic Abbreviation
+
+Chromatic Abbreviation in nature manipulates the red, green and blue channels separately. This means we'll have to write something like.
+
+```hlsl {4-6}
+fixed4 renderFocus(fixed2 uv){
+	float eq = peakEquation(findAngle(uv), _MouseAngle);
+
+	fixed r = renderCircle(uv,eq);
+	fixed g = renderCircle(uv,???);
+	fixed b = renderCircle(uv,???);
+
+	return fixed4(r,g,b,1);
+}
+```
+
+This indicates that we'll need a slightly different version of eq for the other two channels.
+
+Looking at TrapNation MVs, the Chromatic Abbreviation happens when the bump itself moves. What if we used the mouse position's previous location to replicate this effect?
+
+This will require a new data variable `prevMousePosition`
+
+```cs {2,11,19} title="FocusRadar.cs"
+public Material ringMat;
+private float previousMousePos;
+
+...
+
+public float GetMouseAngle()
+{
+	// Getting the Mouse angle, relative to the screen's origin
+	Vector3 screenOrigin = new Vector3(screen.w / 2, screen.h / 2, 0);
+	float mouse = FindAngle(Input.mousePosition - screenOrigin);
+	previousMousePos = mouse;
+	return mouse;
+}
+
+...
+
+private void FixedUpdate()
+{
+	ringMat.SetFloat("_PrevMouseAngle", previousMousePos);
+	ringMat.SetFloat("_MouseAngle", GetMouseAngle());
+	ringMat.SetFloat("_ExitAngle", GetExitAngle());
+	ringMat.SetFloat("_Intensity", GetIntensity());
+}
+```
+
+```hlsl {3,5-6} title="FocusRadar.shader"
+fixed4 renderFocus(fixed2 uv){
+	float eq = peakEquation(findAngle(uv), _MouseAngle);
+	float eqPrev = peakEquation(findAngle(uv), _PrevMouseAngle);
+
+	fixed r = renderCircle(uv,eq);
+	fixed g = renderCircle(uv,lerp(eq,eqPrev,0.5));
+	fixed b = renderCircle(uv,eqPrev);
+
+	return fixed4(r,g,b,1);
+}
+```
+
+# Results
+
+Congratulations for making it this far! That was the base logic for how I render this TrapNation-inspired shader.
+
+As a recap, we:
+
+1. Used Desmos to find the mathematical function to represent a peak in a circle.
+2. Considered the UV Coordinates as a Unit Circle to render angle coordinates and values.
+3. Made a dynamic Intensity value that considered how close the player is to the exit.
+4. Used Chromatic Abbreviation to make a mouse-movement effect.
+
+<Tag
+	link='https://raw.githubusercontent.com/thomasw-dev/LudumDare55/PostJam/LudumDare55/Assets/Scripts/Shader/FocusRing.shader?token=GHSAT0AAAAAACWRN6OOROPLUB64XKLLTLKUZWWRWWQ'
+	name='Source Code: FocusRadar.shader'
+	isSolid={true}
+	isNewPage={true}
+/>
+<Tag
+	link='https://raw.githubusercontent.com/thomasw-dev/LudumDare55/PostJam/LudumDare55/Assets/Scripts/Shader/FocusRing.cs?token=GHSAT0AAAAAACWRN6OONQW7WMSRW2GJKAZ4ZWWRXIA'
+	name='Source Code: FocusRadar.cs'
+	isSolid={true}
+	isNewPage={true}
+/>{' '}
+
+---
+
+Thank you for reading! Check out the game that used this, or the project details about it here!
+
+<Tag link='/blogs/luminth' name='Luminth Details' isSolid={true} />{' '}
+
+<iframe
+	frameborder='0'
+	src='https://itch.io/embed/2649454?linkback=true&amp;bg_color=EDE9E4&amp;fg_color=806562&amp;link_color=C3864D&amp;border_color=C3864D'
+	width='552'
+	height='167'>
+	<a href='https://raphaeleg.itch.io/luminth'>
+		Luminth by Raphaele Guillemot, Thomas Wang
+	</a>
+</iframe>
+e:T15ace,var Component=(()=>{var p=Object.create;var c=Object.defineProperty;var E=Object.getOwnPropertyDescriptor;var y=Object.getOwnPropertyNames;var F=Object.getPrototypeOf,A=Object.prototype.hasOwnProperty;var D=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),u=(n,e)=>{for(var r in e)c(n,r,{get:e[r],enumerable:!0})},s=(n,e,r,t)=>{if(e&&typeof e=="object"||typeof e=="function")for(let a of y(e))!A.call(n,a)&&a!==r&&c(n,a,{get:()=>e[a],enumerable:!(t=E(e,a))||t.enumerable});return n};var g=(n,e,r)=>(r=n!=null?p(F(n)):{},s(e||!n||!n.__esModule?c(r,"default",{value:n,enumerable:!0}):r,n)),f=n=>s(c({},"__esModule",{value:!0}),n);var i=D((v,o)=>{o.exports=_jsx_runtime});var S={};u(S,{default:()=>C,frontmatter:()=>m});var l=g(i()),m={title:"How to: Make a TrapNation-Inspired Radar, Unity",desc:"Learn how to make a radar that follows the mouse using HLSL in Unity",image:"../../public/blogs/luminth-3.gif",publishedAt:"2024-06-20",isPublished:!0,redirect:"",tags:["graphics","shader","hlsl","unity","csharp","experiment","solo"]};function d(n){let e=Object.assign({p:"p",strong:"strong",h1:"h1",a:"a",span:"span",table:"table",thead:"thead",tr:"tr",th:"th",ul:"ul",li:"li",h3:"h3",ol:"ol",em:"em",h2:"h2",div:"div",pre:"pre",code:"code",hr:"hr"},n.components),{Image:r,Tag:t}=e;return r||h("Image",!0),t||h("Tag",!0),(0,l.jsxs)(l.Fragment,{children:[(0,l.jsxs)(e.p,{children:["From the original submission's feedback, we have introduced a new mechanic that helps players ",(0,l.jsx)(e.strong,{children:"find the direction of the exit"}),"."]}),`
+`,(0,l.jsx)(r,{src:"/blogs/luminth-3.gif",width:"500",height:"500",alt:"Trap Nation",sizes:"100vw"}),`
+`,(0,l.jsxs)(e.h1,{id:"ideation",children:["Ideation",(0,l.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#ideation",children:(0,l.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,l.jsx)(e.p,{children:'Luminth is a dreamy game, so it felt fitting to have a "focus" mechanic to listen closely, and sense the direction of the exit.'}),`
+`,(0,l.jsx)(e.p,{children:"I took inspiration from Trap Nation's music videos, where their beats created a trail of chromatic abbreviation."}),`
+`,(0,l.jsx)(e.table,{children:(0,l.jsx)(e.thead,{children:(0,l.jsxs)(e.tr,{children:[(0,l.jsx)(e.th,{children:(0,l.jsx)(r,{src:"/blogs/luminth-focusplan.png",width:"460",height:"500",alt:"Plan",sizes:"100vw"})}),(0,l.jsx)(e.th,{children:(0,l.jsx)(r,{src:"/blogs/luminth-inspo.jpg",width:"500",height:"500",alt:"Trap Nation",sizes:"100vw"})})]})})}),`
+`,(0,l.jsxs)(e.h1,{id:"planning",children:["Planning",(0,l.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#planning",children:(0,l.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,l.jsx)(e.p,{children:"First, let's look at how we might create a sense to where the exit is. There are three important actors:"}),`
+`,(0,l.jsxs)(e.ul,{children:[`
+`,(0,l.jsxs)(e.li,{children:[(0,l.jsx)(e.strong,{children:"Exit:"})," the location on the circle that will produce a bump."]}),`
+`,(0,l.jsxs)(e.li,{children:[(0,l.jsx)(e.strong,{children:"Player:"})," determines the relative location the exit is."]}),`
+`,(0,l.jsxs)(e.li,{children:[(0,l.jsx)(e.strong,{children:"Mouse:"}),' the position the player is "focusing" at, which will go around the circle in search for a bump.']}),`
+`]}),`
+`,(0,l.jsxs)(e.h3,{id:"finding-the-wave-equation",children:["Finding the Wave Equation",(0,l.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#finding-the-wave-equation",children:(0,l.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,l.jsx)(e.p,{children:"Let's use Desmos to figure out how to achieve this bumpy circle."}),`
+`,(0,l.jsxs)(e.ol,{children:[`
+`,(0,l.jsxs)(e.li,{children:['r = \u03B8 is the equation to make a "loop" pattern ',(0,l.jsx)(r,{src:"/blogs/luminth-ogr.png",width:"300",height:"300",alt:"Formula",sizes:"100vw"})]}),`
+`,(0,l.jsxs)(e.li,{children:["Recall the transformation of functions. ",(0,l.jsx)(r,{src:"/blogs/luminth-eqexplain.png",width:"200",height:"200",alt:"Formula",sizes:"100vw"})," The equivalent to transform our function is r = a ( \u03B8 - h ) + k.",`
+`,(0,l.jsxs)(e.ul,{children:[`
+`,(0,l.jsxs)(e.li,{children:["Since this is a loop/circular function, h and k behave similarly. Therefore, Let's say k = 0.  ",(0,l.jsx)(r,{src:"/blogs/luminth-sqirl.png",width:"500",height:"500",alt:"Formula",sizes:"100vw"})]}),`
+`]}),`
+`]}),`
+`,(0,l.jsxs)(e.li,{children:["Let's turn the loop pattern into a wave to make it an enclosed circle! We can simply use sin. ",(0,l.jsx)(r,{src:"/blogs/luminth-closeloop.png",width:"500",height:"500",alt:"Formula",sizes:"100vw"})]}),`
+`,(0,l.jsxs)(e.li,{children:["To actually produce a bump, we have to add a few more variables ",(0,l.jsx)(r,{src:"/blogs/luminth-sin2.png",width:"500",height:"500",alt:"Formula",sizes:"100vw"}),`
+`,(0,l.jsxs)(e.ul,{children:[`
+`,(0,l.jsxs)(e.li,{children:["as long as c",(0,l.jsx)("sub",{children:"amplitude"}),` is an integer, it produces one single bump. Let's use this to show the "peak". `,(0,l.jsx)("br",{}),"Subsituting 1 gives two bumps, so let's use 2."]}),`
+`,(0,l.jsxs)(e.li,{children:["c",(0,l.jsx)("sub",{children:"intensity"}),' determines how "slim" the bump is.']}),`
+`,(0,l.jsxs)(e.li,{children:["c",(0,l.jsx)("sub",{children:"radius"})," is the radius of the base circle. Since we're dealing with texturespace, 1 is a good value."]}),`
+`]}),`
+`]}),`
+`]}),`
+`,(0,l.jsxs)(e.p,{children:["So our wave function is ",(0,l.jsx)("br",{}),"f",(0,l.jsx)("sub",{children:"wave"}),"(x,k) = c",(0,l.jsx)("sub",{children:"amplitude"}),"sin( (x-k)/c",(0,l.jsx)("sub",{children:"amplitude"}),") )",(0,l.jsxs)("sup",{children:["c",(0,l.jsx)("sub",{children:"intensity"})]})," + c",(0,l.jsx)("sub",{children:"radius"}),(0,l.jsx)("br",{}),"f",(0,l.jsx)("sub",{children:"wave"}),"(x,k) = 2sin( (x-k)/2) )",(0,l.jsx)("sup",{children:"80"})," + 1"]}),`
+`,(0,l.jsxs)(e.p,{children:[`Now the rest is easy.\r
+To show two different bumps, we simply multiply two equations like so:`,(0,l.jsx)(r,{src:"/blogs/luminth-twobumps.png",width:"500",height:"500",alt:"Formula",sizes:"100vw"})]}),`
+`,(0,l.jsxs)(e.p,{children:["Adding a few more constants to create the desired shape and ",(0,l.jsx)(e.em,{children:"voila"}),", it's perfect. ",(0,l.jsx)(r,{src:"/blogs/luminth-finaldesmo.gif",width:"700",height:"700",alt:"Formula",sizes:"100vw"})," v",(0,l.jsx)("sub",{children:"exit"})," and v",(0,l.jsx)("sub",{children:"mouse"})," has a big bump whenever I go around it, and shows nothing if they aren't aligned."]}),`
+`,(0,l.jsxs)(e.p,{children:["The final equation is r = f",(0,l.jsx)("sub",{children:"wave"}),"(\u03B8,v",(0,l.jsx)("sub",{children:"exit"}),") \xD7 f",(0,l.jsx)("sub",{children:"wave"}),"(\u03B8,v",(0,l.jsx)("sub",{children:"mouse"}),") \xD7 c",(0,l.jsx)("sub",{children:"size"})," + c",(0,l.jsx)("sub",{children:"radius"})]}),`
+`,(0,l.jsxs)(e.h2,{id:"rendering",children:["Rendering",(0,l.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#rendering",children:(0,l.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,l.jsx)(e.p,{children:"Let's import these equations to our project."}),`
+`,(0,l.jsxs)(e.div,{"data-rehype-pretty-code-fragment":"",children:[(0,l.jsx)(e.div,{"data-rehype-pretty-code-title":"","data-language":"hlsl","data-theme":"default",children:"FocusRadar.shader"}),(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"hlsl","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"hlsl","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" _Intensity, _ExitAngle, _MouseAngle;"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"fixed "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},"data-highlighted-chars":"",children:"wave"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" theta, "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" pos){"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" eq = "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"2"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"*"}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"sin"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"0.5"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"*(theta-pos))+"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:";"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"pow"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(eq,_Intensity);"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"}"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"fixed "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},"data-highlighted-chars":"",children:"peakEquation"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" uvAngle, "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" refAngle) {"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},"data-highlighted-chars":"",children:"wave"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uvAngle, _ExitAngle) * "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},"data-highlighted-chars":"",children:"wave"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uvAngle, refAngle) * "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"/"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"10"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" + "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:";"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"}"})})]})})]}),`
+`,(0,l.jsx)(e.p,{children:"If we want to render this in the frag function, we notice that we're missing a few steps:"}),`
+`,(0,l.jsxs)(e.ul,{children:[`
+`,(0,l.jsx)(e.li,{children:`Getting the "\u03B8", as it's not simply the texture coordinates.`}),`
+`,(0,l.jsx)(e.li,{children:"Rendering a circle based on the equation."}),`
+`]}),`
+`,(0,l.jsx)(e.div,{"data-rehype-pretty-code-fragment":"",children:(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"hlsl","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"hlsl","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"fixed4 "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"frag"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" (Interpolator i) : "}),(0,l.jsx)(e.span,{style:{color:"#9CCFD8"},children:"SV_Target"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"{"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" eq = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"peakEquation"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},"data-highlighted-chars":"",children:"???"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(i.uv), _MouseAngle);"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"fixed4"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},"data-highlighted-chars":"",children:"1"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:");"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"}"})})]})})}),`
+`,(0,l.jsxs)(e.h3,{id:"a-simple-circle-base",children:["A Simple Circle base",(0,l.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#a-simple-circle-base",children:(0,l.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,l.jsxs)(e.p,{children:["Firstly, we can reference the ",(0,l.jsx)(e.a,{href:"/blogs/how-to-mask-feathered-holes#1-draw-a-transparent-soft-circle-on-texture",children:"previous code"})," to render a circle like so:"]}),`
+`,(0,l.jsx)(e.div,{"data-rehype-pretty-code-fragment":"",children:(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"hlsl","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"hlsl","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"fixed "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderCircle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float2"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" uv, "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" r) {"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" res = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"step"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"0"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:","}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"length"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv) - r); "}),(0,l.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:"// using sdf method"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"-res;"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"}"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"fixed4 "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"frag"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" (Interpolator i) : "}),(0,l.jsx)(e.span,{style:{color:"#9CCFD8"},children:"SV_Target"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"{"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" eq = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"peakEquation"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},"data-highlighted-chars":"",children:"???"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(i.uv), _MouseAngle);"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"fixed4"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderCircle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv,eq));"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"}"})})]})})}),`
+`,(0,l.jsxs)(e.h3,{id:"getting-the-theta-angle",children:["Getting the Theta Angle",(0,l.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#getting-the-theta-angle",children:(0,l.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,l.jsx)(e.p,{children:"As for the angle, we might want to look at our texturespace as we do a Unit Circle. The Unit Circle has the same domains!"}),`
+`,(0,l.jsx)(r,{src:"/blogs/The-Unit-Circle-Chart.webp",width:"500",height:"500",alt:"Formula",sizes:"100vw"}),`
+`,(0,l.jsxs)(e.div,{"data-rehype-pretty-code-fragment":"",children:[(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"hlsl","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"hlsl","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"#define"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" PI "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"3.14159"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"fixed "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"findAngle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float2"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" v) {"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	fixed2 o = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"fixed2"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:","}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"0"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:");				"}),(0,l.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:"// The starting point"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" dot = o.x*v.x + o.y*v.y;"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" len = "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" * "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"length"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(v);"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" angle = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"acos"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(dot/len)*"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"0.5"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:";	"}),(0,l.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:"// Cosine Rule Equation"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:"// If negative-x, other side of the circle"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"if"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" (v.y < "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"0"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:") {angle = PI-angle;}"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" angle/PI;"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"}"})})]})}),(0,l.jsx)(e.div,{"data-rehype-pretty-code-caption":"","data-language":"hlsl","data-theme":"default",children:"Get angle using the Unit Circle coordinate system"})]}),`
+`,(0,l.jsxs)(e.div,{"data-rehype-pretty-code-fragment":"",children:[(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"hlsl","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"hlsl","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"fixed4 "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"frag"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" (Interpolator i) : "}),(0,l.jsx)(e.span,{style:{color:"#9CCFD8"},children:"SV_Target"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"{"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float2"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" uv = i.uv*"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"2"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"-"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:";	"}),(0,l.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:"// Make (0,0) at the center of the screen"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" eq = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"peakEquation"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},"data-highlighted-chars":"",children:"findAngle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv), _MouseAngle);"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"fixed4"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderCircle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv,eq));"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"}"})})]})}),(0,l.jsx)(e.div,{"data-rehype-pretty-code-caption":"","data-language":"hlsl","data-theme":"default",children:"Now we're using the Unit Circle Coordinates instead of the UV Coordinates!"})]}),`
+`,(0,l.jsx)(e.p,{children:"We just need to adjust the formula slightly to align with the new changes."}),`
+`,(0,l.jsx)(e.div,{"data-rehype-pretty-code-fragment":"",children:(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"hlsl","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"hlsl","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"#define"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" TAU "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"6.283185"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"#define"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" PI "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"3.14159"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"fixed "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"wave"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" theta, "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" pos){"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" eq = "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"0.5"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"*"}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"sin"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(TAU*(theta-pos)+PI/"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"2"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:")+"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"0.5"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"+_Intensity*"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"0.00012"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:";"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"pow"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(eq,_Intensity);"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"}"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"fixed "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"peakEquation"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" uvAngle, "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" refAngle) {"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"wave"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uvAngle, _ExitAngle) * "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"wave"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uvAngle, refAngle)/"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"2.5"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" * "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"/"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"10"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" + "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"0.3"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:";"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"}"})})]})})}),`
+`,(0,l.jsxs)(e.h2,{id:"data",children:["Data",(0,l.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#data",children:(0,l.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,l.jsx)(e.p,{children:"Now that we have a shader that takes any angle and renders a radar, let's see how we can actually get those data from Unity."}),`
+`,(0,l.jsx)(e.p,{children:"First, let's define the data we have to send to the shader:"}),`
+`,(0,l.jsxs)(e.div,{"data-rehype-pretty-code-fragment":"",children:[(0,l.jsx)(e.div,{"data-rehype-pretty-code-title":"","data-language":"cs","data-theme":"default",children:"FocusRadar.cs"}),(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"cs","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"cs","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"public"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#9CCFD8"},children:"Material"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"ringMat"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"private"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"void"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"FixedUpdate"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"()"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"{"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"ringMat"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"SetFloat"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#F6C177"},children:'"_MouseAngle"'}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},"data-highlighted-chars":"",children:"???"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:");	"}),(0,l.jsx)(e.span,{style:{color:"#908CAA",fontStyle:"italic"},children:"//"}),(0,l.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:" the angle the mouse is pointing at"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"ringMat"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"SetFloat"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#F6C177"},children:'"_ExitAngle"'}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},"data-highlighted-chars":"",children:"???"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:");	"}),(0,l.jsx)(e.span,{style:{color:"#908CAA",fontStyle:"italic"},children:"//"}),(0,l.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:" the angle the exit is located at"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"ringMat"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"SetFloat"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#F6C177"},children:'"_Intensity"'}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},"data-highlighted-chars":"",children:"???"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:");	"}),(0,l.jsx)(e.span,{style:{color:"#908CAA",fontStyle:"italic"},children:"//"}),(0,l.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:' how "slim" the bump should loop'})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"}"})})]})})]}),`
+`,(0,l.jsxs)(e.h3,{id:"calculating-angle-data",children:["Calculating Angle Data",(0,l.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#calculating-angle-data",children:(0,l.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,l.jsxs)(e.p,{children:["First, let's make a similar ",(0,l.jsx)(e.code,{children:"findAngle"})," function as we wrote in the shader."]}),`
+`,(0,l.jsxs)(e.div,{"data-rehype-pretty-code-fragment":"",children:[(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"cs","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"cs","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"private"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"FindAngle"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#9CCFD8"},children:"Vector2"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"v"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:")"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"{"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"var"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"angleRadians"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"Mathf"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"Atan2"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"v"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"y"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"v"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"x"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"if"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"angleRadians"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"<"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"0"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:")"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"{"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"angleRadians"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"+="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"Mathf"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"PI"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"*"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"2"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"}"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"angleRadians"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"/="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"Mathf"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"PI"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"*"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"2"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"angleRadians"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"}"})})]})}),(0,l.jsx)(e.div,{"data-rehype-pretty-code-caption":"","data-language":"cs","data-theme":"default",children:"Using the Unit Circle Coordinates"})]}),`
+`,(0,l.jsx)(e.p,{children:"Now it's as simple as adding the input in the function to get the correct values!"}),`
+`,(0,l.jsxs)(e.div,{"data-rehype-pretty-code-fragment":"",children:[(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"cs","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"cs","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"public"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"GetMouseAngle"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"()"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"{"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#908CAA",fontStyle:"italic"},children:"//"}),(0,l.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:" Getting the Mouse angle, relative to the screen's origin"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#9CCFD8"},children:"Vector3"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"screenOrigin"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"new"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#9CCFD8"},children:"Vector3"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"screen"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"w"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"/"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"2"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"screen"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"h"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"/"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"2"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"0"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"FindAngle"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"Input"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"mousePosition"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"-"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"screenOrigin"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"}"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"public"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"GetExitAngle"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"()"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"{"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#908CAA",fontStyle:"italic"},children:"//"}),(0,l.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:" Getting the Exit angle, relative to the player's position"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"line"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"values"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"exitPos"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"-"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"values"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"playerPos"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"FindAngle"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"line"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"}"})})]})}),(0,l.jsx)(e.div,{"data-rehype-pretty-code-caption":"","data-language":"cs","data-theme":"default",children:"Mouse and Exit Angles"})]}),`
+`,(0,l.jsxs)(e.h3,{id:"intensity",children:["Intensity",(0,l.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#intensity",children:(0,l.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,l.jsx)(e.p,{children:"Intensity should be based on how close or far the player is from the exit."}),`
+`,(0,l.jsx)(e.div,{"data-rehype-pretty-code-fragment":"",children:(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"cs","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"cs","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"public"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"GetIntensity"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"()"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"{"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"distance"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"Vector2"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"Distance"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"values"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"exitPos"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"values"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"playerPos"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"distance"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"}"})})]})})}),`
+`,(0,l.jsx)(e.p,{children:"However, distance can range from 0 to 1920. Let's cap this so that the bump doesn't cover the full screen"}),`
+`,(0,l.jsx)(e.div,{"data-rehype-pretty-code-fragment":"",children:(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"cs","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"cs","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"public"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"GetIntensity"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"()"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"{"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"longestDistance"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"30"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"distance"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"Vector2"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"Distance"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"values"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"exitPos"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"values"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"playerPos"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"intensity"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"-"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"distance"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"/"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"longestDistance"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"intensity"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"}"})})]})})}),`
+`,(0,l.jsx)(e.p,{children:"Now it ranges from 0 to 30! However, players wouldn't be able to see any bump despite pointing at the right direction. Let's change this:"}),`
+`,(0,l.jsxs)(e.div,{"data-rehype-pretty-code-fragment":"",children:[(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"cs","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"cs","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"public"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"GetIntensity"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"()"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"{"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"longestDistance"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"30"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"minI"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"5"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"maxI"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"90"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"distance"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"Vector2"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"Distance"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"values"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"exitPos"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"values"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"playerPos"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"intensity"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"minI"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"+"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"maxI"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"-"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"minI"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:")"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"*"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"-"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"distance"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"/"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"longestDistance"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"));"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"intensity"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"}"})})]})}),(0,l.jsx)(e.div,{"data-rehype-pretty-code-caption":"","data-language":"cs","data-theme":"default",children:"Now the value will always be 5 or above, showing at least a small bump."})]}),`
+`,(0,l.jsx)(e.hr,{}),`
+`,(0,l.jsxs)(e.p,{children:["Adding all the functions into ",(0,l.jsx)(e.code,{children:"FixedUpdate()"})," gives"]}),`
+`,(0,l.jsx)(e.div,{"data-rehype-pretty-code-fragment":"",children:(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"cs","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"cs","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"public"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#9CCFD8"},children:"Material"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"ringMat"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"private"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"void"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"FixedUpdate"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"()"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"{"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"ringMat"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"SetFloat"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#F6C177"},children:'"_MouseAngle"'}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsxs)(e.span,{"data-highlighted-chars-wrapper":"","data-highlighted-chars":"",children:[(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"GetMouseAngle"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"()"})]}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"ringMat"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"SetFloat"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#F6C177"},children:'"_ExitAngle"'}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsxs)(e.span,{"data-highlighted-chars-wrapper":"","data-highlighted-chars":"",children:[(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"GetExitAngle"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"()"})]}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"ringMat"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"SetFloat"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#F6C177"},children:'"_Intensity"'}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsxs)(e.span,{"data-highlighted-chars-wrapper":"","data-highlighted-chars":"",children:[(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"GetIntensity"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"()"})]}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"}"})})]})})}),`
+`,(0,l.jsxs)(e.h1,{id:"final-touches",children:["Final Touches",(0,l.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#final-touches",children:(0,l.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,l.jsxs)(e.p,{children:["We successfully have a working radar! But if you recall, TrapNation's MVs has more than just a bump. We're missing two things: ",(0,l.jsx)(r,{src:"/blogs/luminth-inspo.jpg",width:"300",height:"300",alt:"Trap Nation",sizes:"100vw"})]}),`
+`,(0,l.jsxs)(e.ul,{children:[`
+`,(0,l.jsx)(e.li,{children:"Black circle base"}),`
+`,(0,l.jsx)(e.li,{children:"Chromatic Abbreviation"}),`
+`]}),`
+`,(0,l.jsxs)(e.h3,{id:"simple-black-circle-base",children:["Simple Black Circle base",(0,l.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#simple-black-circle-base",children:(0,l.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,l.jsxs)(e.p,{children:["We can simply use the ",(0,l.jsx)(e.code,{children:"renderCircle()"})," function we made ",(0,l.jsx)(e.a,{href:"/blogs/how-to-radar#a-simple-circle-base",children:"earlier"}),", right after our previous work"]}),`
+`,(0,l.jsxs)(e.div,{"data-rehype-pretty-code-fragment":"",children:[(0,l.jsx)(e.div,{"data-rehype-pretty-code-title":"","data-language":"hlsl","data-theme":"default",children:"FocusRadar.shader"}),(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"hlsl","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"hlsl","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"fixed4 "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderInnerBlack"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(fixed4 col, fixed2 uv){"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" circ = "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"-"}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderCircle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv,"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"0.28"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:");"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"fixed4"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(circ.xxx,"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"-circ);"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"}"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"fixed4 "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderFocus"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(fixed2 uv){"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" eq = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"peakEquation"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"findAngle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv), _MouseAngle);"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"fixed4"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(eq.xxx,"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:");"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"}"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"fixed4 "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"frag"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" (Interpolator i) : "}),(0,l.jsx)(e.span,{style:{color:"#9CCFD8"},children:"SV_Target"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" {"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float2"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" uv = i.uv*"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"2"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"-"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:";"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	fixed4 col = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderFocus"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv);"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	col *= "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"fixed4"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderInnerBlack"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(col, uv).rgb,col.a);"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" col;"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"}"})})]})})]}),`
+`,(0,l.jsxs)(e.h3,{id:"chromatic-abbreviation",children:["Chromatic Abbreviation",(0,l.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#chromatic-abbreviation",children:(0,l.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,l.jsx)(e.p,{children:"Chromatic Abbreviation in nature manipulates the red, green and blue channels separately. This means we'll have to write something like."}),`
+`,(0,l.jsx)(e.div,{"data-rehype-pretty-code-fragment":"",children:(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"hlsl","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"hlsl","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"fixed4 "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderFocus"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(fixed2 uv){"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" eq = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"peakEquation"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"findAngle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv), _MouseAngle);"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	fixed r = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderCircle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv,eq);"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	fixed g = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderCircle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv,???);"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	fixed b = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderCircle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv,???);"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"fixed4"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(r,g,b,"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:");"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"}"})})]})})}),`
+`,(0,l.jsx)(e.p,{children:"This indicates that we'll need a slightly different version of eq for the other two channels."}),`
+`,(0,l.jsx)(e.p,{children:"Looking at TrapNation MVs, the Chromatic Abbreviation happens when the bump itself moves. What if we used the mouse position's previous location to replicate this effect?"}),`
+`,(0,l.jsxs)(e.p,{children:["This will require a new data variable ",(0,l.jsx)(e.code,{children:"prevMousePosition"})]}),`
+`,(0,l.jsxs)(e.div,{"data-rehype-pretty-code-fragment":"",children:[(0,l.jsx)(e.div,{"data-rehype-pretty-code-title":"","data-language":"cs","data-theme":"default",children:"FocusRadar.cs"}),(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"cs","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"cs","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"public"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#9CCFD8"},children:"Material"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"ringMat"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"private"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"previousMousePos"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"..."})}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"public"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"GetMouseAngle"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"()"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"{"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#908CAA",fontStyle:"italic"},children:"//"}),(0,l.jsx)(e.span,{style:{color:"#6E6A86",fontStyle:"italic"},children:" Getting the Mouse angle, relative to the screen's origin"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#9CCFD8"},children:"Vector3"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"screenOrigin"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"new"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#9CCFD8"},children:"Vector3"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"screen"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"w"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"/"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"2"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"screen"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"h"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"/"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"2"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"0"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"mouse"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"FindAngle"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"Input"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"mousePosition"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"-"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"screenOrigin"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"previousMousePos"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"="}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"mouse"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"mouse"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:";"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"}"})}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"..."})}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"private"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"void"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"FixedUpdate"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"()"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"{"})}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"ringMat"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"SetFloat"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#F6C177"},children:'"_PrevMouseAngle"'}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"previousMousePos"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:");"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"ringMat"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"SetFloat"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#F6C177"},children:'"_MouseAngle"'}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"GetMouseAngle"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"());"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"ringMat"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"SetFloat"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#F6C177"},children:'"_ExitAngle"'}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"GetExitAngle"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"());"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4",fontStyle:"italic"},children:"ringMat"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"."}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"SetFloat"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#F6C177"},children:'"_Intensity"'}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:","}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"GetIntensity"}),(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"());"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#908CAA"},children:"}"})})]})})]}),`
+`,(0,l.jsxs)(e.div,{"data-rehype-pretty-code-fragment":"",children:[(0,l.jsx)(e.div,{"data-rehype-pretty-code-title":"","data-language":"hlsl","data-theme":"default",children:"FocusRadar.shader"}),(0,l.jsx)(e.pre,{style:{backgroundColor:"#232136"},tabIndex:"0","data-language":"hlsl","data-theme":"default",children:(0,l.jsxs)(e.code,{"data-language":"hlsl","data-theme":"default",children:[(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"fixed4 "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderFocus"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(fixed2 uv){"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" eq = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"peakEquation"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"findAngle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv), _MouseAngle);"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"float"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" eqPrev = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"peakEquation"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"("}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"findAngle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv), _PrevMouseAngle);"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	fixed r = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderCircle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv,eq);"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"","data-highlighted-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	fixed g = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderCircle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv,"}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"lerp"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(eq,eqPrev,"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"0.5"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"));"})]}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	fixed b = "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"renderCircle"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(uv,eqPrev);"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":""}),`
+`,(0,l.jsxs)(e.span,{"data-line":"",children:[(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"	"}),(0,l.jsx)(e.span,{style:{color:"#3E8FB0"},children:"return"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:" "}),(0,l.jsx)(e.span,{style:{color:"#EB6F92",fontStyle:"italic"},children:"fixed4"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"(r,g,b,"}),(0,l.jsx)(e.span,{style:{color:"#EA9A97"},children:"1"}),(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:");"})]}),`
+`,(0,l.jsx)(e.span,{"data-line":"",children:(0,l.jsx)(e.span,{style:{color:"#E0DEF4"},children:"}"})})]})})]}),`
+`,(0,l.jsxs)(e.h1,{id:"results",children:["Results",(0,l.jsx)(e.a,{"aria-hidden":"true",tabIndex:"-1",href:"#results",children:(0,l.jsx)(e.span,{className:"icon icon-link"})})]}),`
+`,(0,l.jsx)(e.p,{children:"Congratulations for making it this far! That was the base logic for how I render this TrapNation-inspired shader."}),`
+`,(0,l.jsx)(e.p,{children:"As a recap, we:"}),`
+`,(0,l.jsxs)(e.ol,{children:[`
+`,(0,l.jsx)(e.li,{children:"Used Desmos to find the mathematical function to represent a peak in a circle."}),`
+`,(0,l.jsx)(e.li,{children:"Considered the UV Coordinates as a Unit Circle to render angle coordinates and values."}),`
+`,(0,l.jsx)(e.li,{children:"Made a dynamic Intensity value that considered how close the player is to the exit."}),`
+`,(0,l.jsx)(e.li,{children:"Used Chromatic Abbreviation to make a mouse-movement effect."}),`
+`]}),`
+`,(0,l.jsx)(t,{link:"https://raw.githubusercontent.com/thomasw-dev/LudumDare55/PostJam/LudumDare55/Assets/Scripts/Shader/FocusRing.shader?token=GHSAT0AAAAAACWRN6OOROPLUB64XKLLTLKUZWWRWWQ",name:"Source Code: FocusRadar.shader",isSolid:!0,isNewPage:!0}),`
+`,(0,l.jsx)(t,{link:"https://raw.githubusercontent.com/thomasw-dev/LudumDare55/PostJam/LudumDare55/Assets/Scripts/Shader/FocusRing.cs?token=GHSAT0AAAAAACWRN6OONQW7WMSRW2GJKAZ4ZWWRXIA",name:"Source Code: FocusRadar.cs",isSolid:!0,isNewPage:!0}),`
+`," ",`
+`,(0,l.jsx)(e.hr,{}),`
+`,(0,l.jsx)(e.p,{children:"Thank you for reading! Check out the game that used this, or the project details about it here!"}),`
+`,(0,l.jsx)(t,{link:"/blogs/luminth",name:"Luminth Details",isSolid:!0}),`
+`," ",`
+`,(0,l.jsx)("iframe",{frameborder:"0",src:"https://itch.io/embed/2649454?linkback=true&bg_color=EDE9E4&fg_color=806562&link_color=C3864D&border_color=C3864D",width:"552",height:"167",children:(0,l.jsx)("a",{href:"https://raphaeleg.itch.io/luminth",children:(0,l.jsx)(e.p,{children:"Luminth by Raphaele Guillemot, Thomas Wang"})})})]})}function B(n={}){let{wrapper:e}=n.components||{};return e?(0,l.jsx)(e,Object.assign({},n,{children:(0,l.jsx)(d,n)})):d(n)}var C=B;function h(n,e){throw new Error("Expected "+(e?"component":"object")+" `"+n+"` to be defined: you likely forgot to import, pass, or provide it.")}return f(S);})();
+;return Component;2:[null,["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__variable_f367f3 __variable_73ee6c font-mr bg-light","children":[["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":["$","main",null,{"className":"my-32 w-full h-[55vh] flex justify-center font-mr","children":["$","div",null,{"className":"relative flex flex-col items-center justify-center","children":[["$","h1",null,{"className":"inline-block text-dark \n      text-6xl font-bold w-full capitalize xl:text-8xl text-center","children":"404"}],["$","h2",null,{"className":"inline-block text-dark \n      text-5xl font-bold w-full capitalize xl:text-6xl text-center mt-4 tracking-wide leading-snug","children":"Page Not Found!"}],["$","$L7",null,{"href":"/","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light m-12","children":"Go To Home"}]]}]}],"notFoundStyles":[],"childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children",["slug","how-to-trapnation-radar","d"],"children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$L8",[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"How to: Make a TrapNation-Inspired Radar, Unity\",\"image\":[\"https://raphaeleg.github.io/blogs/luminth-3.gif\"],\"datePublished\":\"2024-06-20T00:00:00.000Z\",\"dateModified\":\"2024-06-20T00:00:00.000Z\",\"author\":[{\"@type\":\"Person\",\"name\":\"Raphaele's Portfolio\",\"url\":\"https://www.linkedin.com/in/raphaele-michelle-guillemot-6a34271a8/\"}]}"}}],["$","article",null,{"children":[["$","div",null,{"className":"mb-8 text-center relative w-full h-[50vh] bg-dark","children":[["$","div",null,{"className":"w-5/6 z-10 flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2","children":[["$","span",null,{"children":[["$","$L7",null,{"href":"/categories/graphics","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#graphics"}],["$","$L7",null,{"href":"/categories/shader","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#shader"}],["$","$L7",null,{"href":"/categories/hlsl","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#hlsl"}],["$","$L7",null,{"href":"/categories/unity","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#unity"}],["$","$L7",null,{"href":"/categories/csharp","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#csharp"}],["$","$L7",null,{"href":"/categories/experiment","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#experiment"}],["$","$L7",null,{"href":"/categories/solo","target":"","className":"my-4 mr-4 inline-block py-2 sm:py-3 px-6 sm:px-10 border-accent rounded-full capitalize font-semibold hover:scale-105 transition-all ease duration-200 text-sm sm:text-base bg-accent text-light px-6 mx-2 text-sm py-2","children":"#solo\r"}]]}],["$","h1",null,{"className":"inline-block mt-6 font-semibold capitalize text-light text-2xl md:text-3xl lg:text-5xl !leading-normal relative","children":"How to: Make a TrapNation-Inspired Radar, Unity"}],"$undefined"]}],["$","div",null,{"className":"absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60"}],["$","$L9",null,{"src":"/blogs/luminth-3.gif","placeholder":"blur","blurDataURL":"$a","alt":"How to: Make a TrapNation-Inspired Radar, Unity","width":1280,"height":720,"className":"w-full h-full object-cover object-center false [object Object]","priority":true,"sizes":"100vw"}]]}],["$","div",null,{"className":"grid grid-cols-12  gap-y-8 lg:gap-8 sxl:gap-16 mt-8 px-5 md:px-10","children":[["$","div",null,{"className":"col-span-12  lg:col-span-4","children":["$","details",null,{"className":"border-[1px] border-solid border-dark  text-dark  rounded-lg p-4 sticky top-6 max-h-[80vh] overflow-hidden overflow-y-auto","open":true,"children":[["$","summary",null,{"className":"text-lg font-semibold capitalize cursor-pointer","children":"Table Of Content"}],["$","ul",null,{"className":"mt-4 font-in text-base","children":[["$","li","#ideation",{"className":"py-1","children":["$","a",null,{"href":"#ideation","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Ideation"}]]}]}],["$","li","#planning",{"className":"py-1","children":["$","a",null,{"href":"#planning","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Planning"}]]}]}],["$","li","#finding-the-wave-equation",{"className":"py-1","children":["$","a",null,{"href":"#finding-the-wave-equation","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"Finding the Wave Equation"}]]}]}],["$","li","#rendering",{"className":"py-1","children":["$","a",null,{"href":"#rendering","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Rendering"}]]}]}],["$","li","#a-simple-circle-base",{"className":"py-1","children":["$","a",null,{"href":"#a-simple-circle-base","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"A Simple Circle base"}]]}]}],["$","li","#getting-the-theta-angle",{"className":"py-1","children":["$","a",null,{"href":"#getting-the-theta-angle","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"Getting the Theta Angle"}]]}]}],["$","li","#data",{"className":"py-1","children":["$","a",null,{"href":"#data","data-level":"two","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Data"}]]}]}],["$","li","#calculating-angle-data",{"className":"py-1","children":["$","a",null,{"href":"#calculating-angle-data","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"Calculating Angle Data"}]]}]}],["$","li","#intensity",{"className":"py-1","children":["$","a",null,{"href":"#intensity","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"Intensity"}]]}]}],["$","li","#final-touches",{"className":"py-1","children":["$","a",null,{"href":"#final-touches","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Final Touches"}]]}]}],["$","li","#simple-black-circle-base",{"className":"py-1","children":["$","a",null,{"href":"#simple-black-circle-base","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"Simple Black Circle base"}]]}]}],["$","li","#chromatic-abbreviation",{"className":"py-1","children":["$","a",null,{"href":"#chromatic-abbreviation","data-level":"three","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[["$","span",null,{"className":"flex w-1 h-1 rounded-full bg-dark mr-2","children":" "}],["$","span",null,{"className":"hover:underline","children":"Chromatic Abbreviation"}]]}]}],["$","li","#results",{"className":"py-1","children":["$","a",null,{"href":"#results","data-level":"one","className":"data-[level=two]:pl-0  data-[level=two]:pt-2   data-[level=two]:border-t border-solid border-dark/40   data-[level=three]:pl-4   sm:data-[level=three]:pl-6   flex items-center justify-start   ","children":[null,["$","span",null,{"className":"hover:underline","children":"Results"}]]}]}]]}]]}]}],["$","$Lb",null,{"blog":{"title":"How to: Make a TrapNation-Inspired Radar, Unity","publishedAt":"2024-06-20T00:00:00.000Z","desc":"Learn how to make a radar that follows the mouse using HLSL in Unity","image":{"filePath":"../public/blogs/luminth-3.gif","relativeFilePath":"../../public/blogs/luminth-3.gif","format":"gif","height":720,"width":1280,"aspectRatio":1.7777777777777777,"blurhashDataUrl":"$c"},"isPublished":true,"redirect":"","tags":["graphics","shader","hlsl","unity","csharp","experiment","solo\r"],"body":{"raw":"$d","code":"$e"},"_id":"how-to-trapnation-radar/index.mdx","_raw":{"sourceFilePath":"how-to-trapnation-radar/index.mdx","sourceFileName":"index.mdx","sourceFileDir":"how-to-trapnation-radar","contentType":"mdx","flattenedPath":"how-to-trapnation-radar"},"type":"Blog","url":"/blogs/how-to-trapnation-radar","toc":[{"level":"one","text":"Ideation","slug":"ideation"},{"level":"one","text":"Planning","slug":"planning"},{"level":"three","text":"Finding the Wave Equation","slug":"finding-the-wave-equation"},{"level":"two","text":"Rendering","slug":"rendering"},{"level":"three","text":"A Simple Circle base","slug":"a-simple-circle-base"},{"level":"three","text":"Getting the Theta Angle","slug":"getting-the-theta-angle"},{"level":"two","text":"Data","slug":"data"},{"level":"three","text":"Calculating Angle Data","slug":"calculating-angle-data"},{"level":"three","text":"Intensity","slug":"intensity"},{"level":"one","text":"Final Touches","slug":"final-touches"},{"level":"three","text":"Simple Black Circle base","slug":"simple-black-circle-base"},{"level":"three","text":"Chromatic Abbreviation","slug":"chromatic-abbreviation"},{"level":"one","text":"Results","slug":"results"}]}}]]}]]}]],null],"segment":"__PAGE__?{\"slug\":\"how-to-trapnation-radar\"}"},"styles":[]}],"segment":["slug","how-to-trapnation-radar","d"]},"styles":[]}],"segment":"blogs"},"styles":[]}],["$","$Lf",null,{}]]}]}],null]
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"How to: Make a TrapNation-Inspired Radar, Unity | Raphaele's Portfolio"}],["$","link","2",{"rel":"manifest","href":"/manifest.webmanifest"}],["$","meta","3",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","4",{"name":"robots","content":"index, follow"}],["$","meta","5",{"name":"googlebot","content":"index, follow, noimageindex, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","6",{"property":"og:title","content":"How to: Make a TrapNation-Inspired Radar, Unity"}],["$","meta","7",{"property":"og:url","content":"https://raphaeleg.github.io/blogs/how-to-trapnation-radar"}],["$","meta","8",{"property":"og:site_name","content":"Raphaele's Portfolio"}],["$","meta","9",{"property":"og:locale","content":"en-us"}],["$","meta","10",{"property":"og:image","content":"https://raphaeleg.github.io/blogs/luminth-3.gif"}],["$","meta","11",{"property":"og:type","content":"article"}],["$","meta","12",{"property":"article:published_time","content":"2024-06-20T00:00:00.000Z"}],["$","meta","13",{"property":"article:modified_time","content":"2024-06-20T00:00:00.000Z"}],["$","meta","14",{"property":"article:author","content":"Raphaele's Portfolio"}],["$","meta","15",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","16",{"name":"twitter:title","content":"How to: Make a TrapNation-Inspired Radar, Unity"}],["$","meta","17",{"name":"twitter:image","content":"https://raphaeleg.github.io/blogs/luminth-3.gif"}]]
+8:null
