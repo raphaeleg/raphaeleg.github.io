@@ -1,9 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './.contentlayer/generated/**/*.mjs',
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -15,7 +18,6 @@ module.exports = {
         accentDark: "#55240c",
         gray: "#747474",
       },
-
       fontFamily: {
         mr: ["var(--font-mr)"],
         in: ["var(--font-in)"]
@@ -27,6 +29,6 @@ module.exports = {
     },
   },
   plugins: [
-    require( '@tailwindcss/typography' )
+    require('@tailwindcss/typography')
   ],
 }
