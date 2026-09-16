@@ -2,7 +2,7 @@ export default function manifest() {
     return {
         name: 'Raphaele G. - Portfolio',
         short_name: 'Raphaele G.',
-        description: 'Game Developer inspired to create something new.',
+        description: 'Game dev at heart, System Engineer by trade.',
         start_url: '/',
         display: 'standalone',
         //   background_color: '#fff',

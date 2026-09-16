@@ -9,7 +9,7 @@ const Footer = () => {
         <footer className=" bg-accentLight p-2 sm:p-10 flex flex-col items-center text-dark">
             <div className=" w-full relative font-medium py-2 px-8 flex flex-col md:flex-row items-center justify-between">
                 <span className="text-center min-w-[30vw]">
-                    &copy;Copyright 2024 Raphaele Guillemot - All Rights Reserved
+                    &copy;Copyright 2026 Raphaele Guillemot - All Rights Reserved
                 </span>
                 <span className="flex flex-col items-center justify-center my-4 md:my-0 min-w-[30vw]">
                     <div className="flex flex-row items-center justify-center my-4">

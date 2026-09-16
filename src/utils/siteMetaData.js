@@ -2,7 +2,7 @@ const siteMetadata = {
     title: "Raphaele's Portfolio",
     author: 'Raphaele G.',
     headerTitle: "Raphaele's Portfolio",
-    description: 'Game Developer inspired to create something new.',
+    description: 'Game dev at heart, System Engineer by trade.',
     language: 'en-us',
     theme: 'light',
     siteUrl: 'https://raphaeleg.github.io',
