@@ -6,12 +6,14 @@ import BlogImage from './BlogImage';
 
 const BlogLayoutOne = ( { blog } ) => {
     return (
-        <Link href={blog.url} className="group inline-block overflow-hidden rounded-xl w-full h-full">
+        <div className="group relative inline-block overflow-hidden rounded-xl w-full h-full">
+            <Link href={blog.url} className="block h-full">
+                <BlogImage blog={blog} classes="rounded-xl" sizes={"(max-width:1024px) 60vw, 100vw"} />
+            </Link>
             <div
-                className="absolute top-0 left-0 bottom-0 right-0 h-full
+                className="pointer-events-none absolute top-0 left-0 bottom-0 right-0 h-full
                 bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-xl z-10"
             />
-            <BlogImage blog={blog} classes="rounded-xl" sizes={"(max-width:1024px) 60vw, 100vw"} />
 
             <div className="w-full h-full sm:h-auto absolute bottom-0 p-4 xs:p-6 sm:p-10 z-10">
                 <Tag isSolid={true} link={`/categories/${slug( blog.tags[0] )}`} name={blog.tags[0]}
@@ -31,7 +33,7 @@ const BlogLayoutOne = ( { blog } ) => {
                     {blog.desc}
                 </p>
             </div>
-        </Link>
+        </div>
     );
 };
 export default BlogLayoutOne
