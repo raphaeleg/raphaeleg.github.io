@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import React from 'react'
 
 const BlogLink = ( { href, redirect, className, children } ) => {
@@ -8,9 +7,9 @@ const BlogLink = ( { href, redirect, className, children } ) => {
                 ? < a href={redirect} className={className} >
                     {children}
                 </a >
-                : <Link href={href} className={className}>
+                : <a href={href} className={className}>
                     {children}
-                </Link>
+                </a>
             }
         </>
     );

@@ -1,15 +1,14 @@
 import React from "react";
 import Tag from "../Elements/Tag";
-import Link from "next/link";
 import { slug } from "github-slugger";
 import BlogImage from './BlogImage';
 
 const BlogLayoutOne = ( { blog } ) => {
     return (
         <div className="group relative inline-block overflow-hidden rounded-xl w-full h-full">
-            <Link href={blog.url} className="block h-full">
+            <a href={blog.url} className="block h-full">
                 <BlogImage blog={blog} classes="rounded-xl" sizes={"(max-width:1024px) 60vw, 100vw"} />
-            </Link>
+            </a>
             <div
                 className="pointer-events-none absolute top-0 left-0 bottom-0 right-0 h-full
                 bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-xl z-10"
@@ -19,7 +18,7 @@ const BlogLayoutOne = ( { blog } ) => {
                 <Tag isSolid={true} link={`/categories/${slug( blog.tags[0] )}`} name={blog.tags[0]}
                     className="px-6 text-xs  sm:text-sm py-1 sm:py-2 !border "
                 />
-                <Link href={blog.url} className="mt-6">
+                <a href={blog.url} className="mt-6">
                     <h2 className="font-bold capitalize text-sm xs:text-base sm:text-xl md:text-2xl text-light mt-2 sm:mt-4">
                         <span
                             className="bg-gradient-to-r from-accent/50 to-accent/50 bg-[length:0px_6px]
@@ -28,7 +27,7 @@ const BlogLayoutOne = ( { blog } ) => {
                             {blog.title}
                         </span>
                     </h2>
-                </Link>
+                </a>
                 <p className="text-sm xs:text-base sm:text-l md:text-xl text-light/80 mt-6 sm:mt-4">
                     {blog.desc}
                 </p>
